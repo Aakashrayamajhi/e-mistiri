@@ -1,0 +1,72 @@
+import * as authService from "./userAuth.service.js";
+
+export const sendOTP = async (req, res, next) => {
+  try {
+    const { phone } = req.body;
+
+    const result = await authService.sendOTP(phone);
+
+    res.status(200).json({
+      success: true,
+      message: result.message,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+
+export const verifyOTP = async (req, res, next) => {
+  try {
+    const { phone, otp } = req.body;
+
+    const user = await authService.verifyOTP(phone, otp);
+
+    res.status(200).json({
+      success: true,
+      message: "OTP verified",
+      data: user,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+
+export const completeProfile = async (req, res, next) => {
+  try {
+    const { userId, username, email, password } = req.body;
+
+    const result = await authService.completeProfile({
+      userId,
+      username,
+      email,
+      password,
+    });
+
+    res.status(200).json({
+      success: true,
+      message: "Profile completed",
+      data: result,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+
+export const loginUser = async (req, res, next) => {
+  try {
+    const { email, password } = req.body;
+
+    const result = await authService.loginUser({ email, password });
+
+    res.status(200).json({
+      success: true,
+      message: "Login successful",
+      data: result,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
