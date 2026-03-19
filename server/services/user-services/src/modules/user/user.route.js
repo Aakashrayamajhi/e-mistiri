@@ -10,12 +10,12 @@ userRouter.post("/", userController.createUser);
 userRouter.get("/phone/:phone", userController.getUserByPhone);
 userRouter.get("/:id", userController.getUserById);
 
-userRouter.put("/:id", userController.updateUser);
+userRouter.patch("/:id", userController.updateUser);
 userRouter.delete("/:id", userController.deleteUser);
 
-userRouter.put(
+userRouter.patch(
   "/:id/profile-image",
-  upload.single("image"),
+  upload.single("profileImage"),
   userController.uploadProfileImage
 );
 

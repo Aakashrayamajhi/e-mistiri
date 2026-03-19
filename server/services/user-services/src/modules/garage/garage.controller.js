@@ -1,4 +1,5 @@
 import * as garageService from "./garage.service.js";
+import { uploadImage } from "../../utils/cloudinary.util.js";
 
 export const registerGarage = async (req, res, next) => {
   try {
@@ -116,6 +117,33 @@ export const rejectGarage = async (req, res, next) => {
       success: true,
       message: "Garage rejected",
       data: garage,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const uploadGarageProfileImage = async (req, res, next) => {
+  try {
+    const garageId = req.params.id;
+
+    if (!req.file) {
+      return res.status(400).json({
+        success: false,
+        message: "No file uploaded",
+      });
+    }
+
+    const result = await uploadImage(req.file.buffer, "garages");
+
+    const updated = await garageService.updateGarage(garageId, {
+      profileImage: result.secure_url,
+    });
+
+    res.json({
+      success: true,
+      message: "Profile image uploaded",
+      data: updated,
     });
   } catch (error) {
     next(error);

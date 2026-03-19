@@ -1,5 +1,6 @@
 import express from "express";
 import * as garageController from "./garage.controller.js";
+import upload from "../../middleware/multer.middleware.js";
 
 const garageRouter = express.Router();
 
@@ -14,5 +15,11 @@ garageRouter.delete("/:id", garageController.deleteGarage);
 
 garageRouter.patch("/:id/approve", garageController.approveGarage);
 garageRouter.patch("/:id/reject", garageController.rejectGarage);
+
+garageRouter.patch(
+  "/:id/profile-image",
+  upload.single("profileImage"),
+  garageController.uploadGarageProfileImage
+);
 
 export default garageRouter;
