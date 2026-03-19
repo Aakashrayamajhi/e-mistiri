@@ -135,17 +135,20 @@ export const completeProfile = async ({
 };
 
 
-export const loginUser = async ({ email, password }) => {
-  if (!email || !password)
-    throw new Error("Email and password required");
+export const loginUser = async ({ phone, password }) => {
+  if (!phone || !password)
+    throw new Error("phoneNumber and password required");
+
+  console.log("password:", password)
 
   let user;
 
   try {
     const response = await axios.get(
-      `${USER_SERVICE_URL}/email/${email}`
+      `${USER_SERVICE_URL}/phone/${phone}`
     );
-    user = response.data;
+    user = response.data.data;
+    console.log("l-u:",user)
   } catch {
     throw new Error("User not found");
   }

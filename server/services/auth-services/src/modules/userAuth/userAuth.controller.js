@@ -57,9 +57,9 @@ export const completeProfile = async (req, res, next) => {
 
 export const loginUser = async (req, res, next) => {
   try {
-    const { email, password } = req.body;
+    const { phone , password } = req.body;
 
-    const result = await authService.loginUser({ email, password });
+    const result = await authService.loginUser({ phone , password });
 
     res.status(200).json({
       success: true,

@@ -15,6 +15,7 @@ export const sendSMS = async (to, message) => {
       from: process.env.TWILIO_PHONE,
       to
     });
+    console.log("Twilio response:", response);
 
     return response;
   } catch (error) {
