@@ -57,8 +57,7 @@ export const approveGarage = async (id) => {
     {
       status: "approved",
       isVerified: true,
-    },
-    { new: true }
+    },{returnDocument: 'after'}
   );
 };
 
