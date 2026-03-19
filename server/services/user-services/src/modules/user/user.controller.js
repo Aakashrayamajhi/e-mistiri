@@ -1,12 +1,19 @@
 import * as userService from "./user.service.js";
+import { uploadImage } from "../../utils/cloudinary.util.js";
 
 export const createUser = async (req, res) => {
   try {
     const user = await userService.createUser(req.body);
-    res.status(201).json({ success: true, user });
+
+    return res.status(201).json({
+      success: true,
+      message: "User created successfully",
+      data: user,
+    });
   } catch (error) {
     console.error("Create user error:", error.message);
-    res.status(error.status || 400).json({
+
+    return res.status(error.status || 400).json({
       success: false,
       message: error.message,
     });
@@ -17,15 +24,24 @@ export const getUserByPhone = async (req, res) => {
   try {
     const user = await userService.findUserByPhone(req.params.phone);
 
-    if (!user)
+    if (!user) {
       return res.status(404).json({
         success: false,
         message: "User not found",
       });
+    }
 
-    res.json({ success: true, user });
+    return res.json({
+      success: true,
+      data: user,
+    });
   } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
+    console.error("Get user by phone error:", error.message);
+
+    return res.status(500).json({
+      success: false,
+      message: error.message,
+    });
   }
 };
 
@@ -33,41 +49,125 @@ export const getUserById = async (req, res) => {
   try {
     const user = await userService.getUserById(req.params.id);
 
-    if (!user)
+    if (!user) {
       return res.status(404).json({
         success: false,
         message: "User not found",
       });
+    }
 
-    res.json({ success: true, user });
+    return res.json({
+      success: true,
+      data: user,
+    });
   } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
+    console.error("Get user by ID error:", error.message);
+
+    return res.status(500).json({
+      success: false,
+      message: error.message,
+    });
   }
 };
 
 export const getAllUsers = async (req, res) => {
   try {
     const users = await userService.getAllUsers();
-    res.json({ success: true, users });
+
+    return res.json({
+      success: true,
+      count: users.length,
+      data: users,
+    });
   } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
+    console.error("Get all users error:", error.message);
+
+    return res.status(500).json({
+      success: false,
+      message: error.message,
+    });
   }
 };
 
 export const updateUser = async (req, res) => {
   try {
     const user = await userService.updateUser(req.params.id, req.body);
-    res.json({ success: true, user });
+
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found",
+      });
+    }
+
+    return res.json({
+      success: true,
+      message: "User updated successfully",
+      data: user,
+    });
   } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
+    console.error("Update user error:", error.message);
+
+    return res.status(500).json({
+      success: false,
+      message: error.message,
+    });
   }
 };
 
 export const deleteUser = async (req, res) => {
   try {
-    await userService.deleteUser(req.params.id);
-    res.json({ success: true, message: "User deleted" });
+    const user = await userService.deleteUser(req.params.id);
+
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found",
+      });
+    }
+
+    return res.json({
+      success: true,
+      message: "User deleted successfully",
+    });
   } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
+    console.error("Delete user error:", error.message);
+
+    return res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+export const uploadProfileImage = async (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({
+        success: false,
+        message: "No file uploaded",
+      });
+    }
+
+    // upload to cloudinary
+    const result = await uploadImage(req.file.buffer, "users");
+
+    // update user profile image
+    const user = await userService.updateUser(req.params.id, {
+      profileImage: result.secure_url,
+    });
+
+    return res.json({
+      success: true,
+      message: "Profile image uploaded successfully",
+      data: user,
+    });
+  } catch (error) {
+    console.error("Upload profile image error:", error.message);
+
+    return res.status(500).json({
+      success: false,
+      message: error.message,
+    });
   }
 };
