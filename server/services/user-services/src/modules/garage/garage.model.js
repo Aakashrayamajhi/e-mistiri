@@ -2,22 +2,20 @@ import mongoose from "mongoose";
 
 const garageSchema = new mongoose.Schema(
 {
-  
   name: {
     type: String,
-    required: true,
     trim: true
   },
 
   ownerName: {
     type: String,
-    required: true,
     trim: true
   },
 
   phone: {
     type: String,
-    required: true
+    required: true,
+    unique: true 
   },
 
   email: {
@@ -28,52 +26,36 @@ const garageSchema = new mongoose.Schema(
   },
 
   password: {
-    type: String
+    type: String,
   },
 
-  //  Garage Details
   address: {
     type: String,
-    required: true
   },
 
-  city: {
-    type: String
-  },
+  city: String,
 
-  description: {
-    type: String
-  },
+  description: String,
 
   location: {
-    type: {
-      type: String,
-      enum: ["Point"],
-      default: "Point"
-    },
-    coordinates: {
-      type: [Number] // lat, long
-    }
+  type: {
+    type: String,
+    enum: ["Point"]
+  },
+  coordinates: {
+    type: [Number]
+  }
+},
+
+  profileImage: {
+    type: String,
+    default: "https://static.vecteezy.com/system/resources/previews/013/042/571/large_2x/default-avatar-profile-icon-social-media-user-photo-in-flat-style-vector.jpg",
   },
 
-  logo: {
-    type: String
-  },
+  shopImages: [String],
 
-  shopImages: [
-    {
-      type: String
-    }
-  ],
+  services: [String],
 
-
-  services: [
-    {
-      type: String
-    }
-  ],
-
- 
   openingTime: String,
   closingTime: String,
 
@@ -82,26 +64,22 @@ const garageSchema = new mongoose.Schema(
     default: false
   },
 
-  
-documents: {
-  registrationCertificate: String,
-  citizenshipFront: String,
-  citizenshipBack: String,
-  panNumber: String,
-  vatNumber: String
-},
+  documents: {
+    registrationCertificate: String,
+    citizenshipFront: String,
+    citizenshipBack: String,
+    panNumber: String,
+    vatNumber: String
+  },
 
   paymentDetails: {
     bankName: String,
     accountHolderName: String,
     accountNumber: String,
     branch: String,
-
-   
     esewaId: String,
     khaltiId: String
   },
-
 
   rating: {
     type: Number,
@@ -112,7 +90,6 @@ documents: {
     type: Number,
     default: 0
   },
-
 
   status: {
     type: String,
@@ -128,6 +105,12 @@ documents: {
 },
 { timestamps: true }
 );
+
+garageSchema.index({ location: "2dsphere" });
+
+garageSchema.pre("save", async function () {
+  this.isVerified = this.status === "approved";
+});
 
 const Garage = mongoose.model("Garage", garageSchema);
 
