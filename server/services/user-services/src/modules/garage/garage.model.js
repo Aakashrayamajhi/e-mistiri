@@ -14,7 +14,7 @@ const garageSchema = new mongoose.Schema(
 
     role: {
       type: String,
-      default: "user",
+      default: "garage",
     },
 
 

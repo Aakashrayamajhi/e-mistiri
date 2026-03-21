@@ -1,0 +1,8 @@
+2026-03-21 15:23:56 [ERROR] API-GATEWAY: Rate limiter error {"error":"rateLimiterScript is not defined"}
+2026-03-21 15:23:56 [ERROR] API-GATEWAY: Rate limiter error {"error":"rateLimiterScript is not defined"}
+2026-03-21 15:24:00 [ERROR] API-GATEWAY: Rate limiter error {"error":"rateLimiterScript is not defined"}
+2026-03-21 15:24:00 [ERROR] API-GATEWAY: Rate limiter error {"error":"rateLimiterScript is not defined"}
+2026-03-21 15:24:02 [ERROR] API-GATEWAY: Rate limiter error {"error":"rateLimiterScript is not defined"}
+2026-03-21 16:17:17 [ERROR] API-GATEWAY: POST /api/userAuth/send-otp - 500 {"method":"POST","path":"/api/userAuth/send-otp","statusCode":500,"duration":"1107ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:18:07 [ERROR] API-GATEWAY: POST /api/userAuth/send-otp - 500 {"method":"POST","path":"/api/userAuth/send-otp","statusCode":500,"duration":"6ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:19:06 [ERROR] API-GATEWAY: POST /api/userAuth/send-otp - 500 {"method":"POST","path":"/api/userAuth/send-otp","statusCode":500,"duration":"5ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}

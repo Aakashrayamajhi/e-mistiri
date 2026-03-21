@@ -7,14 +7,12 @@ export const errorMiddleware = (err, req, res, next) => {
   logger.error(`[${status}] ${message}`, {
     path: req.path,
     method: req.method,
-    ip: req.ip,
     error: err.stack
   })
 
   res.status(status).json({
     success: false,
     message,
-    timestamp: new Date().toISOString(),
     ...(process.env.NODE_ENV === 'development' && { stack: err.stack })
   })
 }

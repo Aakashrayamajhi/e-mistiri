@@ -60,7 +60,6 @@ export const verifyGarageOTP = async (phone, otp) => {
     console.log(" AXIOS ERROR STATUS:", err.response?.status);
     console.log(" AXIOS ERROR DATA:", err.response?.data);
 
-    // 🔥 If already exists → login instead
     if (err.response?.data?.includes("Garage already exists")) {
       console.log("Garage exists → logging in");
 

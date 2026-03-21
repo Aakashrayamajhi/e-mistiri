@@ -9,9 +9,8 @@ garageRouter.post("/register", garageController.registerGarage);
 garageRouter.get("/", garageController.getAllGarages)
 garageRouter.get("/approved", garageController.getGarages);
 garageRouter.get("/nearby", garageController.getNearbyGarages);
-garageRouter.get("/me", garageController.getGarage);
-
-garageRouter.patch("/:id", garageController.updateGarage);
+garageRouter.patch("/me", garageController.updateGarage);
+garageRouter.get("/:id", garageController.getGarage);
 garageRouter.delete("/:id", garageController.deleteGarage);
 
 garageRouter.patch("/:id/approve", garageController.approveGarage);

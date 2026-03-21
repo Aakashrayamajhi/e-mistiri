@@ -149,10 +149,8 @@ export const uploadProfileImage = async (req, res) => {
       });
     }
 
-    // upload to cloudinary
     const result = await uploadImage(req.file.buffer, "users");
 
-    // update user profile image
     const user = await userService.updateUser(req.params.id, {
       profileImage: result.secure_url,
     });

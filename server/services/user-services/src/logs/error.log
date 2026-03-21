@@ -1,0 +1,95 @@
+2026-03-21 11:28:17 [ERROR]: [400] request aborted {
+  "path": "/api/v1/garage/me",
+  "method": "PATCH",
+  "error": "BadRequestError: request aborted\n    at IncomingMessage.onAborted (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\raw-body\\index.js:245:10)\n    at IncomingMessage.emit (node:events:508:28)\n    at IncomingMessage._destroy (node:_http_incoming:221:10)\n    at _destroy (node:internal/streams/destroy:122:10)\n    at IncomingMessage.destroy (node:internal/streams/destroy:84:5)\n    at abortIncoming (node:_http_server:845:9)\n    at socketOnClose (node:_http_server:839:3)\n    at Socket.emit (node:events:520:35)\n    at TCP.<anonymous> (node:net:346:12)"
+}
+2026-03-21 11:30:17 [ERROR]: [400] request aborted {
+  "path": "/api/v1/garage/health",
+  "method": "GET",
+  "error": "BadRequestError: request aborted\n    at IncomingMessage.onAborted (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\raw-body\\index.js:245:10)\n    at IncomingMessage.emit (node:events:508:28)\n    at IncomingMessage._destroy (node:_http_incoming:221:10)\n    at _destroy (node:internal/streams/destroy:122:10)\n    at IncomingMessage.destroy (node:internal/streams/destroy:84:5)\n    at abortIncoming (node:_http_server:845:9)\n    at socketOnClose (node:_http_server:839:3)\n    at Socket.emit (node:events:520:35)\n    at TCP.<anonymous> (node:net:346:12)"
+}
+2026-03-21 11:30:18 [ERROR]: [400] request aborted {
+  "path": "/api/v1/garage/health",
+  "method": "PATCH",
+  "error": "BadRequestError: request aborted\n    at IncomingMessage.onAborted (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\raw-body\\index.js:245:10)\n    at IncomingMessage.emit (node:events:508:28)\n    at IncomingMessage._destroy (node:_http_incoming:221:10)\n    at _destroy (node:internal/streams/destroy:122:10)\n    at IncomingMessage.destroy (node:internal/streams/destroy:84:5)\n    at abortIncoming (node:_http_server:845:9)\n    at socketOnClose (node:_http_server:839:3)\n    at Socket.emit (node:events:520:35)\n    at TCP.<anonymous> (node:net:346:12)"
+}
+2026-03-21 11:38:37 [ERROR]: [400] request aborted {
+  "path": "/api/v1/garage/health",
+  "method": "GET",
+  "error": "BadRequestError: request aborted\n    at IncomingMessage.onAborted (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\raw-body\\index.js:245:10)\n    at IncomingMessage.emit (node:events:508:28)\n    at IncomingMessage._destroy (node:_http_incoming:221:10)\n    at _destroy (node:internal/streams/destroy:122:10)\n    at IncomingMessage.destroy (node:internal/streams/destroy:84:5)\n    at abortIncoming (node:_http_server:845:9)\n    at socketOnClose (node:_http_server:839:3)\n    at Socket.emit (node:events:520:35)\n    at TCP.<anonymous> (node:net:346:12)"
+}
+2026-03-21 11:39:07 [ERROR]: [400] request aborted {
+  "path": "/api/v1/garage/",
+  "method": "GET",
+  "error": "BadRequestError: request aborted\n    at IncomingMessage.onAborted (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\raw-body\\index.js:245:10)\n    at IncomingMessage.emit (node:events:508:28)\n    at IncomingMessage._destroy (node:_http_incoming:221:10)\n    at _destroy (node:internal/streams/destroy:122:10)\n    at IncomingMessage.destroy (node:internal/streams/destroy:84:5)\n    at abortIncoming (node:_http_server:845:9)\n    at socketOnClose (node:_http_server:839:3)\n    at Socket.emit (node:events:520:35)\n    at TCP.<anonymous> (node:net:346:12)"
+}
+2026-03-21 11:41:37 [ERROR]: [400] request aborted {
+  "path": "/api/v1/garage/",
+  "method": "GET",
+  "error": "BadRequestError: request aborted\n    at IncomingMessage.onAborted (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\raw-body\\index.js:245:10)\n    at IncomingMessage.emit (node:events:508:28)\n    at IncomingMessage._destroy (node:_http_incoming:221:10)\n    at _destroy (node:internal/streams/destroy:122:10)\n    at IncomingMessage.destroy (node:internal/streams/destroy:84:5)\n    at abortIncoming (node:_http_server:845:9)\n    at socketOnClose (node:_http_server:839:3)\n    at Socket.emit (node:events:520:35)\n    at TCP.<anonymous> (node:net:346:12)"
+}
+2026-03-21 11:43:07 [ERROR]: [400] request aborted {
+  "path": "/api/v1/garage/",
+  "method": "GET",
+  "error": "BadRequestError: request aborted\n    at IncomingMessage.onAborted (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\raw-body\\index.js:245:10)\n    at IncomingMessage.emit (node:events:508:28)\n    at IncomingMessage._destroy (node:_http_incoming:221:10)\n    at _destroy (node:internal/streams/destroy:122:10)\n    at IncomingMessage.destroy (node:internal/streams/destroy:84:5)\n    at abortIncoming (node:_http_server:845:9)\n    at socketOnClose (node:_http_server:839:3)\n    at Socket.emit (node:events:520:35)\n    at TCP.<anonymous> (node:net:346:12)"
+}
+2026-03-21 11:43:36 [ERROR]: [400] request aborted {
+  "path": "/api/v1/garage/",
+  "method": "GET",
+  "error": "BadRequestError: request aborted\n    at IncomingMessage.onAborted (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\raw-body\\index.js:245:10)\n    at IncomingMessage.emit (node:events:508:28)\n    at IncomingMessage._destroy (node:_http_incoming:221:10)\n    at _destroy (node:internal/streams/destroy:122:10)\n    at IncomingMessage.destroy (node:internal/streams/destroy:84:5)\n    at abortIncoming (node:_http_server:845:9)\n    at socketOnClose (node:_http_server:839:3)\n    at Socket.emit (node:events:520:35)\n    at TCP.<anonymous> (node:net:346:12)"
+}
+2026-03-21 11:44:02 [ERROR]: [400] request aborted {
+  "path": "/",
+  "method": "GET",
+  "error": "BadRequestError: request aborted\n    at IncomingMessage.onAborted (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\raw-body\\index.js:245:10)\n    at IncomingMessage.emit (node:events:508:28)\n    at IncomingMessage._destroy (node:_http_incoming:221:10)\n    at _destroy (node:internal/streams/destroy:122:10)\n    at IncomingMessage.destroy (node:internal/streams/destroy:84:5)\n    at abortIncoming (node:_http_server:845:9)\n    at socketOnClose (node:_http_server:839:3)\n    at Socket.emit (node:events:520:35)\n    at TCP.<anonymous> (node:net:346:12)"
+}
+2026-03-21 11:44:23 [ERROR]: [400] request aborted {
+  "path": "/",
+  "method": "GET",
+  "error": "BadRequestError: request aborted\n    at IncomingMessage.onAborted (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\raw-body\\index.js:245:10)\n    at IncomingMessage.emit (node:events:508:28)\n    at IncomingMessage._destroy (node:_http_incoming:221:10)\n    at _destroy (node:internal/streams/destroy:122:10)\n    at IncomingMessage.destroy (node:internal/streams/destroy:84:5)\n    at abortIncoming (node:_http_server:845:9)\n    at socketOnClose (node:_http_server:839:3)\n    at Socket.emit (node:events:520:35)\n    at TCP.<anonymous> (node:net:346:12)"
+}
+2026-03-21 11:45:51 [ERROR]: [400] request aborted {
+  "path": "/approved",
+  "method": "GET",
+  "error": "BadRequestError: request aborted\n    at IncomingMessage.onAborted (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\raw-body\\index.js:245:10)\n    at IncomingMessage.emit (node:events:508:28)\n    at IncomingMessage._destroy (node:_http_incoming:221:10)\n    at _destroy (node:internal/streams/destroy:122:10)\n    at IncomingMessage.destroy (node:internal/streams/destroy:84:5)\n    at abortIncoming (node:_http_server:845:9)\n    at socketOnClose (node:_http_server:839:3)\n    at Socket.emit (node:events:520:35)\n    at TCP.<anonymous> (node:net:346:12)"
+}
+2026-03-21 11:47:08 [ERROR]: [400] request aborted {
+  "path": "/approved",
+  "method": "GET",
+  "error": "BadRequestError: request aborted\n    at IncomingMessage.onAborted (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\raw-body\\index.js:245:10)\n    at IncomingMessage.emit (node:events:508:28)\n    at IncomingMessage._destroy (node:_http_incoming:221:10)\n    at _destroy (node:internal/streams/destroy:122:10)\n    at IncomingMessage.destroy (node:internal/streams/destroy:84:5)\n    at abortIncoming (node:_http_server:845:9)\n    at socketOnClose (node:_http_server:839:3)\n    at Socket.emit (node:events:520:35)\n    at TCP.<anonymous> (node:net:346:12)"
+}
+2026-03-21 11:50:23 [ERROR]: [500] Cast to ObjectId failed for value "health" (type string) at path "_id" for model "Garage" {
+  "path": "/api/v1/garage/health",
+  "method": "GET",
+  "error": "CastError: Cast to ObjectId failed for value \"health\" (type string) at path \"_id\" for model \"Garage\"\n    at SchemaObjectId.cast (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\schema\\objectId.js:253:11)\n    at SchemaType.applySetters (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\schemaType.js:1287:12)\n    at SchemaType.castForQuery (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\schemaType.js:1713:17)\n    at cast (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\cast.js:386:32)\n    at Query.cast (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\query.js:5127:12)\n    at Query._castConditions (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\query.js:2376:10)\n    at model.Query._findOne (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\query.js:2716:8)\n    at model.Query.exec (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\query.js:4726:80)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Module.getGarageById (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/user-services/src/modules/garage/garage.repository.js:16:10)"
+}
+2026-03-21 11:50:49 [ERROR]: [500] Cast to ObjectId failed for value "health" (type string) at path "_id" for model "Garage" {
+  "path": "/api/v1/garage/health",
+  "method": "GET",
+  "error": "CastError: Cast to ObjectId failed for value \"health\" (type string) at path \"_id\" for model \"Garage\"\n    at SchemaObjectId.cast (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\schema\\objectId.js:253:11)\n    at SchemaType.applySetters (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\schemaType.js:1287:12)\n    at SchemaType.castForQuery (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\schemaType.js:1713:17)\n    at cast (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\cast.js:386:32)\n    at Query.cast (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\query.js:5127:12)\n    at Query._castConditions (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\query.js:2376:10)\n    at model.Query._findOne (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\query.js:2716:8)\n    at model.Query.exec (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\query.js:4726:80)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Module.getGarageById (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/user-services/src/modules/garage/garage.repository.js:16:10)"
+}
+2026-03-21 11:51:22 [ERROR]: [500] Cast to ObjectId failed for value "health" (type string) at path "_id" for model "Garage" {
+  "path": "/api/v1/garage/health",
+  "method": "GET",
+  "error": "CastError: Cast to ObjectId failed for value \"health\" (type string) at path \"_id\" for model \"Garage\"\n    at SchemaObjectId.cast (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\schema\\objectId.js:253:11)\n    at SchemaType.applySetters (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\schemaType.js:1287:12)\n    at SchemaType.castForQuery (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\schemaType.js:1713:17)\n    at cast (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\cast.js:386:32)\n    at Query.cast (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\query.js:5127:12)\n    at Query._castConditions (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\query.js:2376:10)\n    at model.Query._findOne (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\query.js:2716:8)\n    at model.Query.exec (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\query.js:4726:80)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Module.getGarageById (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/user-services/src/modules/garage/garage.repository.js:16:10)"
+}
+2026-03-21 12:08:05 [ERROR]: [400] request aborted {
+  "path": "/api/v1/user/",
+  "method": "GET",
+  "error": "BadRequestError: request aborted\n    at IncomingMessage.onAborted (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\raw-body\\index.js:245:10)\n    at IncomingMessage.emit (node:events:508:28)\n    at IncomingMessage._destroy (node:_http_incoming:221:10)\n    at _destroy (node:internal/streams/destroy:122:10)\n    at IncomingMessage.destroy (node:internal/streams/destroy:84:5)\n    at abortIncoming (node:_http_server:845:9)\n    at socketOnClose (node:_http_server:839:3)\n    at Socket.emit (node:events:520:35)\n    at TCP.<anonymous> (node:net:346:12)"
+}
+2026-03-21 12:08:05 [ERROR]: [400] request aborted {
+  "path": "/api/v1/user/",
+  "method": "GET",
+  "error": "BadRequestError: request aborted\n    at IncomingMessage.onAborted (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\raw-body\\index.js:245:10)\n    at IncomingMessage.emit (node:events:508:28)\n    at IncomingMessage._destroy (node:_http_incoming:221:10)\n    at _destroy (node:internal/streams/destroy:122:10)\n    at IncomingMessage.destroy (node:internal/streams/destroy:84:5)\n    at abortIncoming (node:_http_server:845:9)\n    at socketOnClose (node:_http_server:839:3)\n    at Socket.emit (node:events:520:35)\n    at TCP.<anonymous> (node:net:346:12)"
+}
+2026-03-21 12:08:05 [ERROR]: [400] request aborted {
+  "path": "/api/v1/user/",
+  "method": "GET",
+  "error": "BadRequestError: request aborted\n    at IncomingMessage.onAborted (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\raw-body\\index.js:245:10)\n    at IncomingMessage.emit (node:events:508:28)\n    at IncomingMessage._destroy (node:_http_incoming:221:10)\n    at _destroy (node:internal/streams/destroy:122:10)\n    at IncomingMessage.destroy (node:internal/streams/destroy:84:5)\n    at abortIncoming (node:_http_server:845:9)\n    at socketOnClose (node:_http_server:839:3)\n    at Socket.emit (node:events:520:35)\n    at TCP.<anonymous> (node:net:346:12)"
+}
+2026-03-21 16:28:46 [ERROR]: [400] Expected double-quoted property name in JSON at position 35 (line 4 column 1) {
+  "path": "/api/v1/user/",
+  "method": "POST",
+  "error": "SyntaxError: Expected double-quoted property name in JSON at position 35 (line 4 column 1)\n    at JSON.parse (<anonymous>)\n    at parse (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\body-parser\\lib\\types\\json.js:72:19)\n    at C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\body-parser\\lib\\read.js:162:18\n    at AsyncResource.runInAsyncScope (node:async_hooks:228:14)\n    at invokeCallback (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\raw-body\\index.js:238:16)\n    at done (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\raw-body\\index.js:227:7)\n    at IncomingMessage.onEnd (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\raw-body\\index.js:287:7)\n    at IncomingMessage.emit (node:events:508:28)\n    at endReadableNT (node:internal/streams/readable:1729:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)"
+}

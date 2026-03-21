@@ -26,7 +26,7 @@ dotenv.config({
 });
 
 const USER_SERVICE_URL =
-  process.env.USER_SERVICE_URL || "http://localhost:3000/api/v1/user";
+  process.env.USER_SERVICE_URL || "http://localhost:3002/api/v1/user";
 
 const JWT_SECRET = process.env.JWT_SECRET;
 const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || "1d";

@@ -1,0 +1,135 @@
+2026-03-21 10:57:06 [INFO]: GET /health - 200 - 4ms 
+2026-03-21 11:24:17 [ERROR]: [400] request aborted {
+  "path": "/api/v1/userAuth/send-otp",
+  "method": "POST",
+  "error": "BadRequestError: request aborted\n    at IncomingMessage.onAborted (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\raw-body\\index.js:245:10)\n    at IncomingMessage.emit (node:events:508:28)\n    at IncomingMessage._destroy (node:_http_incoming:221:10)\n    at _destroy (node:internal/streams/destroy:122:10)\n    at IncomingMessage.destroy (node:internal/streams/destroy:84:5)\n    at abortIncoming (node:_http_server:845:9)\n    at socketOnClose (node:_http_server:839:3)\n    at Socket.emit (node:events:520:35)\n    at TCP.<anonymous> (node:net:346:12)"
+}
+2026-03-21 11:26:17 [ERROR]: [400] request aborted {
+  "path": "/api/v1/userAuth/send-otp",
+  "method": "POST",
+  "error": "BadRequestError: request aborted\n    at IncomingMessage.onAborted (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\raw-body\\index.js:245:10)\n    at IncomingMessage.emit (node:events:508:28)\n    at IncomingMessage._destroy (node:_http_incoming:221:10)\n    at _destroy (node:internal/streams/destroy:122:10)\n    at IncomingMessage.destroy (node:internal/streams/destroy:84:5)\n    at abortIncoming (node:_http_server:845:9)\n    at socketOnClose (node:_http_server:839:3)\n    at Socket.emit (node:events:520:35)\n    at TCP.<anonymous> (node:net:346:12)"
+}
+2026-03-21 11:54:11 [ERROR]: [500] Phone required {
+  "path": "/api/v1/userAuth/send-otp",
+  "method": "POST",
+  "error": "Error: Phone required\n    at Module.sendOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:40:21)\n    at sendOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:7:38)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:291:5)"
+}
+2026-03-21 11:54:11 [INFO]: POST /api/v1/userAuth/send-otp - 500 - 10ms 
+2026-03-21 11:54:36 [INFO]: POST /send-otp - 200 - 1382ms 
+2026-03-21 11:55:09 [ERROR]: [500] Internal Server Error {
+  "path": "/api/v1/userAuth/verify-otp",
+  "method": "POST",
+  "error": "AggregateError\n    at AxiosError.from (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/node_modules/axios/lib/core/AxiosError.js:7:24)\n    at RedirectableRequest.handleRequestError (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/node_modules/axios/lib/adapters/http.js:866:27)\n    at RedirectableRequest.emit (node:events:508:28)\n    at eventHandlers.<computed> (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\follow-redirects\\index.js:49:24)\n    at ClientRequest.emit (node:events:508:28)\n    at emitErrorEvent (node:_http_client:108:11)\n    at Socket.socketErrorListener (node:_http_client:575:5)\n    at Socket.emit (node:events:508:28)\n    at emitErrorNT (node:internal/streams/destroy:170:8)\n    at emitErrorCloseNT (node:internal/streams/destroy:129:3)\n    at Axios.request (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/node_modules/axios/lib/core/Axios.js:46:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Module.verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:64:20)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:23:18)"
+}
+2026-03-21 11:55:09 [INFO]: POST /api/v1/userAuth/verify-otp - 500 - 12ms 
+2026-03-21 11:59:26 [ERROR]: [500] OTP expired {
+  "path": "/api/v1/userAuth/verify-otp",
+  "method": "POST",
+  "error": "Error: OTP expired\n    at Module.verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:58:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:23:18)"
+}
+2026-03-21 11:59:26 [INFO]: POST /api/v1/userAuth/verify-otp - 500 - 2ms 
+2026-03-21 12:13:58 [ERROR]: [400] request aborted {
+  "path": "/api/v1/userAuth/send-otp",
+  "method": "POST",
+  "error": "BadRequestError: request aborted\n    at IncomingMessage.onAborted (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\raw-body\\index.js:245:10)\n    at IncomingMessage.emit (node:events:508:28)\n    at IncomingMessage._destroy (node:_http_incoming:221:10)\n    at _destroy (node:internal/streams/destroy:122:10)\n    at IncomingMessage.destroy (node:internal/streams/destroy:84:5)\n    at abortIncoming (node:_http_server:845:9)\n    at socketOnClose (node:_http_server:839:3)\n    at Socket.emit (node:events:520:35)\n    at TCP.<anonymous> (node:net:346:12)"
+}
+2026-03-21 12:14:01 [INFO]: POST /send-otp - 200 - 858ms 
+2026-03-21 12:14:31 [ERROR]: [500] Internal Server Error {
+  "path": "/api/v1/userAuth/verify-otp",
+  "method": "POST",
+  "error": "AggregateError\n    at AxiosError.from (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/node_modules/axios/lib/core/AxiosError.js:7:24)\n    at RedirectableRequest.handleRequestError (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/node_modules/axios/lib/adapters/http.js:866:27)\n    at RedirectableRequest.emit (node:events:508:28)\n    at eventHandlers.<computed> (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\follow-redirects\\index.js:49:24)\n    at ClientRequest.emit (node:events:508:28)\n    at emitErrorEvent (node:_http_client:108:11)\n    at Socket.socketErrorListener (node:_http_client:575:5)\n    at Socket.emit (node:events:508:28)\n    at emitErrorNT (node:internal/streams/destroy:170:8)\n    at emitErrorCloseNT (node:internal/streams/destroy:129:3)\n    at Axios.request (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/node_modules/axios/lib/core/Axios.js:46:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Module.verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:64:20)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:23:18)"
+}
+2026-03-21 12:14:31 [INFO]: POST /api/v1/userAuth/verify-otp - 500 - 4ms 
+2026-03-21 12:22:14 [ERROR]: [500] OTP expired {
+  "path": "/api/v1/userAuth/verify-otp",
+  "method": "POST",
+  "error": "Error: OTP expired\n    at Module.verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:58:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:23:18)"
+}
+2026-03-21 12:22:14 [INFO]: POST /api/v1/userAuth/verify-otp - 500 - 2ms 
+2026-03-21 12:22:34 [ERROR]: [500] phoneNumber and password required {
+  "path": "/api/v1/userAuth/login",
+  "method": "POST",
+  "error": "Error: phoneNumber and password required\n    at Module.loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:140:11)\n    at loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:62:38)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:291:5)"
+}
+2026-03-21 12:22:34 [INFO]: POST /api/v1/userAuth/login - 500 - 1ms 
+2026-03-21 12:22:51 [ERROR]: [500] User not found {
+  "path": "/api/v1/userAuth/login",
+  "method": "POST",
+  "error": "Error: User not found\n    at Module.loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:153:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:62:20)"
+}
+2026-03-21 12:22:51 [INFO]: POST /api/v1/userAuth/login - 500 - 4ms 
+2026-03-21 12:23:03 [ERROR]: [500] User not found {
+  "path": "/api/v1/userAuth/login",
+  "method": "POST",
+  "error": "Error: User not found\n    at Module.loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:153:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:62:20)"
+}
+2026-03-21 12:23:03 [INFO]: POST /api/v1/userAuth/login - 500 - 7ms 
+2026-03-21 12:23:22 [ERROR]: [500] User not found {
+  "path": "/api/v1/userAuth/login",
+  "method": "POST",
+  "error": "Error: User not found\n    at Module.loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:153:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:62:20)"
+}
+2026-03-21 12:23:22 [INFO]: POST /api/v1/userAuth/login - 500 - 3ms 
+2026-03-21 12:24:21 [INFO]: POST /api/v1/userAuth/69bd2cd4c4fa6daa41a51a3b - 404 - 0ms 
+2026-03-21 12:24:53 [INFO]: GET /api/v1/userAuth/69bd2cd4c4fa6daa41a51a3b - 404 - 1ms 
+2026-03-21 12:24:56 [INFO]: GET /api/v1/userAuth/69bd2cd4c4fa6daa41a51a3b - 404 - 0ms 
+2026-03-21 12:26:04 [ERROR]: [500] User not found {
+  "path": "/api/v1/userAuth/login",
+  "method": "POST",
+  "error": "Error: User not found\n    at Module.loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:153:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:62:20)"
+}
+2026-03-21 12:26:04 [INFO]: POST /api/v1/userAuth/login - 500 - 4ms 
+2026-03-21 12:27:58 [ERROR]: [500] User not found {
+  "path": "/api/v1/userAuth/login",
+  "method": "POST",
+  "error": "Error: User not found\n    at Module.loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:153:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:62:20)"
+}
+2026-03-21 12:27:58 [INFO]: POST /api/v1/userAuth/login - 500 - 3ms 
+2026-03-21 12:29:03 [INFO]: POST /api/v1/userAuth/login%20%20%20 - 404 - 0ms 
+2026-03-21 12:30:02 [INFO]: POST /api/v1/userAuth/login%20%20%20 - 404 - 0ms 
+2026-03-21 12:30:27 [INFO]: POST /api/v1/userAuth/login%20%20%20 - 404 - 1ms 
+2026-03-21 12:31:39 [ERROR]: [500] User not found {
+  "path": "/api/v1/userAuth/login",
+  "method": "POST",
+  "error": "Error: User not found\n    at Module.loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:153:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:62:20)"
+}
+2026-03-21 12:31:39 [INFO]: POST /api/v1/userAuth/login - 500 - 3ms 
+2026-03-21 12:32:51 [ERROR]: [500] Invalid password {
+  "path": "/api/v1/userAuth/login",
+  "method": "POST",
+  "error": "Error: Invalid password\n    at Module.loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:157:21)\n    at async loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:62:20)"
+}
+2026-03-21 12:32:51 [INFO]: POST /api/v1/userAuth/login - 500 - 31ms 
+2026-03-21 12:33:18 [INFO]: POST /login - 200 - 17ms 
+2026-03-21 12:33:24 [ERROR]: [500] Invalid password {
+  "path": "/api/v1/userAuth/login",
+  "method": "POST",
+  "error": "Error: Invalid password\n    at Module.loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:157:21)\n    at async loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:62:20)"
+}
+2026-03-21 12:33:24 [INFO]: POST /api/v1/userAuth/login - 500 - 19ms 
+2026-03-21 12:33:46 [ERROR]: [500] Invalid password {
+  "path": "/api/v1/userAuth/login",
+  "method": "POST",
+  "error": "Error: Invalid password\n    at Module.loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:157:21)\n    at async loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:62:20)"
+}
+2026-03-21 12:33:46 [INFO]: POST /api/v1/userAuth/login - 500 - 9ms 
+2026-03-21 12:33:55 [INFO]: POST /login - 200 - 28ms 
+2026-03-21 16:17:01 [INFO]: GET /api/v1/userAuth/send-otp - 404 - 36ms 
+2026-03-21 16:17:17 [ERROR]: [500] Failed to send OTP {
+  "path": "/api/v1/userAuth/send-otp",
+  "method": "POST",
+  "error": "Error: Failed to send OTP\n    at sendSMS (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/utils/otp.service.js:23:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Module.sendOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:46:3)\n    at async sendOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:7:20)"
+}
+2026-03-21 16:17:17 [INFO]: POST /api/v1/userAuth/send-otp - 500 - 1104ms 
+2026-03-21 16:18:07 [ERROR]: [500] Phone required {
+  "path": "/api/v1/userAuth/send-otp",
+  "method": "POST",
+  "error": "Error: Phone required\n    at Module.sendOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:40:21)\n    at sendOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:7:38)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:291:5)"
+}
+2026-03-21 16:18:07 [INFO]: POST /api/v1/userAuth/send-otp - 500 - 2ms 
+2026-03-21 16:19:06 [ERROR]: [500] Phone required {
+  "path": "/api/v1/userAuth/send-otp",
+  "method": "POST",
+  "error": "Error: Phone required\n    at Module.sendOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:40:21)\n    at sendOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:7:38)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:291:5)"
+}
+2026-03-21 16:19:06 [INFO]: POST /api/v1/userAuth/send-otp - 500 - 1ms 

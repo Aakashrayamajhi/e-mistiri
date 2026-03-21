@@ -1,0 +1,150 @@
+2026-03-21 15:00:25 [INFO] API-GATEWAY: GET /api/user - 200 {
+  "method": "GET",
+  "path": "/api/user",
+  "statusCode": 200,
+  "duration": "58ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 15:00:35 [INFO] API-GATEWAY: GET /api/user - 200 {
+  "method": "GET",
+  "path": "/api/user",
+  "statusCode": 200,
+  "duration": "14ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 15:05:41 [INFO] API-GATEWAY: GET /api/user - 200 {
+  "method": "GET",
+  "path": "/api/user",
+  "statusCode": 200,
+  "duration": "17ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 15:07:29 [INFO] API-GATEWAY: GET /api/user - 200 {
+  "method": "GET",
+  "path": "/api/user",
+  "statusCode": 200,
+  "duration": "28ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 15:07:34 [INFO] API-GATEWAY: GET /api/user - 200 {
+  "method": "GET",
+  "path": "/api/user",
+  "statusCode": 200,
+  "duration": "13ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 15:10:32 [INFO] API-GATEWAY: GET /api/user - 200 {"method":"GET","path":"/api/user","statusCode":200,"duration":"73ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 15:15:22 [INFO] API-GATEWAY: GET /api/user - 200 {"method":"GET","path":"/api/user","statusCode":200,"duration":"19ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 15:15:27 [INFO] API-GATEWAY: GET /api/user - 200 {"method":"GET","path":"/api/user","statusCode":200,"duration":"6ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 15:15:41 [INFO] API-GATEWAY: GET /api/user - 200 {"method":"GET","path":"/api/user","statusCode":200,"duration":"6ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 15:15:45 [INFO] API-GATEWAY: GET /api/user - 200 {"method":"GET","path":"/api/user","statusCode":200,"duration":"10ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 15:23:56 [ERROR] API-GATEWAY: Rate limiter error {"error":"rateLimiterScript is not defined"}
+2026-03-21 15:23:56 [INFO] API-GATEWAY: GET /api/user - 200 {"method":"GET","path":"/api/user","statusCode":200,"duration":"21ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 15:23:56 [ERROR] API-GATEWAY: Rate limiter error {"error":"rateLimiterScript is not defined"}
+2026-03-21 15:23:56 [INFO] API-GATEWAY: GET /api/user - 200 {"method":"GET","path":"/api/user","statusCode":200,"duration":"8ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 15:24:00 [ERROR] API-GATEWAY: Rate limiter error {"error":"rateLimiterScript is not defined"}
+2026-03-21 15:24:00 [INFO] API-GATEWAY: GET /api/user - 200 {"method":"GET","path":"/api/user","statusCode":200,"duration":"6ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 15:24:00 [ERROR] API-GATEWAY: Rate limiter error {"error":"rateLimiterScript is not defined"}
+2026-03-21 15:24:00 [INFO] API-GATEWAY: GET /api/user - 200 {"method":"GET","path":"/api/user","statusCode":200,"duration":"9ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 15:24:02 [ERROR] API-GATEWAY: Rate limiter error {"error":"rateLimiterScript is not defined"}
+2026-03-21 15:24:02 [INFO] API-GATEWAY: GET /api/user - 200 {"method":"GET","path":"/api/user","statusCode":200,"duration":"7ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:17:01 [WARN] API-GATEWAY: GET /api/userAuth/send-otp - 404 {"method":"GET","path":"/api/userAuth/send-otp","statusCode":404,"duration":"72ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:17:17 [ERROR] API-GATEWAY: POST /api/userAuth/send-otp - 500 {"method":"POST","path":"/api/userAuth/send-otp","statusCode":500,"duration":"1107ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:18:07 [ERROR] API-GATEWAY: POST /api/userAuth/send-otp - 500 {"method":"POST","path":"/api/userAuth/send-otp","statusCode":500,"duration":"6ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:18:35 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:18:35 [WARN] API-GATEWAY: GET /api/garage/ - 401 {"method":"GET","path":"/api/garage/","statusCode":401,"duration":"3ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:18:46 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:18:46 [WARN] API-GATEWAY: GET /api/user/ - 401 {"method":"GET","path":"/api/user/","statusCode":401,"duration":"2ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:19:06 [ERROR] API-GATEWAY: POST /api/userAuth/send-otp - 500 {"method":"POST","path":"/api/userAuth/send-otp","statusCode":500,"duration":"5ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:19:34 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:19:34 [WARN] API-GATEWAY: GET /api/user/ - 401 {"method":"GET","path":"/api/user/","statusCode":401,"duration":"2ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:19:40 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:19:40 [WARN] API-GATEWAY: GET /api/user/ - 401 {"method":"GET","path":"/api/user/","statusCode":401,"duration":"7ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:20:01 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:20:01 [WARN] API-GATEWAY: GET /api/user/ - 401 {"method":"GET","path":"/api/user/","statusCode":401,"duration":"1ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:21:32 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:21:32 [WARN] API-GATEWAY: GET /api/user/ - 401 {"method":"GET","path":"/api/user/","statusCode":401,"duration":"2ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:21:32 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:21:32 [WARN] API-GATEWAY: GET /api/user/ - 401 {"method":"GET","path":"/api/user/","statusCode":401,"duration":"1ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:21:33 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:21:33 [WARN] API-GATEWAY: GET /api/user/ - 401 {"method":"GET","path":"/api/user/","statusCode":401,"duration":"1ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:21:34 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:21:34 [WARN] API-GATEWAY: GET /api/user/ - 401 {"method":"GET","path":"/api/user/","statusCode":401,"duration":"1ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:21:34 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:21:34 [WARN] API-GATEWAY: GET /api/user/ - 401 {"method":"GET","path":"/api/user/","statusCode":401,"duration":"1ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:21:35 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:21:35 [WARN] API-GATEWAY: GET /api/user/ - 401 {"method":"GET","path":"/api/user/","statusCode":401,"duration":"1ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:21:36 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:21:36 [WARN] API-GATEWAY: GET /api/user/ - 401 {"method":"GET","path":"/api/user/","statusCode":401,"duration":"1ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:21:36 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:21:36 [WARN] API-GATEWAY: GET /api/user/ - 401 {"method":"GET","path":"/api/user/","statusCode":401,"duration":"1ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:21:37 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:21:37 [WARN] API-GATEWAY: GET /api/user/ - 401 {"method":"GET","path":"/api/user/","statusCode":401,"duration":"1ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:21:38 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:21:38 [WARN] API-GATEWAY: GET /api/user/ - 401 {"method":"GET","path":"/api/user/","statusCode":401,"duration":"1ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:21:38 [WARN] API-GATEWAY: GET /api/user/ - 429 {"method":"GET","path":"/api/user/","statusCode":429,"duration":"0ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:21:39 [WARN] API-GATEWAY: GET /api/user/ - 429 {"method":"GET","path":"/api/user/","statusCode":429,"duration":"0ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:24:02 [INFO] API-GATEWAY: GET /health - 200 {"method":"GET","path":"/health","statusCode":200,"duration":"2ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:26:04 [INFO] API-GATEWAY: GET /health - 200 {"method":"GET","path":"/health","statusCode":200,"duration":"1ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:27:53 [WARN] API-GATEWAY: GET /user/ - 404 {"method":"GET","path":"/user/","statusCode":404,"duration":"1ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:28:07 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:28:07 [WARN] API-GATEWAY: GET /api/user - 401 {"method":"GET","path":"/api/user","statusCode":401,"duration":"1ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:28:20 [WARN] API-GATEWAY: POST /api/user - 400 {"method":"POST","path":"/api/user","statusCode":400,"duration":"51ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:28:46 [WARN] API-GATEWAY: POST /api/user - 400 {"method":"POST","path":"/api/user","statusCode":400,"duration":"7ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:28:49 [INFO] API-GATEWAY: POST /api/user - 201 {"method":"POST","path":"/api/user","statusCode":201,"duration":"13ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:29:01 [INFO] API-GATEWAY: GET /api/user - 200 {"method":"GET","path":"/api/user","statusCode":200,"duration":"11ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-21 16:47:43 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:47:43 [WARN] API-GATEWAY: GET /api/user - 401 {"method":"GET","path":"/api/user","statusCode":401,"duration":"2ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0"}
+2026-03-21 16:47:43 [WARN] API-GATEWAY: GET /favicon.ico - 404 {"method":"GET","path":"/favicon.ico","statusCode":404,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0"}
+2026-03-21 16:48:02 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:48:02 [WARN] API-GATEWAY: GET /api/user - 401 {"method":"GET","path":"/api/user","statusCode":401,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0"}
+2026-03-21 16:48:28 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:48:28 [WARN] API-GATEWAY: GET /api/user - 401 {"method":"GET","path":"/api/user","statusCode":401,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0"}
+2026-03-21 16:48:28 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:48:28 [WARN] API-GATEWAY: GET /api/user - 401 {"method":"GET","path":"/api/user","statusCode":401,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0"}
+2026-03-21 16:48:29 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:48:29 [WARN] API-GATEWAY: GET /api/user - 401 {"method":"GET","path":"/api/user","statusCode":401,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0"}
+2026-03-21 16:48:29 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:48:29 [WARN] API-GATEWAY: GET /api/user - 401 {"method":"GET","path":"/api/user","statusCode":401,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0"}
+2026-03-21 16:48:30 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:48:30 [WARN] API-GATEWAY: GET /api/user - 401 {"method":"GET","path":"/api/user","statusCode":401,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0"}
+2026-03-21 16:48:30 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:48:30 [WARN] API-GATEWAY: GET /api/user - 401 {"method":"GET","path":"/api/user","statusCode":401,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0"}
+2026-03-21 16:48:30 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:48:30 [WARN] API-GATEWAY: GET /api/user - 401 {"method":"GET","path":"/api/user","statusCode":401,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0"}
+2026-03-21 16:48:30 [WARN] API-GATEWAY: GET /api/user - 429 {"method":"GET","path":"/api/user","statusCode":429,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0"}
+2026-03-21 16:48:31 [WARN] API-GATEWAY: GET /api/user - 429 {"method":"GET","path":"/api/user","statusCode":429,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0"}
+2026-03-21 16:49:42 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:49:42 [WARN] API-GATEWAY: GET /api/user - 401 {"method":"GET","path":"/api/user","statusCode":401,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0"}
+2026-03-21 16:50:37 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:50:37 [WARN] API-GATEWAY: GET /api/user - 401 {"method":"GET","path":"/api/user","statusCode":401,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0"}
+2026-03-21 16:50:38 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:50:38 [WARN] API-GATEWAY: GET /api/user - 401 {"method":"GET","path":"/api/user","statusCode":401,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0"}
+2026-03-21 16:50:39 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:50:39 [WARN] API-GATEWAY: GET /api/user - 401 {"method":"GET","path":"/api/user","statusCode":401,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0"}
+2026-03-21 16:50:39 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:50:39 [WARN] API-GATEWAY: GET /api/user - 401 {"method":"GET","path":"/api/user","statusCode":401,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0"}
+2026-03-21 16:50:39 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:50:39 [WARN] API-GATEWAY: GET /api/user - 401 {"method":"GET","path":"/api/user","statusCode":401,"duration":"2ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0"}
+2026-03-21 16:50:39 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:50:39 [WARN] API-GATEWAY: GET /api/user - 401 {"method":"GET","path":"/api/user","statusCode":401,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0"}
+2026-03-21 16:50:39 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:50:39 [WARN] API-GATEWAY: GET /api/user - 401 {"method":"GET","path":"/api/user","statusCode":401,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0"}
+2026-03-21 16:50:40 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:50:40 [WARN] API-GATEWAY: GET /api/user - 401 {"method":"GET","path":"/api/user","statusCode":401,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0"}
+2026-03-21 16:50:40 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:50:40 [WARN] API-GATEWAY: GET /api/user - 401 {"method":"GET","path":"/api/user","statusCode":401,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0"}
+2026-03-21 16:50:40 [WARN] API-GATEWAY: GET /api/user - 429 {"method":"GET","path":"/api/user","statusCode":429,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0"}
+2026-03-21 16:50:40 [WARN] API-GATEWAY: GET /api/user - 429 {"method":"GET","path":"/api/user","statusCode":429,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0"}
+2026-03-21 16:52:15 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:52:15 [WARN] API-GATEWAY: GET /api/user - 401 {"method":"GET","path":"/api/user","statusCode":401,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0"}
+2026-03-21 16:52:41 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-21 16:52:41 [WARN] API-GATEWAY: GET /api/user - 401 {"method":"GET","path":"/api/user","statusCode":401,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0"}
+2026-03-21 16:53:21 [INFO] API-GATEWAY: GET /health - 200 {"method":"GET","path":"/health","statusCode":200,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0"}
+2026-03-21 16:55:08 [INFO] API-GATEWAY: GET /health - 200 {"method":"GET","path":"/health","statusCode":200,"duration":"2ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0"}
+2026-03-21 16:56:36 [INFO] API-GATEWAY: GET /health - 200 {"method":"GET","path":"/health","statusCode":200,"duration":"1ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0"}

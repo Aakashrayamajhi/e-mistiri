@@ -1,6 +1,6 @@
 export const SERVICES = {
-  USER_SERVICE: 'http://localhost:3000',
-  GARAGE_SERVICE: 'http://localhost:3000',
-  USER_AUTH_SERVICE: 'http://localhost:4000',
-  GARAGE_AUTH_SERVICE: 'http://localhost:4000'
+  USER_SERVICE: 'http://localhost:3002',
+  GARAGE_SERVICE: 'http://localhost:3002',
+  USER_AUTH_SERVICE: 'http://localhost:4002',
+  GARAGE_AUTH_SERVICE: 'http://localhost:4002'
 }

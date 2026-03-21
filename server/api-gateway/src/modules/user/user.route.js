@@ -4,7 +4,7 @@ import proxy from './user.proxy.js'
 const router = express.Router()
 
 router.use((req, res, next) => {
-  console.log('🔥 User route hit')
+  console.log('User route hit')
   next()
 })
 

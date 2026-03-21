@@ -1,32 +1,38 @@
-import redis from "../config/redis.config.js"
+import Radis from "ioredis"
+
+const redis = new Radis({
+    host: "127.0.0.1",
+    port: 6379
+})
 
 const limit = 10;
 const window = 60;
 
-const rateLimiter = async (req, res, next) => {
-  try {
-    const ip = req.ip
-    const key = `rate_limit:${ip}`
+export const apilimiter = async (req, res, next) => {
+    try {
+        const ip = req.ip
+        const key = `rate_limit : ${ip}`
+        const request = await redis.incr(key)
 
-    const requestCount = await redis.incr(key)
+        if (request === 1) {
+            await redis.expire(key, window)
 
-    if (requestCount === 1) {
-      await redis.expire(key, window)
+        }
+
+        if (request > limit) {
+            return res.status(429).json({
+                success: false,
+                message: "Too many request, please try letter",
+            })
+        }
+
+        next()
+
+    } catch (error) {
+        console.log("error occur in Ratelimiting:", error)
     }
 
-    if (requestCount > limit) {
-      return res.status(429).json({
-        success: false,
-        message: "Too many requests, please try later",
-      })
-    }
 
-    next()
-
-  } catch (error) {
-    console.log("Error in rate limiting:", error)
-    next()
-  }
 }
 
-export default rateLimiter
+

@@ -1,0 +1,320 @@
+2026-03-21 11:21:58 [INFO] API-GATEWAY: GET /health - 200 {
+  "method": "GET",
+  "path": "/health",
+  "statusCode": 200,
+  "duration": "4ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 11:59:26 [WARN] API-GATEWAY: POST /api/v1/userAuth/verify-otp - 500 {
+  "method": "POST",
+  "path": "/api/v1/userAuth/verify-otp",
+  "statusCode": 500,
+  "duration": "16ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 11:59:44 [INFO] API-GATEWAY: GET /api/v1/user/ - 200 {
+  "method": "GET",
+  "path": "/api/v1/user/",
+  "statusCode": 200,
+  "duration": "10ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:01:26 [INFO] API-GATEWAY: GET /api/v1/user/ - 200 {
+  "method": "GET",
+  "path": "/api/v1/user/",
+  "statusCode": 200,
+  "duration": "27ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:03:15 [INFO] API-GATEWAY: GET /api/v1/user/ - 200 {
+  "method": "GET",
+  "path": "/api/v1/user/",
+  "statusCode": 200,
+  "duration": "14ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:03:16 [INFO] API-GATEWAY: GET /api/v1/user/ - 200 {
+  "method": "GET",
+  "path": "/api/v1/user/",
+  "statusCode": 200,
+  "duration": "10ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:03:17 [INFO] API-GATEWAY: GET /api/v1/user/ - 200 {
+  "method": "GET",
+  "path": "/api/v1/user/",
+  "statusCode": 200,
+  "duration": "8ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:03:18 [INFO] API-GATEWAY: GET /api/v1/user/ - 200 {
+  "method": "GET",
+  "path": "/api/v1/user/",
+  "statusCode": 200,
+  "duration": "8ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:03:18 [INFO] API-GATEWAY: GET /api/v1/user/ - 200 {
+  "method": "GET",
+  "path": "/api/v1/user/",
+  "statusCode": 200,
+  "duration": "6ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:03:19 [INFO] API-GATEWAY: GET /api/v1/user/ - 200 {
+  "method": "GET",
+  "path": "/api/v1/user/",
+  "statusCode": 200,
+  "duration": "9ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:03:20 [INFO] API-GATEWAY: GET /api/v1/user/ - 200 {
+  "method": "GET",
+  "path": "/api/v1/user/",
+  "statusCode": 200,
+  "duration": "6ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:03:20 [INFO] API-GATEWAY: GET /api/v1/user/ - 200 {
+  "method": "GET",
+  "path": "/api/v1/user/",
+  "statusCode": 200,
+  "duration": "11ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:03:21 [INFO] API-GATEWAY: GET /api/v1/user/ - 200 {
+  "method": "GET",
+  "path": "/api/v1/user/",
+  "statusCode": 200,
+  "duration": "9ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:03:22 [INFO] API-GATEWAY: GET /api/v1/user/ - 200 {
+  "method": "GET",
+  "path": "/api/v1/user/",
+  "statusCode": 200,
+  "duration": "7ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:03:22 [INFO] API-GATEWAY: GET /api/v1/user/ - 200 {
+  "method": "GET",
+  "path": "/api/v1/user/",
+  "statusCode": 200,
+  "duration": "6ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:03:23 [INFO] API-GATEWAY: GET /api/v1/user/ - 200 {
+  "method": "GET",
+  "path": "/api/v1/user/",
+  "statusCode": 200,
+  "duration": "7ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:03:24 [INFO] API-GATEWAY: GET /api/v1/user/ - 200 {
+  "method": "GET",
+  "path": "/api/v1/user/",
+  "statusCode": 200,
+  "duration": "8ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:08:30 [INFO] API-GATEWAY: GET /api/v1/user/ - 200 {
+  "method": "GET",
+  "path": "/api/v1/user/",
+  "statusCode": 200,
+  "duration": "18ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:14:01 [INFO] API-GATEWAY: POST /api/v1/userAuth/send-otp - 200 {
+  "method": "POST",
+  "path": "/api/v1/userAuth/send-otp",
+  "statusCode": 200,
+  "duration": "870ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:14:31 [WARN] API-GATEWAY: POST /api/v1/userAuth/verify-otp - 500 {
+  "method": "POST",
+  "path": "/api/v1/userAuth/verify-otp",
+  "statusCode": 500,
+  "duration": "10ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:22:14 [WARN] API-GATEWAY: POST /api/v1/userAuth/verify-otp - 500 {
+  "method": "POST",
+  "path": "/api/v1/userAuth/verify-otp",
+  "statusCode": 500,
+  "duration": "7ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:22:34 [WARN] API-GATEWAY: POST /api/v1/userAuth/login - 500 {
+  "method": "POST",
+  "path": "/api/v1/userAuth/login",
+  "statusCode": 500,
+  "duration": "5ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:22:51 [WARN] API-GATEWAY: POST /api/v1/userAuth/login - 500 {
+  "method": "POST",
+  "path": "/api/v1/userAuth/login",
+  "statusCode": 500,
+  "duration": "9ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:23:03 [WARN] API-GATEWAY: POST /api/v1/userAuth/login - 500 {
+  "method": "POST",
+  "path": "/api/v1/userAuth/login",
+  "statusCode": 500,
+  "duration": "13ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:23:22 [WARN] API-GATEWAY: POST /api/v1/userAuth/login - 500 {
+  "method": "POST",
+  "path": "/api/v1/userAuth/login",
+  "statusCode": 500,
+  "duration": "5ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:24:21 [WARN] API-GATEWAY: POST /api/v1/userAuth/69bd2cd4c4fa6daa41a51a3b - 404 {
+  "method": "POST",
+  "path": "/api/v1/userAuth/69bd2cd4c4fa6daa41a51a3b",
+  "statusCode": 404,
+  "duration": "3ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:24:53 [WARN] API-GATEWAY: GET /api/v1/userAuth/69bd2cd4c4fa6daa41a51a3b - 404 {
+  "method": "GET",
+  "path": "/api/v1/userAuth/69bd2cd4c4fa6daa41a51a3b",
+  "statusCode": 404,
+  "duration": "4ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:24:56 [WARN] API-GATEWAY: GET /api/v1/userAuth/69bd2cd4c4fa6daa41a51a3b - 404 {
+  "method": "GET",
+  "path": "/api/v1/userAuth/69bd2cd4c4fa6daa41a51a3b",
+  "statusCode": 404,
+  "duration": "2ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:25:00 [INFO] API-GATEWAY: GET /api/v1/user/69bd2cd4c4fa6daa41a51a3b - 200 {
+  "method": "GET",
+  "path": "/api/v1/user/69bd2cd4c4fa6daa41a51a3b",
+  "statusCode": 200,
+  "duration": "20ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:25:26 [WARN] API-GATEWAY: POST /api/v1/user/ - 400 {
+  "method": "POST",
+  "path": "/api/v1/user/",
+  "statusCode": 400,
+  "duration": "16ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:25:36 [INFO] API-GATEWAY: POST /api/v1/user/ - 201 {
+  "method": "POST",
+  "path": "/api/v1/user/",
+  "statusCode": 201,
+  "duration": "21ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:26:04 [WARN] API-GATEWAY: POST /api/v1/userAuth/login - 500 {
+  "method": "POST",
+  "path": "/api/v1/userAuth/login",
+  "statusCode": 500,
+  "duration": "7ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:27:58 [WARN] API-GATEWAY: POST /api/v1/userAuth/login - 500 {
+  "method": "POST",
+  "path": "/api/v1/userAuth/login",
+  "statusCode": 500,
+  "duration": "6ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:28:18 [INFO] API-GATEWAY: GET /api/v1/user/phone/9812972024 - 200 {
+  "method": "GET",
+  "path": "/api/v1/user/phone/9812972024",
+  "statusCode": 200,
+  "duration": "16ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:29:03 [WARN] API-GATEWAY: POST /api/v1/userAuth/login%20%20%20 - 404 {
+  "method": "POST",
+  "path": "/api/v1/userAuth/login%20%20%20",
+  "statusCode": 404,
+  "duration": "3ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:29:41 [WARN] API-GATEWAY: POST /api/v1/userAuth/login%20%20%20 - 404 {
+  "method": "POST",
+  "path": "/api/v1/userAuth/login%20%20%20",
+  "statusCode": 404,
+  "duration": "2ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:33:46 [WARN] API-GATEWAY: POST /api/v1/userAuth/login - 500 {
+  "method": "POST",
+  "path": "/api/v1/userAuth/login",
+  "statusCode": 500,
+  "duration": "12ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:33:55 [INFO] API-GATEWAY: POST /api/v1/userAuth/login - 200 {
+  "method": "POST",
+  "path": "/api/v1/userAuth/login",
+  "statusCode": 200,
+  "duration": "50ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:35:38 [WARN] API-GATEWAY: GET /api/use/ - 404 {
+  "method": "GET",
+  "path": "/api/use/",
+  "statusCode": 404,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
+2026-03-21 12:35:52 [INFO] API-GATEWAY: GET /api/v1/user/ - 200 {
+  "method": "GET",
+  "path": "/api/v1/user/",
+  "statusCode": 200,
+  "duration": "5ms",
+  "ip": "::1",
+  "userAgent": "PostmanRuntime/7.52.0"
+}
