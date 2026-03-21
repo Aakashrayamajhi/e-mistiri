@@ -11,5 +11,11 @@ export default createProxyMiddleware({
 
   onProxyReq: (proxyReq, req, res) => {
     console.log('Forwarding to:', proxyReq.path)
+    
+    if (req.user) {
+      console.log("USER:", req.user);
+      proxyReq.setHeader("x-user-id", req.user.id);
+      proxyReq.setHeader("x-user-role", req.user.role);
+    }
   }
 })

@@ -28,6 +28,21 @@ export const getGarages = async (req, res, next) => {
   }
 };
 
+export const getAllGarages = async (req, res, next) => {
+  try {
+    const garages = await garageService.getAllGarages();
+
+    res.json({
+      success: true,
+      data: garages,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+
+
 export const getGarage = async (req, res, next) => {
   try {
     const garage = await garageService.getGarageById(req.params.id);
@@ -51,7 +66,9 @@ export const getGarage = async (req, res, next) => {
 
 export const updateGarage = async (req, res, next) => {
   try {
-    const updated = await garageService.updateGarage(req.params.id, req.body);
+    const garageId = req.headers["x-user-id"];
+    console.log("Garage ID:", garageId);
+    const updated = await garageService.updateGarage(garageId, req.body);
 
     res.json({
       success: true,

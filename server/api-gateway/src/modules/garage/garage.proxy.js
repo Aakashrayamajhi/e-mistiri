@@ -6,10 +6,25 @@ export default createProxyMiddleware({
   changeOrigin: true,
 
   pathRewrite: (path, req) => {
-    return '/api/v1/garage' + path
+    console.log("Original path:", path);
+    return '/api/v1/garage' + path;
   },
 
-  onProxyReq: (proxyReq, req, res) => {
-    console.log('Forwarding to:', proxyReq.path)
+onProxyReq: (proxyReq, req, res) => {
+  console.log("🔥 PROXY HIT");
+  console.log('Forwarding to:', proxyReq.path);
+
+  if (req.body) {
+    const bodyData = JSON.stringify(req.body);
+
+    proxyReq.setHeader('Content-Type', 'application/json');
+    proxyReq.setHeader('Content-Length', Buffer.byteLength(bodyData));
+
+    proxyReq.write(bodyData);
+  }
+},
+
+  onError: (err, req, res) => {
+    console.error("❌ Proxy error:", err.message);
   }
 })

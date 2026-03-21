@@ -20,7 +20,7 @@ const garageAuthRouter = garageAuthRouterModule.default
 
 import { loggerMiddleware } from './middleware/logger.middleware.js'
 import { errorMiddleware } from './middleware/error.middleware.js'
-import  apilimiter from './middleware/ratelimiter.middleware.js'
+import apilimiter from './middleware/ratelimiter.middleware.js'
 import { authMiddleware } from './middleware/auth.middleware.js'
 
 const app = express()
@@ -28,7 +28,7 @@ const app = express()
 app.use(cors())
 app.use(helmet())
 
-app.use(authMiddleware)
+
 app.use(loggerMiddleware)
 app.use(apilimiter)
 
@@ -37,8 +37,8 @@ app.get('/health', (req, res) => {
 })
 
 
-app.use('/api/user', userRouter)
-app.use('/api/garage', garageRouter)
+app.use('/api/user', authMiddleware, userRouter)
+app.use('/api/garage', authMiddleware, garageRouter)
 app.use('/api/userAuth', userAuthRouter)
 app.use('/api/garageAuth', garageAuthRouter)
 

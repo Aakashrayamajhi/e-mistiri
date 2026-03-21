@@ -29,14 +29,13 @@ export const sendGarageOTP = async (phone) => {
 
   const otp = Math.floor(100000 + Math.random() * 900000).toString();
 
-  await redis.set(otpKey(phone), otp, "EX", 200);
+  await redis.set(otpKey(phone), otp, "EX", 300);
 
   await sendSMS(phone, `Your Garage OTP is ${otp}`);
   console.log("garage otp:", otp);
 
   return { success: true, message: "OTP sent" };
 };
-
 
 export const verifyGarageOTP = async (phone, otp) => {
   const storedOtp = await redis.get(otpKey(phone));
@@ -46,68 +45,38 @@ export const verifyGarageOTP = async (phone, otp) => {
 
   await redis.del(otpKey(phone));
 
-  const response = await axios.post(`${GARAGE_SERVICE_URL}/register`, {
-    phone
-  });
+  let garage;
 
-  return response.data;
-};
+  try {
 
+    const response = await axios.post(`${GARAGE_SERVICE_URL}/register`, {
+      phone
+    });
 
-export const completeGarageProfile = async (data) => {
-  const {
-    garageId,
-    name,
-    ownerName,
-    email,
-    password,
-    address,
-    city,
-    description,
-    location,
-    services,
-    openingTime,
-    closingTime,
-    isOpen24Hours,
-    documents,
-    paymentDetails,
-    shopImages
-  } = data;
+    console.log(" REGISTER SUCCESS:", response.data);
+    garage = response.data;
 
-  if (!garageId) throw new Error("Garage ID required");
-  if (!name || !ownerName) throw new Error("Basic info missing");
-  if (!email || !email.includes("@")) throw new Error("Invalid email");
+  } catch (err) {
+    console.log(" AXIOS ERROR STATUS:", err.response?.status);
+    console.log(" AXIOS ERROR DATA:", err.response?.data);
 
-  let updateData = {
-    name,
-    ownerName,
-    email,
-    address,
-    city,
-    description,
-    location,
-    services,
-    openingTime,
-    closingTime,
-    isOpen24Hours,
-    documents,
-    paymentDetails,
-    shopImages
-  };
+    // 🔥 If already exists → login instead
+    if (err.response?.data?.includes("Garage already exists")) {
+      console.log("Garage exists → logging in");
 
-  // Password optional
-  if (password) {
-    if (password.length < 6) throw new Error("Password too short");
-    updateData.password = await bcrypt.hash(password, 10);
+      const loginResponse = await axios.post(`${GARAGE_SERVICE_URL}/login`, {
+        phone
+      });
+
+      console.log("LOGIN SUCCESS:", loginResponse.data);
+      garage = loginResponse.data;
+
+    } else {
+      throw new Error("Garage service error");
+    }
   }
 
-  const response = await axios.patch(
-    `${GARAGE_SERVICE_URL}/${garageId}`,
-    updateData
-  );
-
-  const garage = response.data;
-
+  
   const token = jwt.sign(
     { id: garage._id, role: "garage" },
     JWT_SECRET,
@@ -115,6 +84,8 @@ export const completeGarageProfile = async (data) => {
   );
 
   return {
+    success: true,
+    message: "Verification completed",
     token,
     garage
   };
@@ -124,12 +95,13 @@ export const completeGarageProfile = async (data) => {
 export const loginGarage = async ({ phone, password }) => {
   if (!phone || !password)
     throw new Error("Phone and password required");
+  console.log("password:", password)
 
   let garage;
 
   try {
     const response = await axios.get(
-      `${GARAGE_SERVICE_URL}`
+      `${GARAGE_SERVICE_URL}/approved`
     );
     garage = response.data.data;
     console.log("garage:", garage)

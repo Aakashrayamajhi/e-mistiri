@@ -45,6 +45,11 @@ const userSchema = new mongoose.Schema(
       default: "https://static.vecteezy.com/system/resources/previews/013/042/571/large_2x/default-avatar-profile-icon-social-media-user-photo-in-flat-style-vector.jpg",
     },
 
+    role: {
+      type: String,
+      default: "garage",
+    },
+
     isActive: {
       type: Boolean,
       default: true,

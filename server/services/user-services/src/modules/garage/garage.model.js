@@ -12,6 +12,12 @@ const garageSchema = new mongoose.Schema(
       trim: true
     },
 
+    role: {
+      type: String,
+      default: "user",
+    },
+
+
     phone: {
       type: String,
       required: true,
