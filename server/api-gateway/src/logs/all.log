@@ -127,3 +127,56 @@
 2026-03-21 15:32:34 [WARN] API-GATEWAY: JWT verification failed: jwt malformed {"path":"/"}
 2026-03-21 15:32:34 [WARN] API-GATEWAY: GET /api/user - 403 {"method":"GET","path":"/api/user","statusCode":403,"duration":"1ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
 2026-03-21 15:32:41 [INFO] API-GATEWAY: GET /api/user - 200 {"method":"GET","path":"/api/user","statusCode":200,"duration":"6ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 09:40:24 [WARN] API-GATEWAY: POST /health - 404 {"method":"POST","path":"/health","statusCode":404,"duration":"12ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 09:40:30 [INFO] API-GATEWAY: GET /health - 200 {"method":"GET","path":"/health","statusCode":200,"duration":"2ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 09:43:18 [WARN] API-GATEWAY: GET /api/userAuth/send-otp - 404 {"method":"GET","path":"/api/userAuth/send-otp","statusCode":404,"duration":"87ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 09:43:53 [WARN] API-GATEWAY: GET /api/userAuth/send-otp - 404 {"method":"GET","path":"/api/userAuth/send-otp","statusCode":404,"duration":"39ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 09:44:06 [WARN] API-GATEWAY: GET /api/userAuth/send-otp - 404 {"method":"GET","path":"/api/userAuth/send-otp","statusCode":404,"duration":"12ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 09:48:51 [WARN] API-GATEWAY: GET /api/userAuth/send-otp - 404 {"method":"GET","path":"/api/userAuth/send-otp","statusCode":404,"duration":"25ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 09:49:10 [WARN] API-GATEWAY: POST /api/userAuth/send-otp - 404 {"method":"POST","path":"/api/userAuth/send-otp","statusCode":404,"duration":"10ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 09:50:51 [INFO] API-GATEWAY: POST /api/garageAuth/send-otp - 200 {"method":"POST","path":"/api/garageAuth/send-otp","statusCode":200,"duration":"1782ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 09:51:14 [ERROR] API-GATEWAY: POST /api/garageAuth/verify-otp - 500 {"method":"POST","path":"/api/garageAuth/verify-otp","statusCode":500,"duration":"11ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 09:51:27 [ERROR] API-GATEWAY: POST /api/garageAuth/verify-otp - 500 {"method":"POST","path":"/api/garageAuth/verify-otp","statusCode":500,"duration":"32ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 09:52:42 [WARN] API-GATEWAY: POST /api/userAuth/verify-otp - 404 {"method":"POST","path":"/api/userAuth/verify-otp","statusCode":404,"duration":"19ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 09:52:59 [WARN] API-GATEWAY: POST /api/userAuth/send-otp - 404 {"method":"POST","path":"/api/userAuth/send-otp","statusCode":404,"duration":"8ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 09:53:56 [WARN] API-GATEWAY: POST /api/userAuth/send-otp - 404 {"method":"POST","path":"/api/userAuth/send-otp","statusCode":404,"duration":"6ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 09:56:30 [WARN] API-GATEWAY: POST /api/userAuth/verify-otp - 404 {"method":"POST","path":"/api/userAuth/verify-otp","statusCode":404,"duration":"5ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 09:59:31 [WARN] API-GATEWAY: POST /api/userAuth/verify-otp - 404 {"method":"POST","path":"/api/userAuth/verify-otp","statusCode":404,"duration":"34ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 10:01:03 [ERROR] API-GATEWAY: POST /api/userAuth/verify-otp - 500 {"method":"POST","path":"/api/userAuth/verify-otp","statusCode":500,"duration":"39ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 10:14:12 [ERROR] API-GATEWAY: POST /api/garageAuth/verify-otp - 500 {"method":"POST","path":"/api/garageAuth/verify-otp","statusCode":500,"duration":"39ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 10:14:51 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/verify-otp"}
+2026-03-22 10:14:51 [WARN] API-GATEWAY: POST /api/user/verify-otp - 401 {"method":"POST","path":"/api/user/verify-otp","statusCode":401,"duration":"24ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 10:15:16 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/69be7665de2e39994fb50eab"}
+2026-03-22 10:15:16 [WARN] API-GATEWAY: POST /api/user/69be7665de2e39994fb50eab - 401 {"method":"POST","path":"/api/user/69be7665de2e39994fb50eab","statusCode":401,"duration":"23ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 10:15:27 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/69be7665de2e39994fb50eab"}
+2026-03-22 10:15:27 [WARN] API-GATEWAY: GET /api/user/69be7665de2e39994fb50eab - 401 {"method":"GET","path":"/api/user/69be7665de2e39994fb50eab","statusCode":401,"duration":"3ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 10:16:14 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/69be7665de2e39994fb50eab"}
+2026-03-22 10:16:14 [WARN] API-GATEWAY: GET /api/user/69be7665de2e39994fb50eab - 401 {"method":"GET","path":"/api/user/69be7665de2e39994fb50eab","statusCode":401,"duration":"24ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 10:16:31 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/"}
+2026-03-22 10:16:31 [WARN] API-GATEWAY: GET /api/user/ - 401 {"method":"GET","path":"/api/user/","statusCode":401,"duration":"5ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 10:16:39 [WARN] API-GATEWAY: JWT verification failed: jwt expired {"path":"/"}
+2026-03-22 10:16:39 [WARN] API-GATEWAY: GET /api/user/ - 401 {"method":"GET","path":"/api/user/","statusCode":401,"duration":"11ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 10:19:53 [WARN] API-GATEWAY: JWT verification failed: jwt expired {"path":"/"}
+2026-03-22 10:19:53 [WARN] API-GATEWAY: GET /api/user/ - 401 {"method":"GET","path":"/api/user/","statusCode":401,"duration":"5ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 10:20:20 [INFO] API-GATEWAY: GET /api/user/ - 200 {"method":"GET","path":"/api/user/","statusCode":200,"duration":"70ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 10:20:36 [WARN] API-GATEWAY: JWT verification failed: jwt expired {"path":"/"}
+2026-03-22 10:20:36 [WARN] API-GATEWAY: GET /api/user/ - 401 {"method":"GET","path":"/api/user/","statusCode":401,"duration":"59ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 10:20:39 [WARN] API-GATEWAY: JWT verification failed: jwt expired {"path":"/"}
+2026-03-22 10:20:39 [WARN] API-GATEWAY: GET /api/user/ - 401 {"method":"GET","path":"/api/user/","statusCode":401,"duration":"4ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 10:20:40 [WARN] API-GATEWAY: JWT verification failed: jwt expired {"path":"/"}
+2026-03-22 10:20:40 [WARN] API-GATEWAY: GET /api/user/ - 401 {"method":"GET","path":"/api/user/","statusCode":401,"duration":"4ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 10:20:41 [WARN] API-GATEWAY: JWT verification failed: jwt expired {"path":"/"}
+2026-03-22 10:20:41 [WARN] API-GATEWAY: GET /api/user/ - 401 {"method":"GET","path":"/api/user/","statusCode":401,"duration":"4ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 10:20:41 [WARN] API-GATEWAY: JWT verification failed: jwt expired {"path":"/"}
+2026-03-22 10:20:41 [WARN] API-GATEWAY: GET /api/user/ - 401 {"method":"GET","path":"/api/user/","statusCode":401,"duration":"5ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 10:20:42 [WARN] API-GATEWAY: JWT verification failed: jwt expired {"path":"/"}
+2026-03-22 10:20:42 [WARN] API-GATEWAY: GET /api/user/ - 401 {"method":"GET","path":"/api/user/","statusCode":401,"duration":"5ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 10:20:43 [WARN] API-GATEWAY: JWT verification failed: jwt expired {"path":"/"}
+2026-03-22 10:20:43 [WARN] API-GATEWAY: GET /api/user/ - 401 {"method":"GET","path":"/api/user/","statusCode":401,"duration":"4ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 10:20:43 [WARN] API-GATEWAY: JWT verification failed: jwt expired {"path":"/"}
+2026-03-22 10:20:43 [WARN] API-GATEWAY: GET /api/user/ - 401 {"method":"GET","path":"/api/user/","statusCode":401,"duration":"5ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 10:20:44 [WARN] API-GATEWAY: GET /api/user/ - 429 {"method":"GET","path":"/api/user/","statusCode":429,"duration":"1ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 10:20:45 [WARN] API-GATEWAY: GET /api/user/ - 429 {"method":"GET","path":"/api/user/","statusCode":429,"duration":"2ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 10:52:13 [WARN] API-GATEWAY: JWT verification failed: jwt expired {"path":"/"}
+2026-03-22 10:52:13 [WARN] API-GATEWAY: GET /api/garage/ - 401 {"method":"GET","path":"/api/garage/","statusCode":401,"duration":"25ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 10:52:27 [INFO] API-GATEWAY: GET /api/garage/ - 200 {"method":"GET","path":"/api/garage/","statusCode":200,"duration":"54ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}

@@ -91,7 +91,16 @@ export const getAllUsers = async (req, res) => {
 
 export const updateUser = async (req, res) => {
   try {
-    const user = await userService.updateUser(req.params.id, req.body);
+    const userId = req.params.id;
+
+    if (req.user.id !== userId) {
+      return res.status(403).json({
+        success: false,
+        message: "You are not allowed to update this user",
+      });
+    }
+
+    const user = await userService.updateUser(userId, req.body);
 
     if (!user) {
       return res.status(404).json({

@@ -37,3 +37,7 @@
 2026-03-21 15:25:13 [ERROR] API-GATEWAY: Rate limiter error {"error":"ERR Error running script (call to f_790c20884345c91de1789e7f7821365040bc6ade): @user_script:7: WRONGTYPE Operation against a key holding the wrong kind of value "}
 2026-03-21 15:25:14 [ERROR] API-GATEWAY: Rate limiter error {"error":"ERR Error running script (call to f_790c20884345c91de1789e7f7821365040bc6ade): @user_script:7: WRONGTYPE Operation against a key holding the wrong kind of value "}
 2026-03-21 15:25:16 [ERROR] API-GATEWAY: Rate limiter error {"error":"ERR Error running script (call to f_790c20884345c91de1789e7f7821365040bc6ade): @user_script:7: WRONGTYPE Operation against a key holding the wrong kind of value "}
+2026-03-22 09:51:14 [ERROR] API-GATEWAY: POST /api/garageAuth/verify-otp - 500 {"method":"POST","path":"/api/garageAuth/verify-otp","statusCode":500,"duration":"11ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 09:51:27 [ERROR] API-GATEWAY: POST /api/garageAuth/verify-otp - 500 {"method":"POST","path":"/api/garageAuth/verify-otp","statusCode":500,"duration":"32ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 10:01:03 [ERROR] API-GATEWAY: POST /api/userAuth/verify-otp - 500 {"method":"POST","path":"/api/userAuth/verify-otp","statusCode":500,"duration":"39ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 10:14:12 [ERROR] API-GATEWAY: POST /api/garageAuth/verify-otp - 500 {"method":"POST","path":"/api/garageAuth/verify-otp","statusCode":500,"duration":"39ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}

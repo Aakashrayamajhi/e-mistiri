@@ -1,8 +1,3 @@
-import util from 'util'
-
-if (typeof util._extend !== 'function' || util._extend === util._extend) {
-  util._extend = Object.assign
-}
 
 import express from 'express'
 import cors from 'cors'

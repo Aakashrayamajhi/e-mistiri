@@ -5,11 +5,16 @@ export default createProxyMiddleware({
   target: SERVICES.USER_AUTH_SERVICE,
   changeOrigin: true,
 
-  pathRewrite: (path, req) => {
-    return '/api/v1/userAuth' + path
-  },
+ pathRewrite: (path, req) => {
+  return '/api/v1/userAuth' + path
+},
 
-  onProxyReq: (proxyReq, req, res) => {
-    console.log('Forwarding to:', proxyReq.path)
+
+  on: {
+    proxyReq: (proxyReq, req, res) => {
+      const target = SERVICES.USER_AUTH_SERVICE
+      const fullurl = target + proxyReq.path
+      console.log('Forwarding to:', fullurl)
+    }
   }
 })

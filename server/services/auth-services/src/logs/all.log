@@ -133,3 +133,42 @@
   "error": "Error: Phone required\n    at Module.sendOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:40:21)\n    at sendOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:7:38)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:291:5)"
 }
 2026-03-21 16:19:06 [INFO]: POST /api/v1/userAuth/send-otp - 500 - 1ms 
+2026-03-21 17:28:41 [INFO]: GET /api/v1/userAuth/send-otp - 404 - 6ms 
+2026-03-22 09:43:18 [INFO]: GET /send-otp - 404 - 11ms 
+2026-03-22 09:43:53 [INFO]: GET /send-otp - 404 - 2ms 
+2026-03-22 09:44:06 [INFO]: GET /send-otp - 404 - 0ms 
+2026-03-22 09:48:51 [INFO]: GET /send-otp - 404 - 1ms 
+2026-03-22 09:49:10 [INFO]: POST /send-otp - 404 - 2ms 
+2026-03-22 09:50:51 [INFO]: POST /send-otp - 200 - 1775ms 
+2026-03-22 09:51:14 [ERROR]: [500] Invalid OTP {
+  "path": "/api/v1/garageAuth/verify-otp",
+  "method": "POST",
+  "error": "Error: Invalid OTP\n    at Module.verifyGarageOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.service.js:44:32)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.controller.js:24:20)"
+}
+2026-03-22 09:51:14 [INFO]: POST /api/v1/garageAuth/verify-otp - 500 - 3ms 
+2026-03-22 09:51:27 [ERROR]: [500] Garage service error {
+  "path": "/api/v1/garageAuth/verify-otp",
+  "method": "POST",
+  "error": "Error: Garage service error\n    at Module.verifyGarageOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.service.js:74:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.controller.js:24:20)"
+}
+2026-03-22 09:51:27 [INFO]: POST /api/v1/garageAuth/verify-otp - 500 - 25ms 
+2026-03-22 09:52:42 [INFO]: POST /verify-otp - 404 - 0ms 
+2026-03-22 09:52:59 [INFO]: POST /send-otp - 404 - 1ms 
+2026-03-22 09:53:56 [INFO]: POST /send-otp - 404 - 0ms 
+2026-03-22 09:54:48 [INFO]: POST /api/userAuth/send-otp - 404 - 1ms 
+2026-03-22 09:55:13 [INFO]: POST /send-otp - 200 - 1135ms 
+2026-03-22 09:55:42 [INFO]: POST /verify-otp - 200 - 116ms 
+2026-03-22 09:56:30 [INFO]: POST /verify-otp - 404 - 0ms 
+2026-03-22 09:59:31 [INFO]: POST /verify-otp - 404 - 1ms 
+2026-03-22 10:01:03 [ERROR]: [500] OTP expired {
+  "path": "/api/v1/userAuth/verify-otp",
+  "method": "POST",
+  "error": "Error: OTP expired\n    at Module.verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:58:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:23:18)"
+}
+2026-03-22 10:01:03 [INFO]: POST /api/v1/userAuth/verify-otp - 500 - 5ms 
+2026-03-22 10:14:12 [ERROR]: [500] OTP expired {
+  "path": "/api/v1/garageAuth/verify-otp",
+  "method": "POST",
+  "error": "Error: OTP expired\n    at Module.verifyGarageOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.service.js:43:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.controller.js:24:20)"
+}
+2026-03-22 10:14:12 [INFO]: POST /api/v1/garageAuth/verify-otp - 500 - 5ms 

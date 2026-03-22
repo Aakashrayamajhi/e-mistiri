@@ -9,13 +9,11 @@ export default createProxyMiddleware({
     return '/api/v1/garageAuth' + path
   },
 
-  onProxyReq: (proxyReq, req, res) => {
-    console.log('Forwarding to:', proxyReq.path)
-    
-    if (req.user) {
-      console.log("USER:", req.user);
-      proxyReq.setHeader("x-user-id", req.user.id);
-      proxyReq.setHeader("x-user-role", req.user.role);
+  on: {
+    proxyReq: (proxyReq, req, res) => {
+      const target = SERVICES.GARAGE_AUTH_SERVICE
+      const fullurl = target + proxyReq.path
+      console.log('Forwarding to:', fullurl)
     }
   }
 })
