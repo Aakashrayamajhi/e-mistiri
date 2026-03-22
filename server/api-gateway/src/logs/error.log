@@ -41,3 +41,5 @@
 2026-03-22 09:51:27 [ERROR] API-GATEWAY: POST /api/garageAuth/verify-otp - 500 {"method":"POST","path":"/api/garageAuth/verify-otp","statusCode":500,"duration":"32ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
 2026-03-22 10:01:03 [ERROR] API-GATEWAY: POST /api/userAuth/verify-otp - 500 {"method":"POST","path":"/api/userAuth/verify-otp","statusCode":500,"duration":"39ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
 2026-03-22 10:14:12 [ERROR] API-GATEWAY: POST /api/garageAuth/verify-otp - 500 {"method":"POST","path":"/api/garageAuth/verify-otp","statusCode":500,"duration":"39ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 15:32:38 [ERROR] API-GATEWAY: PATCH /api/user/69bfb960c3502edea193355b - 500 {"method":"PATCH","path":"/api/user/69bfb960c3502edea193355b","statusCode":500,"duration":"16ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 15:33:50 [ERROR] API-GATEWAY: PATCH /api/user/69bfb960c3502edea193355b - 500 {"method":"PATCH","path":"/api/user/69bfb960c3502edea193355b","statusCode":500,"duration":"8ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}

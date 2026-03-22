@@ -172,3 +172,9 @@
   "error": "Error: OTP expired\n    at Module.verifyGarageOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.service.js:43:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.controller.js:24:20)"
 }
 2026-03-22 10:14:12 [INFO]: POST /api/v1/garageAuth/verify-otp - 500 - 5ms 
+2026-03-22 15:26:18 [INFO]: POST /send-otp - 200 - 1368ms 
+2026-03-22 15:26:52 [INFO]: POST /verify-otp - 200 - 120ms 
+2026-03-22 16:07:56 [INFO]: POST /send-otp - 200 - 1530ms 
+2026-03-22 16:08:18 [INFO]: POST /verify-otp - 200 - 78ms 
+2026-03-22 16:56:54 [INFO]: POST /send-otp - 200 - 1174ms 
+2026-03-22 16:57:18 [INFO]: POST /verify-otp - 200 - 24ms 

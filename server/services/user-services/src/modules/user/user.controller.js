@@ -92,8 +92,12 @@ export const getAllUsers = async (req, res) => {
 export const updateUser = async (req, res) => {
   try {
     const userId = req.params.id;
+    console.log("userid:", userId)
 
-    if (req.user.id !== userId) {
+    const userIdFromToken = req.headers['x-user-id'];
+    console.log("userid form token:", userIdFromToken)
+
+    if (!userIdFromToken || userIdFromToken !== userId) {
       return res.status(403).json({
         success: false,
         message: "You are not allowed to update this user",

@@ -180,3 +180,30 @@
 2026-03-22 10:52:13 [WARN] API-GATEWAY: JWT verification failed: jwt expired {"path":"/"}
 2026-03-22 10:52:13 [WARN] API-GATEWAY: GET /api/garage/ - 401 {"method":"GET","path":"/api/garage/","statusCode":401,"duration":"25ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
 2026-03-22 10:52:27 [INFO] API-GATEWAY: GET /api/garage/ - 200 {"method":"GET","path":"/api/garage/","statusCode":200,"duration":"54ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 15:25:44 [WARN] API-GATEWAY: JWT verification failed: jwt expired {"path":"/"}
+2026-03-22 15:25:44 [WARN] API-GATEWAY: GET /api/garage/ - 401 {"method":"GET","path":"/api/garage/","statusCode":401,"duration":"32ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 15:25:53 [WARN] API-GATEWAY: JWT verification failed: jwt expired {"path":"/"}
+2026-03-22 15:25:53 [WARN] API-GATEWAY: GET /api/user/ - 401 {"method":"GET","path":"/api/user/","statusCode":401,"duration":"6ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 15:26:18 [INFO] API-GATEWAY: POST /api/userAuth/send-otp - 200 {"method":"POST","path":"/api/userAuth/send-otp","statusCode":200,"duration":"1452ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 15:26:52 [INFO] API-GATEWAY: POST /api/userAuth/verify-otp - 200 {"method":"POST","path":"/api/userAuth/verify-otp","statusCode":200,"duration":"129ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 15:32:38 [ERROR] API-GATEWAY: PATCH /api/user/69bfb960c3502edea193355b - 500 {"method":"PATCH","path":"/api/user/69bfb960c3502edea193355b","statusCode":500,"duration":"16ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 15:33:32 [INFO] API-GATEWAY: GET /api/user/69bfb960c3502edea193355b - 200 {"method":"GET","path":"/api/user/69bfb960c3502edea193355b","statusCode":200,"duration":"32ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 15:33:50 [ERROR] API-GATEWAY: PATCH /api/user/69bfb960c3502edea193355b - 500 {"method":"PATCH","path":"/api/user/69bfb960c3502edea193355b","statusCode":500,"duration":"8ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 15:53:38 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/69bfb960c3502edea193355b"}
+2026-03-22 15:53:38 [WARN] API-GATEWAY: PATCH /api/user/69bfb960c3502edea193355b - 401 {"method":"PATCH","path":"/api/user/69bfb960c3502edea193355b","statusCode":401,"duration":"25ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 15:55:05 [WARN] API-GATEWAY: PATCH /api/user/69bfb960c3502edea193355b - 403 {"method":"PATCH","path":"/api/user/69bfb960c3502edea193355b","statusCode":403,"duration":"81ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 15:58:26 [WARN] API-GATEWAY: PATCH /api/user/69bfb960c3502edea193355b - 403 {"method":"PATCH","path":"/api/user/69bfb960c3502edea193355b","statusCode":403,"duration":"63ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 16:01:58 [WARN] API-GATEWAY: PATCH /api/user/69bfb960c3502edea193355b - 403 {"method":"PATCH","path":"/api/user/69bfb960c3502edea193355b","statusCode":403,"duration":"37ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 16:02:16 [WARN] API-GATEWAY: Missing or invalid authorization header {"path":"/69bfb960c3502edea193355b"}
+2026-03-22 16:02:16 [WARN] API-GATEWAY: PATCH /api/user/69bfb960c3502edea193355b - 401 {"method":"PATCH","path":"/api/user/69bfb960c3502edea193355b","statusCode":401,"duration":"9ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 16:03:20 [WARN] API-GATEWAY: PATCH /api/user/69bfb960c3502edea193355b - 403 {"method":"PATCH","path":"/api/user/69bfb960c3502edea193355b","statusCode":403,"duration":"12ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 16:03:44 [WARN] API-GATEWAY: PATCH /api/user/69bfb960c3502edea193355b - 403 {"method":"PATCH","path":"/api/user/69bfb960c3502edea193355b","statusCode":403,"duration":"34ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 16:07:56 [INFO] API-GATEWAY: POST /api/userAuth/send-otp - 200 {"method":"POST","path":"/api/userAuth/send-otp","statusCode":200,"duration":"1578ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 16:08:18 [INFO] API-GATEWAY: POST /api/userAuth/verify-otp - 200 {"method":"POST","path":"/api/userAuth/verify-otp","statusCode":200,"duration":"86ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 16:09:36 [WARN] API-GATEWAY: POST /api/user/69bfc31618562974dabfb964 - 404 {"method":"POST","path":"/api/user/69bfc31618562974dabfb964","statusCode":404,"duration":"11ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 16:09:42 [WARN] API-GATEWAY: PATCH /api/user/69bfc31618562974dabfb964 - 403 {"method":"PATCH","path":"/api/user/69bfc31618562974dabfb964","statusCode":403,"duration":"10ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 16:56:12 [WARN] API-GATEWAY: PATCH /api/user/69bfc31618562974dabfb964 - 403 {"method":"PATCH","path":"/api/user/69bfc31618562974dabfb964","statusCode":403,"duration":"33ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 16:56:54 [INFO] API-GATEWAY: POST /api/userAuth/send-otp - 200 {"method":"POST","path":"/api/userAuth/send-otp","statusCode":200,"duration":"1211ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 16:57:18 [INFO] API-GATEWAY: POST /api/userAuth/verify-otp - 200 {"method":"POST","path":"/api/userAuth/verify-otp","statusCode":200,"duration":"30ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 16:59:10 [WARN] API-GATEWAY: POST /api/user/69bfce9218562974dabfb967 - 404 {"method":"POST","path":"/api/user/69bfce9218562974dabfb967","statusCode":404,"duration":"9ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}
+2026-03-22 16:59:16 [INFO] API-GATEWAY: PATCH /api/user/69bfce9218562974dabfb967 - 200 {"method":"PATCH","path":"/api/user/69bfce9218562974dabfb967","statusCode":200,"duration":"29ms","ip":"::1","userAgent":"PostmanRuntime/7.52.0"}

@@ -5,6 +5,7 @@ import { logger } from '../utils/logger.js'
 export const authMiddleware = (req, res, next) => {
   try {
     const authHeader = req.headers.authorization
+    console.log("auth-header:", authHeader)
 
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
       logger.warn('Missing or invalid authorization header', { path: req.path })
@@ -21,9 +22,9 @@ export const authMiddleware = (req, res, next) => {
 
       req.user = {
         id: decoded.id,
-        role: decoded.role,
-        email: decoded.email
+        role: decoded.role
       }
+      console.log("docodded user:", req.user)
 
       next()
 

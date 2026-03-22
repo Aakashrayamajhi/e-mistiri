@@ -65,74 +65,26 @@ export const verifyOTP = async (phone, otp) => {
     phone
   });
 
-  return response.data;
-};
+  let user = response.data.data
 
-
-export const completeProfile = async ({
-  userId,
-  username,
-  email,
-  password
-}) => {
-  if (!username || !email || !password)
-    throw new Error("All fields required");
-
-  if (!email.includes("@")) throw new Error("Invalid email");
-  if (password.length < 6) throw new Error("Password too short");
-
-  const existingUsername = await getUsername(username);
-  if (existingUsername) throw new Error("Username already exists");
-
-  const existingEmail = await getEmail(email);
-  if (existingEmail) throw new Error("Email already exists");
-
-  const usernameReserved = await reserveUsername(username);
-  if (!usernameReserved) throw new Error("Username busy");
-
-  const emailReserved = await reserveEmail(email);
-  if (!emailReserved) {
-    await releaseUsername(username);
-    throw new Error("Email busy");
-  }
-
-  let existingUser = null;
-  try {
-    const res = await axios.get(`${USER_SERVICE_URL}/email/${email}`);
-    existingUser = res.data;
-  } catch {}
-
-  if (existingUser) {
-    await releaseUsername(username);
-    await releaseEmail(email);
-    throw new Error("User already exists");
-  }
-
-  const hashedPassword = await bcrypt.hash(password, 10);
-
-  const response = await axios.patch(`${USER_SERVICE_URL}/${userId}`, {
-    name: username,
-    email,
-    password: hashedPassword
-  });
-
-  const user = response.data;
-
-  await saveUserCache(username, email);
-
-  const token = jwt.sign({ id: user._id }, JWT_SECRET, {
+   const token = jwt.sign(
+  {
+    id: user._id,
+    role: user.role,
+  },
+  JWT_SECRET,
+  {
     expiresIn: JWT_EXPIRES_IN
-  });
-
+  }
+);
   return {
+    success: true,
     token,
-    user: {
-      id: user._id,
-      username: user.name,
-      email: user.email
-    }
+    message: "Successfully verified your Number",
+   user
   };
 };
+
 
 
 export const loginUser = async ({ phone, password }) => {
@@ -156,10 +108,17 @@ export const loginUser = async ({ phone, password }) => {
   const match = await bcrypt.compare(password, user.password);
   if (!match) throw new Error("Invalid password");
 
-  const token = jwt.sign({ id: user._id }, JWT_SECRET, {
+const token = jwt.sign(
+  {
+    id: user._id,
+    role: user.role,
+    
+  },
+  JWT_SECRET,
+  {
     expiresIn: JWT_EXPIRES_IN
-  });
-
+  }
+);
   return {
     token,
     user: {
