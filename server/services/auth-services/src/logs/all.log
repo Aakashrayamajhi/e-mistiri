@@ -178,3 +178,15 @@
 2026-03-22 16:08:18 [INFO]: POST /verify-otp - 200 - 78ms 
 2026-03-22 16:56:54 [INFO]: POST /send-otp - 200 - 1174ms 
 2026-03-22 16:57:18 [INFO]: POST /verify-otp - 200 - 24ms 
+2026-03-22 17:07:35 [ERROR]: [500] Invalid password {
+  "path": "/api/v1/userAuth/login",
+  "method": "POST",
+  "error": "Error: Invalid password\n    at Module.loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:109:21)\n    at async loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:62:20)"
+}
+2026-03-22 17:07:35 [INFO]: POST /api/v1/userAuth/login - 500 - 20ms 
+2026-03-22 17:08:08 [INFO]: POST /login - 200 - 47ms 
+2026-03-22 17:09:47 [INFO]: POST /login - 200 - 12ms 
+2026-03-22 17:12:50 [INFO]: POST /login - 200 - 10ms 
+2026-03-22 17:56:01 [INFO]: POST /send-otp - 200 - 840ms 
+2026-03-22 17:56:27 [INFO]: POST /verify-otp - 200 - 55ms 
+2026-03-22 18:13:48 [INFO]: POST /login - 200 - 92ms 

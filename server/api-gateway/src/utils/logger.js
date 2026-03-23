@@ -23,7 +23,7 @@ const colors = {
 
 winston.addColors(colors)
 
-// Base format (NO color here)
+
 const baseFormat = winston.format.combine(
   winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
   winston.format.printf(({ timestamp, level, message, ...meta }) => {
@@ -39,7 +39,7 @@ export const logger = winston.createLogger({
   level: 'debug',
   levels,
   transports: [
-    // ✅ Console (color LAST)
+   
     new winston.transports.Console({
       format: winston.format.combine(
         baseFormat,
@@ -47,14 +47,14 @@ export const logger = winston.createLogger({
       )
     }),
 
-    // ✅ Error file
+  
     new winston.transports.File({
       filename: path.join(logDir, 'error.log'),
       level: 'error',
       format: baseFormat
     }),
 
-    // ✅ All logs file
+
     new winston.transports.File({
       filename: path.join(logDir, 'all.log'),
       format: baseFormat
