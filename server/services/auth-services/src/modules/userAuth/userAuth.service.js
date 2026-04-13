@@ -43,7 +43,7 @@ export const sendOTP = async (phone) => {
 
   await redis.set(otpKey(phone), otp, "EX", 200);
 
-  await sendSMS(phone, `Your OTP is ${otp}`);
+  // await sendSMS(phone, `Your OTP is ${otp}`);
   console.log("otp:", otp)
 
   return { success: true, message: "OTP sent" };
@@ -60,29 +60,91 @@ export const verifyOTP = async (phone, otp) => {
   if (storedOtp !== otp) throw new Error("Invalid OTP");
 
   await redis.del(otpKey(phone));
-
   const response = await axios.post(`${USER_SERVICE_URL}`, {
     phone
   });
 
   let user = response.data.data
 
-   const token = jwt.sign(
-  {
-    id: user._id,
-    role: user.role,
-  },
-  JWT_SECRET,
-  {
-    expiresIn: JWT_EXPIRES_IN
-  }
-);
+  const token = jwt.sign(
+    {
+      id: user._id,
+      role: user.role,
+    },
+    JWT_SECRET,
+    {
+      expiresIn: JWT_EXPIRES_IN
+    }
+  );
   return {
     success: true,
     token,
     message: "Successfully verified your Number",
-   user
+    user
   };
+};
+
+
+const validatePassword = (password) => {
+  const strongPasswordRegex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+  if (!strongPasswordRegex.test(password)) {
+    throw new Error(
+      "Password must be at least 8 characters and include uppercase, lowercase, number, and special character"
+    );
+  }
+};
+
+export const completeProfile = async (data, token) => {
+  try {
+    const { userId, fullname, password } = data;
+
+    
+    if (!userId) throw new Error("User ID is required");
+    if (!fullname || fullname.trim().length < 3) {
+      throw new Error("Full name must be at least 3 characters");
+    }
+
+    const updateData = {
+      fullname: fullname.trim(),
+    };
+
+   
+    if (password) {
+      // validatePassword(password);
+
+      const hashedPassword = await bcrypt.hash(password, 10);
+      updateData.password = hashedPassword;
+    }
+
+   
+    const response = await axios.patch(
+      `${USER_SERVICE_URL}/${userId}`,
+      updateData,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    return {
+      success: true,
+      user: response.data.data,
+    };
+
+  } catch (error) {
+ 
+    if (error.response) {
+  
+      throw new Error(
+        error.response.data?.message || "User service error"
+      );
+    }
+
+    throw new Error(error.message || "Something went wrong");
+  }
 };
 
 
@@ -100,7 +162,7 @@ export const loginUser = async ({ phone, password }) => {
       `${USER_SERVICE_URL}/phone/${phone}`
     );
     user = response.data.data;
-    console.log("l-u:",user)
+    console.log("l-u:", user)
   } catch {
     throw new Error("User not found");
   }
@@ -108,17 +170,17 @@ export const loginUser = async ({ phone, password }) => {
   const match = await bcrypt.compare(password, user.password);
   if (!match) throw new Error("Invalid password");
 
-const token = jwt.sign(
-  {
-    id: user._id,
-    role: user.role,
-    
-  },
-  JWT_SECRET,
-  {
-    expiresIn: JWT_EXPIRES_IN
-  }
-);
+  const token = jwt.sign(
+    {
+      id: user._id,
+      role: user.role,
+
+    },
+    JWT_SECRET,
+    {
+      expiresIn: JWT_EXPIRES_IN
+    }
+  );
   return {
     token,
     user: {

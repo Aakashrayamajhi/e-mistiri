@@ -26,18 +26,13 @@ const userSchema = new mongoose.Schema(
       sparse: true,
       trim: true,
       lowercase: true,
+  
     },
 
-    email: {
-      type: String,
-      unique: true,
-      sparse: true,
-      lowercase: true,
-      trim: true,
-    },
     password: {
       type: String,
       sparse: true,
+    
     },
 
     profileImage: {

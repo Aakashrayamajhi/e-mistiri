@@ -5,7 +5,7 @@ let server
 
 const StartServer = () => {
   try {
-    server = app.listen(PORT, () => {
+    server = app.listen(PORT, "0.0.0.0",() => {
       console.log(`API Gateway running on port: ${PORT}`)
     })
     

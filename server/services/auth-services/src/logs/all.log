@@ -190,3 +190,474 @@
 2026-03-22 17:56:01 [INFO]: POST /send-otp - 200 - 840ms 
 2026-03-22 17:56:27 [INFO]: POST /verify-otp - 200 - 55ms 
 2026-03-22 18:13:48 [INFO]: POST /login - 200 - 92ms 
+2026-03-24 15:48:02 [INFO]: POST /login - 200 - 313ms 
+2026-04-07 15:33:30 [ERROR]: [500] Invalid password {
+  "path": "/api/v1/userAuth/login",
+  "method": "POST",
+  "error": "Error: Invalid password\n    at Module.loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:109:21)\n    at async loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:62:20)"
+}
+2026-04-07 15:33:30 [INFO]: POST /api/v1/userAuth/login - 500 - 313ms 
+2026-04-07 15:33:48 [ERROR]: [500] Invalid password {
+  "path": "/api/v1/userAuth/login",
+  "method": "POST",
+  "error": "Error: Invalid password\n    at Module.loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:109:21)\n    at async loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:62:20)"
+}
+2026-04-07 15:33:48 [INFO]: POST /api/v1/userAuth/login - 500 - 219ms 
+2026-04-07 15:33:55 [ERROR]: [500] Invalid password {
+  "path": "/api/v1/userAuth/login",
+  "method": "POST",
+  "error": "Error: Invalid password\n    at Module.loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:109:21)\n    at async loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:62:20)"
+}
+2026-04-07 15:33:55 [INFO]: POST /api/v1/userAuth/login - 500 - 216ms 
+2026-04-07 15:34:09 [ERROR]: [500] Invalid password {
+  "path": "/api/v1/userAuth/login",
+  "method": "POST",
+  "error": "Error: Invalid password\n    at Module.loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:109:21)\n    at async loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:62:20)"
+}
+2026-04-07 15:34:09 [INFO]: POST /api/v1/userAuth/login - 500 - 212ms 
+2026-04-07 15:34:51 [ERROR]: [500] Invalid password {
+  "path": "/api/v1/userAuth/login",
+  "method": "POST",
+  "error": "Error: Invalid password\n    at Module.loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:109:21)\n    at async loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:62:20)"
+}
+2026-04-07 15:34:51 [INFO]: POST /api/v1/userAuth/login - 500 - 16ms 
+2026-04-07 15:35:51 [INFO]: POST /login - 200 - 45ms 
+2026-04-12 17:06:31 [INFO]: PATCH /api/v1/userAuth/ - 404 - 15ms 
+2026-04-12 17:06:40 [INFO]: PATCH /api/v1/userAuth/ - 404 - 1ms 
+2026-04-12 17:11:04 [INFO]: GET /api/v1/garageAuth/send-otp - 404 - 2ms 
+2026-04-12 17:11:36 [INFO]: POST /send-otp - 200 - 1849ms 
+2026-04-12 17:12:00 [INFO]: POST /send-otp - 200 - 962ms 
+2026-04-12 17:12:01 [INFO]: POST /send-otp - 200 - 583ms 
+2026-04-12 17:13:27 [INFO]: POST /send-otp - 200 - 938ms 
+2026-04-12 17:13:57 [ERROR]: [500] Garage service error {
+  "path": "/api/v1/garageAuth/verify-otp",
+  "method": "POST",
+  "error": "Error: Garage service error\n    at Module.verifyGarageOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.service.js:74:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.controller.js:24:20)"
+}
+2026-04-12 17:13:57 [INFO]: POST /api/v1/garageAuth/verify-otp - 500 - 41ms 
+2026-04-12 17:14:10 [ERROR]: [500] OTP expired {
+  "path": "/api/v1/garageAuth/verify-otp",
+  "method": "POST",
+  "error": "Error: OTP expired\n    at Module.verifyGarageOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.service.js:43:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.controller.js:24:20)"
+}
+2026-04-12 17:14:10 [INFO]: POST /api/v1/garageAuth/verify-otp - 500 - 5ms 
+2026-04-12 17:14:56 [INFO]: POST /send-otp - 200 - 821ms 
+2026-04-12 17:15:48 [ERROR]: [500] Invalid OTP {
+  "path": "/api/v1/garageAuth/verify-otp",
+  "method": "POST",
+  "error": "Error: Invalid OTP\n    at Module.verifyGarageOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.service.js:44:32)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.controller.js:24:20)"
+}
+2026-04-12 17:15:48 [INFO]: POST /api/v1/garageAuth/verify-otp - 500 - 23ms 
+2026-04-12 17:16:00 [INFO]: POST /send-otp - 200 - 1821ms 
+2026-04-12 17:17:37 [INFO]: POST /api/v1/garageAuth/ - 404 - 13ms 
+2026-04-12 17:18:03 [ERROR]: [500] Garage not found {
+  "path": "/api/v1/garageAuth/login",
+  "method": "POST",
+  "error": "Error: Garage not found\n    at Module.loginGarage (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.service.js:108:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async loginGarage (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.controller.js:41:20)"
+}
+2026-04-12 17:18:03 [INFO]: POST /api/v1/garageAuth/login - 500 - 42ms 
+2026-04-12 17:19:12 [ERROR]: [500] Garage not found {
+  "path": "/api/v1/garageAuth/login",
+  "method": "POST",
+  "error": "Error: Garage not found\n    at Module.loginGarage (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.service.js:108:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async loginGarage (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.controller.js:41:20)"
+}
+2026-04-12 17:19:12 [INFO]: POST /api/v1/garageAuth/login - 500 - 57ms 
+2026-04-12 17:20:04 [ERROR]: [500] Garage not found {
+  "path": "/api/v1/garageAuth/login",
+  "method": "POST",
+  "error": "Error: Garage not found\n    at Module.loginGarage (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.service.js:108:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async loginGarage (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.controller.js:41:20)"
+}
+2026-04-12 17:20:04 [INFO]: POST /api/v1/garageAuth/login - 500 - 14ms 
+2026-04-12 17:20:18 [ERROR]: [500] Garage not found {
+  "path": "/api/v1/garageAuth/login",
+  "method": "POST",
+  "error": "Error: Garage not found\n    at Module.loginGarage (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.service.js:108:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async loginGarage (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.controller.js:41:20)"
+}
+2026-04-12 17:20:18 [INFO]: POST /api/v1/garageAuth/login - 500 - 9ms 
+2026-04-12 17:20:51 [ERROR]: [500] Garage not found {
+  "path": "/api/v1/garageAuth/login",
+  "method": "POST",
+  "error": "Error: Garage not found\n    at Module.loginGarage (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.service.js:108:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async loginGarage (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.controller.js:41:20)"
+}
+2026-04-12 17:20:51 [INFO]: POST /api/v1/garageAuth/login - 500 - 9ms 
+2026-04-13 11:24:53 [INFO]: GET /api/v1/garageAuth/send-otp - 404 - 5ms 
+2026-04-13 11:25:03 [ERROR]: [500] Failed to send OTP {
+  "path": "/api/v1/garageAuth/send-otp",
+  "method": "POST",
+  "error": "Error: Failed to send OTP\n    at sendSMS (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/utils/otp.service.js:23:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Module.sendGarageOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.service.js:34:3)\n    at async sendOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.controller.js:8:20)"
+}
+2026-04-13 11:25:03 [INFO]: POST /api/v1/garageAuth/send-otp - 500 - 1067ms 
+2026-04-13 11:32:35 [ERROR]: [500] Failed to send OTP {
+  "path": "/api/v1/garageAuth/send-otp",
+  "method": "POST",
+  "error": "Error: Failed to send OTP\n    at sendSMS (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/utils/otp.service.js:23:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Module.sendGarageOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.service.js:34:3)\n    at async sendOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.controller.js:8:20)"
+}
+2026-04-13 11:32:35 [INFO]: POST /api/v1/garageAuth/send-otp - 500 - 776ms 
+2026-04-13 11:32:49 [ERROR]: [500] Failed to send OTP {
+  "path": "/api/v1/garageAuth/send-otp",
+  "method": "POST",
+  "error": "Error: Failed to send OTP\n    at sendSMS (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/utils/otp.service.js:23:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Module.sendGarageOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.service.js:34:3)\n    at async sendOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.controller.js:8:20)"
+}
+2026-04-13 11:32:49 [INFO]: POST /api/v1/garageAuth/send-otp - 500 - 844ms 
+2026-04-13 11:33:14 [ERROR]: [500] Failed to send OTP {
+  "path": "/api/v1/garageAuth/send-otp",
+  "method": "POST",
+  "error": "Error: Failed to send OTP\n    at sendSMS (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/utils/otp.service.js:23:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Module.sendGarageOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.service.js:34:3)\n    at async sendOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.controller.js:8:20)"
+}
+2026-04-13 11:33:14 [INFO]: POST /api/v1/garageAuth/send-otp - 500 - 617ms 
+2026-04-13 11:33:29 [INFO]: GET /api/v1/garageAuth/send-otp - 404 - 3ms 
+2026-04-13 11:33:30 [INFO]: GET /favicon.ico - 404 - 1ms 
+2026-04-13 11:34:31 [INFO]: POST /api/garageAuth/send-otp - 404 - 0ms 
+2026-04-13 11:34:40 [ERROR]: [500] Failed to send OTP {
+  "path": "/api/v1/garageAuth/send-otp",
+  "method": "POST",
+  "error": "Error: Failed to send OTP\n    at sendSMS (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/utils/otp.service.js:23:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Module.sendGarageOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.service.js:34:3)\n    at async sendOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.controller.js:8:20)"
+}
+2026-04-13 11:34:40 [INFO]: POST /api/v1/garageAuth/send-otp - 500 - 1081ms 
+2026-04-13 11:37:03 [INFO]: POST /send-otp - 200 - 5ms 
+2026-04-13 11:39:45 [INFO]: POST /send-otp - 200 - 1ms 
+2026-04-13 11:40:13 [INFO]: POST /send-otp - 200 - 1ms 
+2026-04-13 11:40:31 [ERROR]: [500] OTP expired {
+  "path": "/api/v1/userAuth/verify-otp",
+  "method": "POST",
+  "error": "Error: OTP expired\n    at Module.verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:58:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:23:18)"
+}
+2026-04-13 11:40:31 [INFO]: POST /api/v1/userAuth/verify-otp - 500 - 4ms 
+2026-04-13 11:40:54 [INFO]: POST /api/v1/userAuth/-otp - 404 - 7ms 
+2026-04-13 11:41:00 [INFO]: POST /send-otp - 200 - 5ms 
+2026-04-13 11:41:14 [INFO]: POST /send-otp - 200 - 1ms 
+2026-04-13 11:41:34 [INFO]: POST /verify-otp - 200 - 111ms 
+2026-04-13 12:12:03 [INFO]: PATCH /api/v1/userAuth/signup - 404 - 5ms 
+2026-04-13 12:12:33 [INFO]: POST /signup - 200 - 4ms 
+2026-04-13 12:13:54 [INFO]: POST /signup - 200 - 2ms 
+2026-04-13 12:15:48 [INFO]: POST /signup - 200 - 9ms 
+2026-04-13 12:17:09 [INFO]: POST /signup - 200 - 11ms 
+2026-04-13 12:19:34 [INFO]: POST /signup - 200 - 9ms 
+2026-04-13 12:23:53 [INFO]: POST /signup - 200 - 2ms 
+2026-04-13 12:25:55 [INFO]: POST /signup - 200 - 13ms 
+2026-04-13 12:28:28 [ERROR]: [500] Cannot read properties of undefined (reading 'ok') {
+  "path": "/api/v1/userAuth/signup",
+  "method": "POST",
+  "error": "TypeError: Cannot read properties of undefined (reading 'ok')\n    at completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:47:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)"
+}
+2026-04-13 12:28:28 [INFO]: POST /api/v1/userAuth/signup - 500 - 22ms 
+2026-04-13 12:29:46 [ERROR]: [500] Cannot read properties of undefined (reading 'ok') {
+  "path": "/api/v1/userAuth/signup",
+  "method": "POST",
+  "error": "TypeError: Cannot read properties of undefined (reading 'ok')\n    at completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:47:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)"
+}
+2026-04-13 12:29:46 [INFO]: POST /api/v1/userAuth/signup - 500 - 5ms 
+2026-04-13 12:30:34 [ERROR]: [500] Cannot read properties of undefined (reading 'ok') {
+  "path": "/api/v1/userAuth/signup",
+  "method": "POST",
+  "error": "TypeError: Cannot read properties of undefined (reading 'ok')\n    at completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:47:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)"
+}
+2026-04-13 12:30:34 [INFO]: POST /api/v1/userAuth/signup - 500 - 40ms 
+2026-04-13 12:30:46 [ERROR]: [500] Cannot read properties of undefined (reading 'error') {
+  "path": "/api/v1/userAuth/signup",
+  "method": "POST",
+  "error": "TypeError: Cannot read properties of undefined (reading 'error')\n    at completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:56:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)"
+}
+2026-04-13 12:30:46 [INFO]: POST /api/v1/userAuth/signup - 500 - 13ms 
+2026-04-13 12:31:04 [INFO]: POST /signup - 500 - 6ms 
+2026-04-13 12:31:58 [INFO]: POST /signup - 500 - 17ms 
+2026-04-13 12:32:30 [INFO]: POST /send-otp - 200 - 4ms 
+2026-04-13 12:32:55 [ERROR]: [500] Invalid OTP {
+  "path": "/api/v1/userAuth/verify-otp",
+  "method": "POST",
+  "error": "Error: Invalid OTP\n    at Module.verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:60:32)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:23:18)"
+}
+2026-04-13 12:32:55 [INFO]: POST /api/v1/userAuth/verify-otp - 500 - 5ms 
+2026-04-13 12:33:05 [ERROR]: [400] Request failed with status code 400 {
+  "path": "/api/v1/userAuth/verify-otp",
+  "method": "POST",
+  "error": "AxiosError: Request failed with status code 400\n    at settle (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/node_modules/axios/lib/core/settle.js:20:7)\n    at IncomingMessage.handleStreamEnd (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/node_modules/axios/lib/adapters/http.js:844:13)\n    at IncomingMessage.emit (node:events:520:35)\n    at endReadableNT (node:internal/streams/readable:1729:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n    at Axios.request (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/node_modules/axios/lib/core/Axios.js:46:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Module.verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:64:20)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:23:18)"
+}
+2026-04-13 12:33:05 [INFO]: POST /api/v1/userAuth/verify-otp - 400 - 98ms 
+2026-04-13 12:33:38 [ERROR]: [500] OTP expired {
+  "path": "/api/v1/userAuth/verify-otp",
+  "method": "POST",
+  "error": "Error: OTP expired\n    at Module.verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:58:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:23:18)"
+}
+2026-04-13 12:33:38 [INFO]: POST /api/v1/userAuth/verify-otp - 500 - 2ms 
+2026-04-13 12:33:51 [ERROR]: [500] OTP expired {
+  "path": "/api/v1/userAuth/verify-otp",
+  "method": "POST",
+  "error": "Error: OTP expired\n    at Module.verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:58:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:23:18)"
+}
+2026-04-13 12:33:51 [INFO]: POST /api/v1/userAuth/verify-otp - 500 - 3ms 
+2026-04-13 12:33:58 [INFO]: POST /api/v1/userAuth/semd-otp - 404 - 1ms 
+2026-04-13 12:34:02 [INFO]: POST /send-otp - 200 - 2ms 
+2026-04-13 12:34:18 [INFO]: POST /send-otp - 200 - 2ms 
+2026-04-13 12:34:25 [ERROR]: [500] Invalid OTP {
+  "path": "/api/v1/userAuth/verify-otp",
+  "method": "POST",
+  "error": "Error: Invalid OTP\n    at Module.verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:60:32)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:23:18)"
+}
+2026-04-13 12:34:25 [INFO]: POST /api/v1/userAuth/verify-otp - 500 - 3ms 
+2026-04-13 12:34:54 [ERROR]: [500] Invalid OTP {
+  "path": "/api/v1/userAuth/verify-otp",
+  "method": "POST",
+  "error": "Error: Invalid OTP\n    at Module.verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:60:32)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:23:18)"
+}
+2026-04-13 12:34:54 [INFO]: POST /api/v1/userAuth/verify-otp - 500 - 3ms 
+2026-04-13 12:36:01 [INFO]: POST /send-otp - 200 - 2ms 
+2026-04-13 12:36:21 [ERROR]: [400] Request failed with status code 400 {
+  "path": "/api/v1/userAuth/verify-otp",
+  "method": "POST",
+  "error": "AxiosError: Request failed with status code 400\n    at settle (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/node_modules/axios/lib/core/settle.js:20:7)\n    at IncomingMessage.handleStreamEnd (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/node_modules/axios/lib/adapters/http.js:844:13)\n    at IncomingMessage.emit (node:events:520:35)\n    at endReadableNT (node:internal/streams/readable:1729:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n    at Axios.request (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/node_modules/axios/lib/core/Axios.js:46:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Module.verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:64:20)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:23:18)"
+}
+2026-04-13 12:36:21 [INFO]: POST /api/v1/userAuth/verify-otp - 400 - 21ms 
+2026-04-13 12:37:56 [ERROR]: [500] OTP expired {
+  "path": "/api/v1/userAuth/verify-otp",
+  "method": "POST",
+  "error": "Error: OTP expired\n    at Module.verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:58:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:23:18)"
+}
+2026-04-13 12:37:56 [INFO]: POST /api/v1/userAuth/verify-otp - 500 - 2ms 
+2026-04-13 12:38:26 [INFO]: POST /send-otp - 200 - 2ms 
+2026-04-13 12:38:49 [INFO]: POST /send-otp - 200 - 1ms 
+2026-04-13 12:39:19 [ERROR]: [400] Request failed with status code 400 {
+  "path": "/api/v1/userAuth/verify-otp",
+  "method": "POST",
+  "error": "AxiosError: Request failed with status code 400\n    at settle (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/node_modules/axios/lib/core/settle.js:20:7)\n    at IncomingMessage.handleStreamEnd (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/node_modules/axios/lib/adapters/http.js:844:13)\n    at IncomingMessage.emit (node:events:520:35)\n    at endReadableNT (node:internal/streams/readable:1729:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n    at Axios.request (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/node_modules/axios/lib/core/Axios.js:46:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Module.verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:64:20)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:23:18)"
+}
+2026-04-13 12:39:19 [INFO]: POST /api/v1/userAuth/verify-otp - 400 - 11ms 
+2026-04-13 12:40:51 [ERROR]: [500] OTP expired {
+  "path": "/api/v1/userAuth/verify-otp",
+  "method": "POST",
+  "error": "Error: OTP expired\n    at Module.verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:58:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:23:18)"
+}
+2026-04-13 12:40:51 [INFO]: POST /api/v1/userAuth/verify-otp - 500 - 12ms 
+2026-04-13 12:40:59 [INFO]: POST /send-otp - 200 - 3ms 
+2026-04-13 12:41:21 [ERROR]: [500] token is not defined {
+  "path": "/api/v1/userAuth/verify-otp",
+  "method": "POST",
+  "error": "ReferenceError: token is not defined\n    at Module.verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:82:5)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:23:18)"
+}
+2026-04-13 12:41:21 [INFO]: POST /api/v1/userAuth/verify-otp - 500 - 5ms 
+2026-04-13 12:49:20 [ERROR]: [500] Failed to send OTP {
+  "path": "/api/v1/userAuth/send-otp",
+  "method": "POST",
+  "error": "Error: Failed to send OTP\n    at sendSMS (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/utils/otp.service.js:23:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Module.sendOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:46:3)\n    at async sendOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:7:20)"
+}
+2026-04-13 12:49:20 [INFO]: POST /api/v1/userAuth/send-otp - 500 - 1410ms 
+2026-04-13 12:52:40 [ERROR]: [500] Failed to send OTP {
+  "path": "/api/v1/userAuth/send-otp",
+  "method": "POST",
+  "error": "Error: Failed to send OTP\n    at sendSMS (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/utils/otp.service.js:23:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Module.sendOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:46:3)\n    at async sendOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:7:20)"
+}
+2026-04-13 12:52:40 [INFO]: POST /api/v1/userAuth/send-otp - 500 - 1314ms 
+2026-04-13 12:52:49 [ERROR]: [400] Expected double-quoted property name in JSON at position 31 (line 5 column 1) {
+  "path": "/api/v1/userAuth/send-otp",
+  "method": "POST",
+  "error": "SyntaxError: Expected double-quoted property name in JSON at position 31 (line 5 column 1)\n    at JSON.parse (<anonymous>)\n    at parse (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\body-parser\\lib\\types\\json.js:72:19)\n    at C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\body-parser\\lib\\read.js:162:18\n    at AsyncResource.runInAsyncScope (node:async_hooks:228:14)\n    at invokeCallback (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\raw-body\\index.js:238:16)\n    at done (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\raw-body\\index.js:227:7)\n    at IncomingMessage.onEnd (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\raw-body\\index.js:287:7)\n    at IncomingMessage.emit (node:events:508:28)\n    at endReadableNT (node:internal/streams/readable:1729:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)"
+}
+2026-04-13 12:52:52 [ERROR]: [500] Failed to send OTP {
+  "path": "/api/v1/userAuth/send-otp",
+  "method": "POST",
+  "error": "Error: Failed to send OTP\n    at sendSMS (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/utils/otp.service.js:23:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Module.sendOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:46:3)\n    at async sendOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:7:20)"
+}
+2026-04-13 12:52:52 [INFO]: POST /api/v1/userAuth/send-otp - 500 - 587ms 
+2026-04-13 12:53:56 [ERROR]: [500] Failed to send OTP {
+  "path": "/api/v1/userAuth/send-otp",
+  "method": "POST",
+  "error": "Error: Failed to send OTP\n    at sendSMS (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/utils/otp.service.js:23:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Module.sendOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:46:3)\n    at async sendOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:7:20)"
+}
+2026-04-13 12:53:56 [INFO]: POST /api/v1/userAuth/send-otp - 500 - 1062ms 
+2026-04-13 12:54:18 [INFO]: POST /send-otp - 200 - 8ms 
+2026-04-13 12:54:39 [ERROR]: [500] token is not defined {
+  "path": "/api/v1/userAuth/verify-otp",
+  "method": "POST",
+  "error": "ReferenceError: token is not defined\n    at Module.verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:82:5)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:23:18)"
+}
+2026-04-13 12:54:39 [INFO]: POST /api/v1/userAuth/verify-otp - 500 - 9ms 
+2026-04-13 12:54:54 [ERROR]: [500] OTP expired {
+  "path": "/api/v1/userAuth/verify-otp",
+  "method": "POST",
+  "error": "Error: OTP expired\n    at Module.verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:58:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:23:18)"
+}
+2026-04-13 12:54:54 [INFO]: POST /api/v1/userAuth/verify-otp - 500 - 12ms 
+2026-04-13 12:55:06 [INFO]: POST /send-otp - 200 - 3ms 
+2026-04-13 12:55:23 [ERROR]: [500] user is not defined {
+  "path": "/api/v1/userAuth/verify-otp",
+  "method": "POST",
+  "error": "ReferenceError: user is not defined\n    at Module.verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:84:4)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:23:18)"
+}
+2026-04-13 12:55:23 [INFO]: POST /api/v1/userAuth/verify-otp - 500 - 5ms 
+2026-04-13 12:55:34 [ERROR]: [500] OTP expired {
+  "path": "/api/v1/userAuth/verify-otp",
+  "method": "POST",
+  "error": "Error: OTP expired\n    at Module.verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:58:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:23:18)"
+}
+2026-04-13 12:55:34 [INFO]: POST /api/v1/userAuth/verify-otp - 500 - 3ms 
+2026-04-13 12:55:47 [INFO]: POST /send-otp - 200 - 2ms 
+2026-04-13 12:56:06 [ERROR]: [500] user is not defined {
+  "path": "/api/v1/userAuth/verify-otp",
+  "method": "POST",
+  "error": "ReferenceError: user is not defined\n    at Module.verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:84:4)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:23:18)"
+}
+2026-04-13 12:56:06 [INFO]: POST /api/v1/userAuth/verify-otp - 500 - 4ms 
+2026-04-13 12:57:22 [INFO]: POST /send-otp - 200 - 6ms 
+2026-04-13 12:57:38 [INFO]: POST /verify-otp - 200 - 4ms 
+2026-04-13 13:05:27 [INFO]: POST /send-otp - 200 - 5ms 
+2026-04-13 13:05:45 [INFO]: POST /api/v1/userAuth/verufy-otp - 404 - 2ms 
+2026-04-13 13:05:49 [INFO]: POST /verify-otp - 200 - 116ms 
+2026-04-13 13:23:48 [INFO]: PATCH /api/v1/userAuth/complete-profile/69dc9951cc9529ac27a9d14b - 404 - 5ms 
+2026-04-13 13:23:55 [INFO]: PATCH /api/v1/userAuth/complete-profile/69dc9951cc9529ac27a9d14b - 404 - 12ms 
+2026-04-13 13:25:06 [INFO]: PATCH /api/v1/userAuth/complete-profile/69dc9951cc9529ac27a9d14b - 404 - 13ms 
+2026-04-13 13:27:12 [INFO]: PATCH /api/v1/userAuth/complete-profile/69dc9951cc9529ac27a9d14b - 404 - 13ms 
+2026-04-13 13:30:16 [INFO]: PATCH /complete-profile/69dc9951cc9529ac27a9d14b - 400 - 32ms 
+2026-04-13 13:30:39 [INFO]: PATCH /complete-profile/69dc9951cc9529ac27a9d14b - 403 - 108ms 
+2026-04-13 13:30:47 [INFO]: PATCH /api/v1/userAuth/complete-profile - 404 - 1ms 
+2026-04-13 13:30:55 [INFO]: PATCH /complete-profile - 403 - 100ms 
+2026-04-13 13:31:01 [INFO]: PATCH /complete-profile - 403 - 79ms 
+2026-04-13 13:31:03 [INFO]: PATCH /complete-profile - 403 - 103ms 
+2026-04-13 13:31:04 [INFO]: PATCH /complete-profile - 403 - 84ms 
+2026-04-13 13:31:05 [INFO]: PATCH /complete-profile - 403 - 91ms 
+2026-04-13 13:31:06 [INFO]: PATCH /complete-profile - 403 - 92ms 
+2026-04-13 13:31:07 [INFO]: PATCH /complete-profile - 403 - 88ms 
+2026-04-13 13:31:07 [INFO]: PATCH /complete-profile - 403 - 123ms 
+2026-04-13 13:31:08 [INFO]: PATCH /complete-profile - 403 - 93ms 
+2026-04-13 13:32:26 [INFO]: PATCH /complete-profile - 403 - 101ms 
+2026-04-13 13:32:43 [INFO]: PATCH /complete-profile - 403 - 123ms 
+2026-04-13 13:33:11 [INFO]: PATCH /complete-profile - 403 - 121ms 
+2026-04-13 13:33:40 [INFO]: PATCH /complete-profile - 403 - 106ms 
+2026-04-13 13:34:57 [INFO]: PATCH /complete-profile - 200 - 266ms 
+2026-04-13 13:40:02 [INFO]: PATCH /complete-profile - 200 - 7ms 
+2026-04-13 13:40:40 [INFO]: PATCH /complete-profile - 200 - 2ms 
+2026-04-13 13:40:49 [INFO]: PATCH /complete-profile - 200 - 2ms 
+2026-04-13 13:42:48 [INFO]: PATCH /api/v1/userAuth/69dc9951cc9529ac27a9d14b - 404 - 1ms 
+2026-04-13 13:43:14 [INFO]: PATCH /api/v1/userAuth/69dc9951cc9529ac27a9d14b - 404 - 1ms 
+2026-04-13 13:43:25 [INFO]: PATCH /api/v1/user/69dc9951cc9529ac27a9d14b - 404 - 1ms 
+2026-04-13 13:45:50 [INFO]: PATCH /complete-profile - 200 - 10ms 
+2026-04-13 13:48:02 [INFO]: PATCH /complete-profile - 200 - 9ms 
+2026-04-13 13:50:34 [INFO]: PATCH /complete-profile - 200 - 2ms 
+2026-04-13 13:50:41 [INFO]: PATCH /complete-profile - 200 - 2ms 
+2026-04-13 13:51:13 [INFO]: PATCH /complete-profile - 200 - 11ms 
+2026-04-13 13:52:25 [INFO]: PATCH /complete-profile - 200 - 3ms 
+2026-04-13 13:54:15 [INFO]: PATCH /complete-profile - 200 - 31ms 
+2026-04-13 13:56:50 [INFO]: PATCH /complete-profile - 200 - 115ms 
+2026-04-13 13:57:12 [INFO]: PATCH /complete-profile - 200 - 120ms 
+2026-04-13 13:57:37 [INFO]: PATCH /complete-profile - 200 - 310ms 
+2026-04-13 13:59:26 [INFO]: PATCH /complete-profile - 200 - 145ms 
+2026-04-13 14:00:36 [INFO]: PATCH /complete-profile - 200 - 120ms 
+2026-04-13 14:02:26 [INFO]: PATCH /complete-profile - 200 - 363ms 
+2026-04-13 14:07:00 [INFO]: PATCH /complete-profile - 200 - 282ms 
+2026-04-13 14:10:39 [ERROR]: [500] next is not defined {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "PATCH",
+  "error": "ReferenceError: next is not defined\n    at completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:46:5)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)"
+}
+2026-04-13 14:10:39 [INFO]: PATCH /api/v1/userAuth/complete-profile - 500 - 15ms 
+2026-04-13 14:11:53 [ERROR]: [500] Password must be at least 8 characters and include uppercase, lowercase, number, and special character {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "PATCH",
+  "error": "Error: Password must be at least 8 characters and include uppercase, lowercase, number, and special character\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:146:11)\n    at completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:38)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:291:5)"
+}
+2026-04-13 14:11:53 [INFO]: PATCH /api/v1/userAuth/complete-profile - 500 - 81ms 
+2026-04-13 14:12:34 [ERROR]: [500] Password must be at least 8 characters and include uppercase, lowercase, number, and special character {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "PATCH",
+  "error": "Error: Password must be at least 8 characters and include uppercase, lowercase, number, and special character\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:146:11)\n    at completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:38)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:291:5)"
+}
+2026-04-13 14:12:34 [INFO]: PATCH /api/v1/userAuth/complete-profile - 500 - 3ms 
+2026-04-13 14:12:40 [ERROR]: [500] Password must be at least 8 characters and include uppercase, lowercase, number, and special character {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "PATCH",
+  "error": "Error: Password must be at least 8 characters and include uppercase, lowercase, number, and special character\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:146:11)\n    at completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:38)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:291:5)"
+}
+2026-04-13 14:12:40 [INFO]: PATCH /api/v1/userAuth/complete-profile - 500 - 3ms 
+2026-04-13 14:12:55 [ERROR]: [500] Password must be at least 8 characters and include uppercase, lowercase, number, and special character {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "PATCH",
+  "error": "Error: Password must be at least 8 characters and include uppercase, lowercase, number, and special character\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:146:11)\n    at completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:38)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:291:5)"
+}
+2026-04-13 14:12:55 [INFO]: PATCH /api/v1/userAuth/complete-profile - 500 - 2ms 
+2026-04-13 14:13:21 [ERROR]: [500] You are not allowed to update this user {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "PATCH",
+  "error": "Error: You are not allowed to update this user\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:141:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:20)"
+}
+2026-04-13 14:13:21 [INFO]: PATCH /api/v1/userAuth/complete-profile - 500 - 203ms 
+2026-04-13 14:13:39 [ERROR]: [500] You are not allowed to update this user {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "PATCH",
+  "error": "Error: You are not allowed to update this user\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:141:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:20)"
+}
+2026-04-13 14:13:39 [INFO]: PATCH /api/v1/userAuth/complete-profile - 500 - 124ms 
+2026-04-13 14:14:39 [ERROR]: [500] You are not allowed to update this user {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "PATCH",
+  "error": "Error: You are not allowed to update this user\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:141:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:20)"
+}
+2026-04-13 14:14:39 [INFO]: PATCH /api/v1/userAuth/complete-profile - 500 - 118ms 
+2026-04-13 15:45:41 [INFO]: GET /api/v1/userAuth/send-otp - 404 - 11ms 
+2026-04-13 15:46:41 [INFO]: POST /send-otp - 200 - 4ms 
+2026-04-13 15:47:14 [INFO]: POST /api/v1/userAuth/veify-otp - 404 - 1ms 
+2026-04-13 15:47:19 [INFO]: POST /api/v1/userAuth/veify-otp - 404 - 1ms 
+2026-04-13 15:47:41 [ERROR]: [400] Request failed with status code 400 {
+  "path": "/api/v1/userAuth/verify-otp",
+  "method": "POST",
+  "error": "AxiosError: Request failed with status code 400\n    at settle (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/node_modules/axios/lib/core/settle.js:20:7)\n    at IncomingMessage.handleStreamEnd (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/node_modules/axios/lib/adapters/http.js:844:13)\n    at IncomingMessage.emit (node:events:520:35)\n    at endReadableNT (node:internal/streams/readable:1729:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n    at Axios.request (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/node_modules/axios/lib/core/Axios.js:46:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Module.verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:63:20)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:23:18)"
+}
+2026-04-13 15:47:41 [INFO]: POST /api/v1/userAuth/verify-otp - 400 - 34ms 
+2026-04-13 15:51:16 [INFO]: POST /send-otp - 200 - 2ms 
+2026-04-13 15:51:38 [ERROR]: [400] Request failed with status code 400 {
+  "path": "/api/v1/userAuth/verify-otp",
+  "method": "POST",
+  "error": "AxiosError: Request failed with status code 400\n    at settle (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/node_modules/axios/lib/core/settle.js:20:7)\n    at IncomingMessage.handleStreamEnd (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/node_modules/axios/lib/adapters/http.js:844:13)\n    at IncomingMessage.emit (node:events:520:35)\n    at endReadableNT (node:internal/streams/readable:1729:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n    at Axios.request (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/node_modules/axios/lib/core/Axios.js:46:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Module.verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:63:20)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:23:18)"
+}
+2026-04-13 15:51:38 [INFO]: POST /api/v1/userAuth/verify-otp - 400 - 53ms 
+2026-04-13 15:53:48 [ERROR]: [500] OTP expired {
+  "path": "/api/v1/userAuth/verify-otp",
+  "method": "POST",
+  "error": "Error: OTP expired\n    at Module.verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:58:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async verifyOTP (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:23:18)"
+}
+2026-04-13 15:53:48 [INFO]: POST /api/v1/userAuth/verify-otp - 500 - 2ms 
+2026-04-13 15:57:05 [INFO]: POST /send-otp - 200 - 2ms 
+2026-04-13 15:57:30 [INFO]: POST /verify-otp - 200 - 38ms 
+2026-04-13 15:59:19 [INFO]: POST /api/v1/userAuth/complete-profile%20 - 404 - 1ms 
+2026-04-13 16:00:11 [INFO]: POST /api/v1/userAuth/complete-profile%20 - 404 - 1ms 
+2026-04-13 16:00:22 [INFO]: POST /api/v1/userAuth/complete-profile - 404 - 0ms 
+2026-04-13 16:00:29 [ERROR]: [500] You are not allowed to update this user {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "PATCH",
+  "error": "Error: You are not allowed to update this user\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:141:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:20)"
+}
+2026-04-13 16:00:29 [INFO]: PATCH /api/v1/userAuth/complete-profile - 500 - 123ms 
+2026-04-13 16:00:36 [ERROR]: [500] You are not allowed to update this user {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "PATCH",
+  "error": "Error: You are not allowed to update this user\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:141:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:20)"
+}
+2026-04-13 16:00:36 [INFO]: PATCH /api/v1/userAuth/complete-profile - 500 - 109ms 
+2026-04-13 16:01:20 [INFO]: PATCH /api/v1/userAuth/send-otp - 404 - 1ms 
+2026-04-13 16:01:47 [INFO]: POST /send-otp - 200 - 2ms 
+2026-04-13 16:02:08 [INFO]: POST /verify-otp - 200 - 13ms 
+2026-04-13 16:03:13 [ERROR]: [500] You are not allowed to update this user {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "PATCH",
+  "error": "Error: You are not allowed to update this user\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:141:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:20)"
+}
+2026-04-13 16:03:13 [INFO]: PATCH /api/v1/userAuth/complete-profile - 500 - 108ms 
+2026-04-13 16:03:22 [ERROR]: [500] You are not allowed to update this user {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "PATCH",
+  "error": "Error: You are not allowed to update this user\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:141:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:20)"
+}
+2026-04-13 16:03:22 [INFO]: PATCH /api/v1/userAuth/complete-profile - 500 - 97ms 
+2026-04-13 16:03:57 [ERROR]: [500] You are not allowed to update this user {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "PATCH",
+  "error": "Error: You are not allowed to update this user\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:141:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:20)"
+}
+2026-04-13 16:03:57 [INFO]: PATCH /api/v1/userAuth/complete-profile - 500 - 112ms 
+2026-04-13 16:05:53 [ERROR]: [500] You are not allowed to update this user {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "PATCH",
+  "error": "Error: You are not allowed to update this user\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:141:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:20)"
+}
+2026-04-13 16:05:53 [INFO]: PATCH /api/v1/userAuth/complete-profile - 500 - 115ms 
+2026-04-13 16:09:17 [INFO]: PATCH /api/v1/userAuth/send-otp - 404 - 1ms 
+2026-04-13 16:09:34 [INFO]: POST /send-otp - 200 - 2ms 
+2026-04-13 16:09:56 [INFO]: POST /verify-otp - 200 - 14ms 
