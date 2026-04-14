@@ -87,20 +87,41 @@ export const verifyOTP = async (phone, otp) => {
 
 const validatePassword = (password) => {
   const strongPasswordRegex =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
 
   if (!strongPasswordRegex.test(password)) {
     throw new Error(
-      "Password must be at least 8 characters and include uppercase, lowercase, number, and special character"
+      "Password must be at least 6 characters and include uppercase, lowercase, number, and special character"
     );
   }
 };
+
+// phone number validation ko laghi 
+
+export function isValidNepaliPhoneNumber(phone) {
+  if (typeof phone !== "string") return false;
+
+  const normalized = phone.replace(/[\s-]/g, "");
+  const local = normalized.replace(/^(?:\+?977)/, "");
+
+  if (!/^\d{10}$/.test(local)) return false;
+
+  const prefix = local.slice(0, 2);
+
+  return prefix === "97" || prefix === "98";
+}
 
 export const completeProfile = async (data) => {
   try {
     const { phone, fullname, password, otp } = data;
 
     if (!phone) throw new Error("Phone is required");
+
+    //CB and fallback 
+      if (!isValidNepaliPhoneNumber(phone)) {
+      throw new Error("Invalid Nepali phone number");
+    }
+
 
     if (!otp) {
       if (!fullname || fullname.trim().length < 3) {
@@ -111,8 +132,8 @@ export const completeProfile = async (data) => {
         throw new Error("Password is required");
       }
 
-      // optional password validation
-      // validatePassword(password);
+   
+      validatePassword(password);
 
       const generatedOtp = Math.floor(100000 + Math.random() * 900000).toString();
 
@@ -195,62 +216,15 @@ export const completeProfile = async (data) => {
   }
 };
 
-// export const completeProfile = async (data) => {
-//   try {
-//     const { userId, fullname, password } = data;
-
-
-//     if (!userId) throw new Error("User ID is required");
-//     if (!fullname || fullname.trim().length < 3) {
-//       throw new Error("Full name must be at least 3 characters");
-//     }
-
-//     const updateData = {
-//       fullname: fullname.trim(),
-//     };
-
-
-//     if (password) {
-//       // validatePassword(password);
-
-//       const hashedPassword = await bcrypt.hash(password, 10);
-//       updateData.password = hashedPassword;
-//     }
-
-
-//     const response = await axios.patch(
-//       `${USER_SERVICE_URL}/${userId}`,
-//       updateData,
-//       // {
-//       //   headers: {
-//       //     Authorization: `Bearer ${token}`,
-//       //   },
-//       // }
-//     );
-
-//     return {
-//       success: true,
-//       user: response.data.data,
-//     };
-
-//   } catch (error) {
-
-//     if (error.response) {
-
-//       throw new Error(
-//         error.response.data?.message || "User service error"
-//       );
-//     }
-
-//     throw new Error(error.message || "Something went wrong");
-//   }
-// };
-
 
 
 export const loginUser = async ({ phone, password }) => {
   if (!phone || !password)
     throw new Error("phoneNumber and password required");
+
+    if (!isValidNepaliPhoneNumber(phone)) {
+    throw new Error("Invalid Nepali phone number");
+  }
 
   console.log("password:", password)
 

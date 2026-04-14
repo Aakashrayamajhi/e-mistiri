@@ -769,3 +769,133 @@
 2026-04-14 12:49:54 [INFO]: POST /complete-profile - 200 - 107ms 
 2026-04-14 12:52:48 [INFO]: POST /complete-profile - 200 - 7ms 
 2026-04-14 12:53:19 [INFO]: POST /complete-profile - 200 - 115ms 
+2026-04-14 13:16:12 [ERROR]: [500] Phone is required {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "POST",
+  "error": "Error: Phone is required\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:194:11)\n    at completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:38)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:291:5)"
+}
+2026-04-14 13:16:12 [INFO]: POST /api/v1/userAuth/complete-profile - 500 - 24ms 
+2026-04-14 13:16:46 [ERROR]: [500] Password must be at least 8 characters and include uppercase, lowercase, number, and special character {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "POST",
+  "error": "Error: Password must be at least 8 characters and include uppercase, lowercase, number, and special character\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:194:11)\n    at completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:38)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:291:5)"
+}
+2026-04-14 13:16:46 [INFO]: POST /api/v1/userAuth/complete-profile - 500 - 3ms 
+2026-04-14 13:17:08 [ERROR]: [500] Password must be at least 8 characters and include uppercase, lowercase, number, and special character {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "POST",
+  "error": "Error: Password must be at least 8 characters and include uppercase, lowercase, number, and special character\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:194:11)\n    at completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:38)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:291:5)"
+}
+2026-04-14 13:17:08 [INFO]: POST /api/v1/userAuth/complete-profile - 500 - 32ms 
+2026-04-14 13:25:10 [ERROR]: [500] Invalid Nepali phone number {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "POST",
+  "error": "Error: Invalid Nepali phone number\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:215:11)\n    at completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:38)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:291:5)"
+}
+2026-04-14 13:25:10 [INFO]: POST /api/v1/userAuth/complete-profile - 500 - 15ms 
+2026-04-14 13:25:24 [ERROR]: [500] Password must be at least 8 characters and include uppercase, lowercase, number, and special character {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "POST",
+  "error": "Error: Password must be at least 8 characters and include uppercase, lowercase, number, and special character\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:215:11)\n    at completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:38)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:291:5)"
+}
+2026-04-14 13:25:24 [INFO]: POST /api/v1/userAuth/complete-profile - 500 - 3ms 
+2026-04-14 13:25:40 [ERROR]: [500] Password must be at least 8 characters and include uppercase, lowercase, number, and special character {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "POST",
+  "error": "Error: Password must be at least 8 characters and include uppercase, lowercase, number, and special character\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:215:11)\n    at completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:38)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:291:5)"
+}
+2026-04-14 13:25:40 [INFO]: POST /api/v1/userAuth/complete-profile - 500 - 2ms 
+2026-04-14 13:26:06 [ERROR]: [500] Password must be at least 6 characters and include uppercase, lowercase, number, and special character {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "POST",
+  "error": "Error: Password must be at least 6 characters and include uppercase, lowercase, number, and special character\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:215:11)\n    at completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:38)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:291:5)"
+}
+2026-04-14 13:26:06 [INFO]: POST /api/v1/userAuth/complete-profile - 500 - 9ms 
+2026-04-14 13:28:08 [INFO]: POST /complete-profile - 200 - 9ms 
+2026-04-14 13:28:15 [ERROR]: [500] Password must be at least 6 characters {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "POST",
+  "error": "Error: Password must be at least 6 characters\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:231:11)\n    at completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:38)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:291:5)"
+}
+2026-04-14 13:28:15 [INFO]: POST /api/v1/userAuth/complete-profile - 500 - 3ms 
+2026-04-14 13:28:58 [ERROR]: [500] Password should include a number or special character for better security {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "POST",
+  "error": "Error: Password should include a number or special character for better security\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:231:11)\n    at completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:38)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:291:5)"
+}
+2026-04-14 13:28:58 [INFO]: POST /api/v1/userAuth/complete-profile - 500 - 3ms 
+2026-04-14 13:29:18 [INFO]: POST /complete-profile - 200 - 3ms 
+2026-04-14 13:29:44 [ERROR]: [500] E11000 duplicate key error collection: e-mistiri.users index: fullname_1 dup key: { fullname: "testing" } {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "POST",
+  "error": "Error: E11000 duplicate key error collection: e-mistiri.users index: fullname_1 dup key: { fullname: \"testing\" }\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:228:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:20)"
+}
+2026-04-14 13:29:44 [INFO]: POST /api/v1/userAuth/complete-profile - 500 - 135ms 
+2026-04-14 13:30:41 [ERROR]: [500] E11000 duplicate key error collection: e-mistiri.users index: fullname_1 dup key: { fullname: "testing" } {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "POST",
+  "error": "Error: E11000 duplicate key error collection: e-mistiri.users index: fullname_1 dup key: { fullname: \"testing\" }\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:226:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:20)"
+}
+2026-04-14 13:30:41 [INFO]: POST /api/v1/userAuth/complete-profile - 500 - 184ms 
+2026-04-14 13:31:01 [INFO]: POST /complete-profile - 200 - 3ms 
+2026-04-14 13:31:21 [ERROR]: [500] data and salt arguments required {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "POST",
+  "error": "Error: data and salt arguments required\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:229:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:20)"
+}
+2026-04-14 13:31:21 [INFO]: POST /api/v1/userAuth/complete-profile - 500 - 5ms 
+2026-04-14 13:32:31 [ERROR]: [500] Invalid signup session: password missing {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "POST",
+  "error": "Error: Invalid signup session: password missing\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:233:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:20)"
+}
+2026-04-14 13:32:31 [INFO]: POST /api/v1/userAuth/complete-profile - 500 - 14ms 
+2026-04-14 13:32:47 [INFO]: POST /complete-profile - 200 - 2ms 
+2026-04-14 13:33:20 [ERROR]: [500] Invalid signup session: password missing {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "POST",
+  "error": "Error: Invalid signup session: password missing\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:233:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:20)"
+}
+2026-04-14 13:33:20 [INFO]: POST /api/v1/userAuth/complete-profile - 500 - 5ms 
+2026-04-14 13:36:53 [ERROR]: [500] Password must be at least 6 characters and include uppercase, lowercase, number, and special character {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "POST",
+  "error": "Error: Password must be at least 6 characters and include uppercase, lowercase, number, and special character\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:215:11)\n    at completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:38)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:291:5)"
+}
+2026-04-14 13:36:53 [INFO]: POST /api/v1/userAuth/complete-profile - 500 - 13ms 
+2026-04-14 13:37:21 [INFO]: POST /complete-profile - 200 - 3ms 
+2026-04-14 13:37:42 [ERROR]: [500] E11000 duplicate key error collection: e-mistiri.users index: fullname_1 dup key: { fullname: "testing" } {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "POST",
+  "error": "Error: E11000 duplicate key error collection: e-mistiri.users index: fullname_1 dup key: { fullname: \"testing\" }\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:212:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:20)"
+}
+2026-04-14 13:37:42 [INFO]: POST /api/v1/userAuth/complete-profile - 500 - 123ms 
+2026-04-14 13:38:26 [ERROR]: [500] E11000 duplicate key error collection: e-mistiri.users index: fullname_1 dup key: { fullname: "testing" } {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "POST",
+  "error": "Error: E11000 duplicate key error collection: e-mistiri.users index: fullname_1 dup key: { fullname: \"testing\" }\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:212:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:20)"
+}
+2026-04-14 13:38:26 [INFO]: POST /api/v1/userAuth/complete-profile - 500 - 374ms 
+2026-04-14 13:38:49 [INFO]: POST /complete-profile - 200 - 3ms 
+2026-04-14 13:39:20 [ERROR]: [500] E11000 duplicate key error collection: e-mistiri.users index: fullname_1 dup key: { fullname: "testing" } {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "POST",
+  "error": "Error: E11000 duplicate key error collection: e-mistiri.users index: fullname_1 dup key: { fullname: \"testing\" }\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:212:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:20)"
+}
+2026-04-14 13:39:20 [INFO]: POST /api/v1/userAuth/complete-profile - 500 - 142ms 
+2026-04-14 13:40:36 [ERROR]: [500] E11000 duplicate key error collection: e-mistiri.users index: fullname_1 dup key: { fullname: "testing" } {
+  "path": "/api/v1/userAuth/complete-profile",
+  "method": "POST",
+  "error": "Error: E11000 duplicate key error collection: e-mistiri.users index: fullname_1 dup key: { fullname: \"testing\" }\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:212:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:20)"
+}
+2026-04-14 13:40:36 [INFO]: POST /api/v1/userAuth/complete-profile - 500 - 258ms 
+2026-04-14 13:41:11 [INFO]: POST /complete-profile - 200 - 2ms 
+2026-04-14 13:41:29 [INFO]: POST /complete-profile - 200 - 154ms 
+2026-04-14 13:41:54 [INFO]: POST /login - 200 - 117ms 
+2026-04-14 13:42:02 [ERROR]: [500] Invalid password {
+  "path": "/api/v1/userAuth/login",
+  "method": "POST",
+  "error": "Error: Invalid password\n    at Module.loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:244:21)\n    at async loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:71:20)"
+}
+2026-04-14 13:42:02 [INFO]: POST /api/v1/userAuth/login - 500 - 121ms 
+2026-04-14 13:42:08 [INFO]: POST /login - 200 - 106ms 
