@@ -15,23 +15,21 @@ const userSchema = new mongoose.Schema(
       default: false,
     },
 
-    name: {
-      type: String,
-      trim: true,
-    },
 
-    username: {
+    fullname: {
       type: String,
       unique: true,
       sparse: true,
       trim: true,
       lowercase: true,
+      required : true
   
     },
 
     password: {
       type: String,
       sparse: true,
+      required : true
     
     },
 

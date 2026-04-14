@@ -96,56 +96,155 @@ const validatePassword = (password) => {
   }
 };
 
-export const completeProfile = async (data, token) => {
+export const completeProfile = async (data) => {
   try {
-    const { userId, fullname, password } = data;
+    const { phone, fullname, password, otp } = data;
 
-    
-    if (!userId) throw new Error("User ID is required");
-    if (!fullname || fullname.trim().length < 3) {
-      throw new Error("Full name must be at least 3 characters");
-    }
+    if (!phone) throw new Error("Phone is required");
 
-    const updateData = {
-      fullname: fullname.trim(),
-    };
+    if (!otp) {
+      if (!fullname || fullname.trim().length < 3) {
+        throw new Error("Full name must be at least 3 characters");
+      }
 
-   
-    if (password) {
+      if (!password) {
+        throw new Error("Password is required");
+      }
+
+      // optional password validation
       // validatePassword(password);
 
-      const hashedPassword = await bcrypt.hash(password, 10);
-      updateData.password = hashedPassword;
+      const generatedOtp = Math.floor(100000 + Math.random() * 900000).toString();
+
+
+      await redis.set(
+        `signup:${phone}`,
+        JSON.stringify({
+          phone,
+          fullname,
+          password,
+          otp: generatedOtp
+        }),
+        "EX",
+        300
+      );
+
+      console.log("OTP:", generatedOtp);
+
+
+      return {
+        success: true,
+        message: "OTP sent to phone",
+      };
     }
 
-   
-    const response = await axios.patch(
-      `${USER_SERVICE_URL}/${userId}`,
-      updateData,
+    // ================= VERIFY OTP =================
+    const storedData = await redis.get(`signup:${phone}`);
+
+    if (!storedData) throw new Error("OTP expired or not requested");
+
+    const parsedData = JSON.parse(storedData);
+
+    if (parsedData.otp !== otp) {
+      throw new Error("Invalid OTP");
+    }
+
+
+    const hashedPassword = await bcrypt.hash(parsedData.password, 10);
+
+    const response = await axios.post(`${USER_SERVICE_URL}`, {
+      phone: parsedData.phone,
+      fullname: parsedData.fullname,
+      password: hashedPassword,
+    });
+
+    const user = response.data.data.data;
+    console.log("user:", user)
+
+
+    await redis.del(`signup:${phone}`);
+
+
+    const token = jwt.sign(
       {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
+        id: user._id,
+        role: user.role,
+      },
+      JWT_SECRET,
+      {
+        expiresIn: JWT_EXPIRES_IN
       }
     );
 
+    console.log("user id in token:" , user._id)
     return {
       success: true,
-      user: response.data.data,
+      message: "Signup successful",
+      data: {
+        token,
+        user,
+      },
     };
 
   } catch (error) {
- 
     if (error.response) {
-  
-      throw new Error(
-        error.response.data?.message || "User service error"
-      );
+      throw new Error(error.response.data?.message || "User service error");
     }
 
     throw new Error(error.message || "Something went wrong");
   }
 };
+
+// export const completeProfile = async (data) => {
+//   try {
+//     const { userId, fullname, password } = data;
+
+
+//     if (!userId) throw new Error("User ID is required");
+//     if (!fullname || fullname.trim().length < 3) {
+//       throw new Error("Full name must be at least 3 characters");
+//     }
+
+//     const updateData = {
+//       fullname: fullname.trim(),
+//     };
+
+
+//     if (password) {
+//       // validatePassword(password);
+
+//       const hashedPassword = await bcrypt.hash(password, 10);
+//       updateData.password = hashedPassword;
+//     }
+
+
+//     const response = await axios.patch(
+//       `${USER_SERVICE_URL}/${userId}`,
+//       updateData,
+//       // {
+//       //   headers: {
+//       //     Authorization: `Bearer ${token}`,
+//       //   },
+//       // }
+//     );
+
+//     return {
+//       success: true,
+//       user: response.data.data,
+//     };
+
+//   } catch (error) {
+
+//     if (error.response) {
+
+//       throw new Error(
+//         error.response.data?.message || "User service error"
+//       );
+//     }
+
+//     throw new Error(error.message || "Something went wrong");
+//   }
+// };
 
 
 

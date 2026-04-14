@@ -38,15 +38,31 @@ export const completeProfile = async (req, res, next) => {
     const result = await authService.completeProfile(req.body);
 
     res.status(200).json({
-      success: true,
-      message: "Profile completed",
-      data: result,
+      success: result.success,
+      message: result.message, 
+      data: result.data || null,
     });
 
   } catch (error) {
     next(error); 
   }
 };
+
+
+// export const completeProfile = async (req, res, next) => {
+//   try {
+//     const result = await authService.completeProfile(req.body);
+
+//     res.status(200).json({
+//       success: true,
+//       message: "Profile completed",
+//       data: result,
+//     });
+
+//   } catch (error) {
+//     next(error); 
+//   }
+// };
 
 export const loginUser = async (req, res, next) => {
   try {

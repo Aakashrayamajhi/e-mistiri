@@ -7,7 +7,7 @@ userAuthRouter.post("/send-otp", userAuthController.sendOTP);
 
 userAuthRouter.post("/verify-otp", userAuthController.verifyOTP);
 
-userAuthRouter.patch("/complete-profile", userAuthController.completeProfile);
+userAuthRouter.post("/complete-profile", userAuthController.completeProfile);
 
 userAuthRouter.post("/login", userAuthController.loginUser);
 

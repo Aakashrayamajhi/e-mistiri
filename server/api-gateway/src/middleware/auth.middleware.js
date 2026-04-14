@@ -9,9 +9,9 @@ export const authMiddleware = (req, res, next) => {
 
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
       logger.warn('Missing or invalid authorization header', { path: req.path })
-      return res.status(401).json({ 
+      return res.status(401).json({
         success: false,
-        message: 'Unauthorized - Missing or invalid token' 
+        message: 'Unauthorized - Missing or invalid token'
       })
     }
 
@@ -21,8 +21,8 @@ export const authMiddleware = (req, res, next) => {
       const decoded = jwt.verify(token, JWT_SECRET)
 
       req.user = {
-        id: decoded.id,
-        role: decoded.role
+        id: decoded.id || decoded._id || decoded.userId,
+        role: decoded.role || "user"
       }
       console.log("docodded user:", req.user)
 
@@ -32,29 +32,29 @@ export const authMiddleware = (req, res, next) => {
       logger.warn(`JWT verification failed: ${error.message}`, { path: req.path })
 
       if (error.name === 'TokenExpiredError') {
-        return res.status(401).json({ 
+        return res.status(401).json({
           success: false,
-          message: 'Token expired - Please login again' 
+          message: 'Token expired - Please login again'
         })
       }
 
       if (error.name === 'JsonWebTokenError') {
-        return res.status(403).json({ 
+        return res.status(403).json({
           success: false,
-          message: 'Invalid token' 
+          message: 'Invalid token'
         })
       }
 
-      return res.status(403).json({ 
+      return res.status(403).json({
         success: false,
-        message: 'Authentication failed' 
+        message: 'Authentication failed'
       })
     }
   } catch (error) {
     logger.error('Auth middleware error', { error: error.message })
-    res.status(500).json({ 
+    res.status(500).json({
       success: false,
-      message: 'Internal server error' 
+      message: 'Internal server error'
     })
   }
 }
