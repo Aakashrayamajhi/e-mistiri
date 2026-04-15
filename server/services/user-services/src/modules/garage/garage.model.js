@@ -2,9 +2,24 @@ import mongoose from "mongoose";
 
 const garageSchema = new mongoose.Schema(
   {
-    name: {
+
+    phone: {
       type: String,
+      required: true,
+      unique: true,
       trim: true
+    },
+
+    fullname: {
+      type: String,
+      trim: true,
+      lowercase : true,
+      required: true
+    },
+
+    password: {
+      type: String,
+      required: true
     },
 
     ownerName: {
@@ -17,27 +32,17 @@ const garageSchema = new mongoose.Schema(
       default: "garage",
     },
 
-
-    phone: {
-      type: String,
-      required: true,
-      unique: true
-    },
-
     email: {
       type: String,
       lowercase: true,
       trim: true,
       unique: true,
-      sparse: true
-    },
-
-    password: {
-      type: String,
+      // sparse: true
     },
 
     address: {
       type: String,
+      trim : true
     },
 
     city: String,

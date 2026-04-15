@@ -8,6 +8,8 @@ garageAuthRouter.post("/send-otp", garageAuthController.sendOTP);
 
 garageAuthRouter.post("/verify-otp", garageAuthController.verifyOTP);
 
+garageAuthRouter.post("/signup", garageAuthController.completeProfile);
+
 garageAuthRouter.post("/login", garageAuthController.loginGarage);
 
 export default garageAuthRouter;

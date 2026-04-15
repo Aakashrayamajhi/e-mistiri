@@ -22,7 +22,7 @@ export const getAllGarages = async () => {
 
 export const updateGarage = async (id, data) => {
   return await Garage.findByIdAndUpdate(id, data, {
-    new: true,
+  returnDocument : "after"
   });
 };
 
@@ -30,11 +30,9 @@ export const deleteGarage = async (id) => {
   return await Garage.findByIdAndDelete(id);
 };
 
-
 export const getApprovedGarages = async () => {
   return await Garage.find({ status: "approved" });
 };
-
 
 export const getNearbyGarages = async (lng, lat) => {
   return await Garage.find({
@@ -50,7 +48,6 @@ export const getNearbyGarages = async (lng, lat) => {
   });
 };
 
-
 export const approveGarage = async (id) => {
   return await Garage.findByIdAndUpdate(
     id,
@@ -60,7 +57,6 @@ export const approveGarage = async (id) => {
     },{returnDocument: 'after'}
   );
 };
-
 
 export const rejectGarage = async (id) => {
   return await Garage.findByIdAndUpdate(

@@ -33,6 +33,21 @@ export const verifyOTP = async (req, res, next) => {
   }
 };
 
+export const completeProfile = async (req, res, next) => {
+  try {
+    const result = await garageAuthService.completeProfile(req.body);
+
+    res.status(200).json({
+      success: result.success,
+      message: result.message, 
+      data: result.data || null,
+    });
+
+  } catch (error) {
+    next(error); 
+  }
+};
+
 
 export const loginGarage = async (req, res, next) => {
   try {

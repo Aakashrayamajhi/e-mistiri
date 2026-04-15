@@ -4,12 +4,14 @@ import upload from "../../middleware/multer.middleware.js";
 
 const garageRouter = express.Router();
 
-garageRouter.post("/register", garageController.registerGarage);
+garageRouter.post("/", garageController.registerGarage);
+
+garageRouter.get("/phone/:phone", garageController.getGarageByPhone);
 
 garageRouter.get("/", garageController.getAllGarages)
 garageRouter.get("/approved", garageController.getGarages);
 garageRouter.get("/nearby", garageController.getNearbyGarages);
-garageRouter.patch("/me", garageController.updateGarage);
+garageRouter.patch("/update/:id", garageController.updateGarage);
 garageRouter.get("/:id", garageController.getGarage);
 garageRouter.delete("/:id", garageController.deleteGarage);
 

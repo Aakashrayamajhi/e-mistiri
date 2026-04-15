@@ -19,7 +19,6 @@ export default createProxyMiddleware({
       if (req.user && req.user.id) {
         proxyReq.setHeader('x-user-id', req.user.id)
         proxyReq.setHeader('x-user-role', req.user.role)
-       
         
       }
     }

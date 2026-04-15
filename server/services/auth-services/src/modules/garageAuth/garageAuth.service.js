@@ -16,115 +16,255 @@ dotenv.config({
 });
 
 const GARAGE_SERVICE_URL =
-  process.env.GARAGE_SERVICE_URL || "http://localhost:3000/api/v1/garage";
+  process.env.GARAGE_SERVICE_URL || "http://localhost:3002/api/v1/garage";
 
 const JWT_SECRET = process.env.JWT_SECRET;
 const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || "1d";
 
-const otpKey = (phone) => `garage:otp:${phone}`;
 
-// ================= SEND OTP =================
-export const sendGarageOTP = async (phone) => {
-  if (!phone) throw new Error("Phone required");
+const validatePassword = (password) => {
+  const strongPasswordRegex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
 
-  const otp = Math.floor(100000 + Math.random() * 900000).toString();
-
-  await redis.set(otpKey(phone), otp, "EX", 300);
-
-  await sendSMS(phone, `Your Garage OTP is ${otp}`);
-  console.log("garage otp:", otp);
-
-  return { success: true, message: "OTP sent" };
+  if (!strongPasswordRegex.test(password)) {
+    throw new Error(
+      "Password must be at least 6 characters and include uppercase, lowercase, number, and special character"
+    );
+  }
 };
 
-export const verifyGarageOTP = async (phone, otp) => {
-  const storedOtp = await redis.get(otpKey(phone));
+// phone number validation ko laghi 
 
-  if (!storedOtp) throw new Error("OTP expired");
-  if (storedOtp !== otp) throw new Error("Invalid OTP");
+export function isValidNepaliPhoneNumber(phone) {
+  if (typeof phone !== "string") return false;
 
-  await redis.del(otpKey(phone));
+  const normalized = phone.replace(/[\s-]/g, "");
+  const local = normalized.replace(/^(?:\+?977)/, "");
 
-  let garage;
+  if (!/^\d{10}$/.test(local)) return false;
 
+  const prefix = local.slice(0, 2);
+
+  return prefix === "97" || prefix === "98";
+}
+
+//garage ko signup logic
+
+export const completeProfile = async (data) => {
   try {
 
-    const response = await axios.post(`${GARAGE_SERVICE_URL}/register`, {
-      phone
-    });
+    console.log("garage complete profile module hit")
+    const { phone, fullname, password, otp } = data;
 
-    console.log(" REGISTER SUCCESS:", response.data);
-    garage = response.data;
+    if (!phone) throw new Error("Phone is required");
 
-  } catch (err) {
-    console.log(" AXIOS ERROR STATUS:", err.response?.status);
-    console.log(" AXIOS ERROR DATA:", err.response?.data);
-
-    if (err.response?.data?.includes("Garage already exists")) {
-      console.log("Garage exists → logging in");
-
-      const loginResponse = await axios.post(`${GARAGE_SERVICE_URL}/login`, {
-        phone
-      });
-
-      console.log("LOGIN SUCCESS:", loginResponse.data);
-      garage = loginResponse.data;
-
-    } else {
-      throw new Error("Garage service error");
+    //CB and fallback 
+      if (!isValidNepaliPhoneNumber(phone)) {
+      throw new Error("Invalid Nepali phone number");
     }
+
+
+    if (!otp) {
+    if (!phone) {
+        const error = new Error("Phone is required");
+        error.status = 400;
+        throw error;
+      }
+
+      if (!fullname && !password) {
+        const error = new Error("All feilds are required")
+        error.status = 400;
+        throw error;
+      }
+
+      if (!fullname) {
+        const error = new Error("fullname missing")
+        error.status = 400
+        throw error
+      }
+
+      if (!password) {
+        const error = new Error("Password is required");
+        error.status = 400;
+        throw error;
+      }
+
+      if (fullname.trim().length < 3) {
+        const error = new Error("Fullname must be at least 3 characters");
+        error.status = 400;
+        throw error;
+      }
+
+
+   
+      validatePassword(password);
+
+      const generatedOtp = Math.floor(100000 + Math.random() * 900000).toString();
+
+
+      await redis.set(
+        `garagesignup:${phone}`,
+        JSON.stringify({
+          phone,
+          fullname,
+          password,
+          otp: generatedOtp
+        }),
+        "EX",
+        300
+      );
+
+      console.log("OTP:", generatedOtp);
+
+
+      return {
+        success: true,
+        message: "OTP sent to phone",
+      };
+    }
+
+    // ================= VERIFY OTP =================
+    const storedData = await redis.get(`garagesignup:${phone}`);
+
+    if (!storedData) throw new Error("OTP expired or not requested");
+
+    const parsedData = JSON.parse(storedData);
+
+    if (parsedData.otp !== otp) {
+      throw new Error("Invalid OTP");
+    }
+
+
+    const hashedPassword = await bcrypt.hash(parsedData.password, 10);
+
+    const response = await axios.post(`${GARAGE_SERVICE_URL}`, {
+      phone: parsedData.phone,
+      fullname: parsedData.fullname,
+      password: hashedPassword,
+    });
+    
+    console.log("axios hit garage.services.js")
+    const garage = response.data.data;
+    console.log("garage:", garage)
+
+    await redis.del(`garagesignup:${phone}`);
+
+    const token = jwt.sign(
+      {
+        id: garage._id,
+        role: garage.role,
+      },
+      JWT_SECRET,
+      {
+        expiresIn: JWT_EXPIRES_IN
+      }
+    );
+
+    console.log("garage id in token:" , garage._id)
+    return {
+      success: true,
+      message: "Signup successful",
+      data: {
+        token,
+        garage,
+      },
+    };
+
+  } catch (error) {
+    if (error.response) {
+      throw new Error(error.response.data?.message || "garage service error");
+    }
+
+    throw new Error(error.message || "Something went wrong");
   }
-
-  
-  const token = jwt.sign(
-    { id: garage._id, role: "garage" },
-    JWT_SECRET,
-    { expiresIn: JWT_EXPIRES_IN }
-  );
-
-  return {
-    success: true,
-    message: "Verification completed",
-    token,
-    garage
-  };
 };
 
-// ================= LOGIN =================
+
+
 export const loginGarage = async ({ phone, password }) => {
   if (!phone || !password)
-    throw new Error("Phone and password required");
+    throw new Error("phoneNumber and password required");
+
+    if (!isValidNepaliPhoneNumber(phone)) {
+    throw new Error("Invalid Nepali phone number");
+  }
+
   console.log("password:", password)
 
   let garage;
 
   try {
     const response = await axios.get(
-      `${GARAGE_SERVICE_URL}/approved`
+      `${GARAGE_SERVICE_URL}/phone/${phone}`
     );
     garage = response.data.data;
-    console.log("garage:", garage)
+    console.log("l-u:", garage)
   } catch {
-    throw new Error("Garage not found");
+    throw new Error("garage not found");
   }
 
-  if (garage.status !== "approved") {
-    throw new Error("Garage not approved yet");
-  }
+  const match = await bcrypt.compare(password, garage.password);
+  if (!match) throw new Error("Invalid password");
 
-  // const match = await bcrypt.compare(password, garage.password);
-  // if (!match) throw new Error("Invalid password");
+  const token = jwt.sign(
+    {
+      id: garage._id,
+      role: garage.role,
 
-  const token = jwt.sign({ id: garage._id, role: "garage" }, JWT_SECRET, {
-    expiresIn: JWT_EXPIRES_IN
-  });
-
+    },
+    JWT_SECRET,
+    {
+      expiresIn: JWT_EXPIRES_IN
+    }
+  );
   return {
     token,
     garage: {
       id: garage._id,
-      name: garage.name,
+      garagename: garage.name,
       email: garage.email
     }
   };
 };
+
+
+
+
+// // ================= LOGIN =================
+// export const loginGarage = async ({ phone, password }) => {
+//   if (!phone || !password)
+//     throw new Error("Phone and password required");
+//   console.log("password:", password)
+
+//   let garage;
+  
+//   try {
+//     const response = await axios.get(
+//       `${GARAGE_SERVICE_URL}/approved`
+//     );
+//     garage = response.data.data;
+//     console.log("garage:", garage)
+//   } catch {
+//     throw new Error("Garage not found");
+//   }
+
+//   if (garage.status !== "approved") {
+//     throw new Error("Garage not approved yet");
+//   }
+
+//   // const match = await bcrypt.compare(password, garage.password);
+//   // if (!match) throw new Error("Invalid password");
+
+//   const token = jwt.sign({ id: garage._id, role: "garage" }, JWT_SECRET, {
+//     expiresIn: JWT_EXPIRES_IN
+//   });
+
+//   return {
+//     token,
+//     garage: {
+//       id: garage._id,
+//       name: garage.name,
+//       email: garage.email
+//     }
+//   };
+// };

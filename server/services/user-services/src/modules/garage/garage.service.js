@@ -20,7 +20,6 @@ export const findGarageByEmail = async (email) => {
   return await garageRepository.findGarageByEmail(email);
 };
 
-
 export const getGarageById = async (id) => {
   return await garageRepository.getGarageById(id);
 };

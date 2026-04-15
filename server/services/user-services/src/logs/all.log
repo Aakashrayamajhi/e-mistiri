@@ -423,3 +423,100 @@
 2026-04-14 13:41:54 [INFO]: GET /phone/9812972024 - 200 - 7ms 
 2026-04-14 13:42:02 [INFO]: GET /phone/9812972024 - 200 - 4ms 
 2026-04-14 13:42:08 [INFO]: GET /phone/9812972024 - 200 - 5ms 
+2026-04-15 11:15:03 [INFO]: POST / - 400 - 49ms 
+2026-04-15 11:16:12 [INFO]: POST / - 201 - 19ms 
+2026-04-15 11:16:50 [INFO]: GET /phone/9811111111 - 200 - 6ms 
+2026-04-15 11:17:09 [INFO]: GET /phone/9811111111 - 200 - 4ms 
+2026-04-15 11:18:40 [INFO]: GET /9811111111 - 500 - 5ms 
+2026-04-15 11:19:18 [INFO]: GET /phone/9811111111 - 200 - 6ms 
+2026-04-15 11:19:41 [INFO]: GET /phone/9811111111 - 200 - 5ms 
+2026-04-15 11:23:18 [INFO]: POST / - 400 - 10ms 
+2026-04-15 11:25:58 [INFO]: POST / - 400 - 50ms 
+2026-04-15 11:37:31 [INFO]: POST / - 201 - 16ms 
+2026-04-15 11:48:39 [INFO]: POST / - 201 - 55ms 
+2026-04-15 11:49:52 [INFO]: POST / - 201 - 9ms 
+2026-04-15 12:02:28 [INFO]: POST /register - 201 - 59ms 
+2026-04-15 13:38:04 [INFO]: POST / - 400 - 21ms 
+2026-04-15 13:38:34 [INFO]: POST / - 201 - 18ms 
+2026-04-15 13:56:04 [INFO]: POST / - 400 - 4ms 
+2026-04-15 14:00:02 [INFO]: GET / - 200 - 25ms 
+2026-04-15 14:01:11 [ERROR]: [400] Garage already exists with this phone {
+  "path": "/api/v1/garage/",
+  "method": "POST",
+  "error": "Error: Garage already exists with this phone\n    at Module.createGarage (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/user-services/src/modules/garage/garage.service.js:7:19)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async registerGarage (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/user-services/src/modules/garage/garage.controller.js:6:20)"
+}
+2026-04-15 14:01:11 [INFO]: POST /api/v1/garage/ - 400 - 8ms 
+2026-04-15 14:01:30 [ERROR]: [500] E11000 duplicate key error collection: e-mistiri.garages index: email_1 dup key: { email: null } {
+  "path": "/api/v1/garage/",
+  "method": "POST",
+  "error": "MongoServerError: E11000 duplicate key error collection: e-mistiri.garages index: email_1 dup key: { email: null }\n    at InsertOneOperation.handleOk (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongodb\\lib\\operations\\insert.js:51:19)\n    at tryOperation (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongodb\\lib\\operations\\execute_operation.js:217:34)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async executeOperation (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongodb\\lib\\operations\\execute_operation.js:80:16)\n    at async Collection.insertOne (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongodb\\lib\\collection.js:154:16)\n    at async model.$__save (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\model.js:425:16)\n    at async model.save (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\model.js:664:5)\n    at async model.create (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\model.js:2751:5)\n    at async Module.createGarage (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/user-services/src/modules/garage/garage.repository.js:12:10)\n    at async Module.createGarage (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/user-services/src/modules/garage/garage.service.js:12:10)"
+}
+2026-04-15 14:01:30 [INFO]: POST /api/v1/garage/ - 500 - 11ms 
+2026-04-15 15:39:25 [INFO]: GET / - 200 - 10ms 
+2026-04-15 15:39:48 [INFO]: GET / - 200 - 7ms 
+2026-04-15 15:40:53 [ERROR]: [500] E11000 duplicate key error collection: e-mistiri.garages index: email_1 dup key: { email: null } {
+  "path": "/api/v1/garage",
+  "method": "POST",
+  "error": "MongoServerError: E11000 duplicate key error collection: e-mistiri.garages index: email_1 dup key: { email: null }\n    at InsertOneOperation.handleOk (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongodb\\lib\\operations\\insert.js:51:19)\n    at tryOperation (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongodb\\lib\\operations\\execute_operation.js:217:34)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async executeOperation (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongodb\\lib\\operations\\execute_operation.js:80:16)\n    at async Collection.insertOne (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongodb\\lib\\collection.js:154:16)\n    at async model.$__save (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\model.js:425:16)\n    at async model.save (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\model.js:664:5)\n    at async model.create (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\model.js:2751:5)\n    at async Module.createGarage (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/user-services/src/modules/garage/garage.repository.js:12:10)\n    at async Module.createGarage (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/user-services/src/modules/garage/garage.service.js:12:10)"
+}
+2026-04-15 15:40:53 [INFO]: POST /api/v1/garage - 500 - 9ms 
+2026-04-15 15:41:58 [INFO]: POST / - 201 - 5ms 
+2026-04-15 15:42:27 [INFO]: GET /api/v1/garage/phone/9811111115 - 404 - 1ms 
+2026-04-15 15:42:40 [INFO]: GET /api/v1/garage/phone/9811111115 - 404 - 1ms 
+2026-04-15 15:44:01 [INFO]: GET /api/v1/garage/phone/9811111115 - 404 - 1ms 
+2026-04-15 15:56:51 [INFO]: GET /phone/9811111115 - 500 - 14ms 
+2026-04-15 16:00:05 [INFO]: GET /phone/9811111115 - 500 - 15ms 
+2026-04-15 16:01:50 [INFO]: GET /phone/9811111115 - 500 - 3ms 
+2026-04-15 16:03:49 [INFO]: GET /phone/9811111115 - 200 - 46ms 
+2026-04-15 16:07:20 [INFO]: GET /phone/9811111115 - 200 - 59ms 
+2026-04-15 16:07:23 [INFO]: GET /phone/9811111115 - 200 - 7ms 
+2026-04-15 16:07:23 [INFO]: GET /phone/9811111115 - 200 - 6ms 
+2026-04-15 16:07:24 [INFO]: GET /phone/9811111115 - 200 - 6ms 
+2026-04-15 16:07:25 [INFO]: GET /phone/9811111115 - 200 - 6ms 
+2026-04-15 16:07:26 [INFO]: GET /phone/9811111115 - 200 - 6ms 
+2026-04-15 16:07:27 [INFO]: GET /phone/9811111115 - 200 - 5ms 
+2026-04-15 16:07:28 [INFO]: GET /phone/9811111115 - 200 - 6ms 
+2026-04-15 16:07:29 [INFO]: GET /phone/9811111115 - 200 - 8ms 
+2026-04-15 16:07:36 [INFO]: GET /phone/9811111115 - 200 - 8ms 
+2026-04-15 16:09:20 [INFO]: GET /phone/9811111115 - 200 - 4ms 
+2026-04-15 16:11:43 [INFO]: POST /api/v1/garage/update - 404 - 2ms 
+2026-04-15 16:11:54 [INFO]: PATCH /update - 200 - 23ms 
+2026-04-15 16:13:03 [INFO]: PATCH /update - 200 - 6ms 
+2026-04-15 16:16:03 [INFO]: PATCH /update - 200 - 40ms 
+2026-04-15 16:17:09 [INFO]: PATCH /update - 200 - 10ms 
+2026-04-15 16:18:56 [INFO]: PATCH /update - 403 - 42ms 
+2026-04-15 16:19:20 [INFO]: PATCH /update - 403 - 7ms 
+2026-04-15 16:19:59 [INFO]: PATCH /update - 403 - 17ms 
+2026-04-15 16:22:46 [INFO]: PATCH /update - 403 - 2ms 
+2026-04-15 16:30:53 [INFO]: PATCH /update - 403 - 18ms 
+2026-04-15 16:31:25 [INFO]: GET /phone/9811111115 - 200 - 39ms 
+2026-04-15 16:32:08 [INFO]: PATCH /update - 403 - 4ms 
+2026-04-15 16:32:53 [INFO]: PATCH /update - 403 - 12ms 
+2026-04-15 16:34:38 [INFO]: PATCH /api/v1/garage/update/69df60ea4e4d9fe8a85ef73b - 404 - 15ms 
+2026-04-15 16:35:02 [INFO]: PATCH /update/69df60ea4e4d9fe8a85ef73b - 500 - 65ms 
+2026-04-15 16:35:47 [INFO]: PATCH /update/69df60ea4e4d9fe8a85ef73b - 200 - 45ms 
+2026-04-15 16:36:19 [INFO]: PATCH /update/69df60ea4e4d9fe8a85ef73b - 200 - 8ms 
+2026-04-15 16:36:20 [INFO]: PATCH /update/69df60ea4e4d9fe8a85ef73b - 200 - 5ms 
+2026-04-15 16:36:23 [INFO]: PATCH /update/69df60ea4e4d9fe8a85ef73b - 200 - 17ms 
+2026-04-15 16:36:25 [INFO]: PATCH /update/69df60ea4e4d9fe8a85ef73b - 200 - 5ms 
+2026-04-15 16:36:26 [INFO]: PATCH /update/69df60ea4e4d9fe8a85ef73b - 200 - 5ms 
+2026-04-15 16:36:35 [INFO]: PATCH /update/69df60ea4e4d9fe8a85ef73b - 200 - 6ms 
+2026-04-15 16:36:36 [INFO]: PATCH /update/69df60ea4e4d9fe8a85ef73b - 200 - 5ms 
+2026-04-15 16:36:37 [INFO]: PATCH /update/69df60ea4e4d9fe8a85ef73b - 200 - 6ms 
+2026-04-15 16:36:44 [INFO]: PATCH /update/69df60ea4e4d9fe8a85ef73b - 200 - 6ms 
+2026-04-15 16:36:51 [INFO]: PATCH /update/69df60ea4e4d9fe8a85ef73b - 200 - 4ms 
+2026-04-15 16:36:52 [INFO]: PATCH /update/69df60ea4e4d9fe8a85ef73b - 200 - 12ms 
+2026-04-15 16:36:53 [INFO]: PATCH /update/69df60ea4e4d9fe8a85ef73b - 200 - 5ms 
+2026-04-15 16:36:54 [INFO]: PATCH /update/69df60ea4e4d9fe8a85ef73b - 200 - 4ms 
+2026-04-15 16:36:55 [INFO]: PATCH /update/69df60ea4e4d9fe8a85ef73b - 200 - 4ms 
+2026-04-15 16:36:56 [INFO]: PATCH /update/69df60ea4e4d9fe8a85ef73b - 200 - 4ms 
+2026-04-15 16:36:57 [INFO]: PATCH /update/69df60ea4e4d9fe8a85ef73b - 200 - 4ms 
+2026-04-15 16:36:57 [INFO]: PATCH /update/69df60ea4e4d9fe8a85ef73b - 200 - 3ms 
+2026-04-15 16:36:58 [INFO]: PATCH /update/69df60ea4e4d9fe8a85ef73b - 200 - 3ms 
+2026-04-15 16:36:59 [INFO]: PATCH /update/69df60ea4e4d9fe8a85ef73b - 200 - 3ms 
+2026-04-15 16:42:45 [INFO]: POST / - 400 - 13ms 
+2026-04-15 16:43:32 [INFO]: POST / - 400 - 4ms 
+2026-04-15 16:49:51 [INFO]: POST / - 201 - 12ms 
+2026-04-15 17:06:51 [INFO]: POST / - 400 - 36ms 
+2026-04-15 17:07:17 [INFO]: POST / - 400 - 20ms 
+2026-04-15 17:07:56 [INFO]: POST / - 201 - 15ms 

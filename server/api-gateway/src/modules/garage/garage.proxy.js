@@ -14,6 +14,13 @@ export default createProxyMiddleware({
       const target = SERVICES.GARAGE_SERVICE
       const fullurl = target + proxyReq.path
       console.log('Forwarding to:', fullurl)
+
+      console.log("Proxy req.user OF GARAGE:", req.user);
+      if (req.user && req.user.id) {
+        proxyReq.setHeader('x-user-id', req.user.id)
+        proxyReq.setHeader('x-user-role', req.user.role)
+        
+      }
     }
   }
 })

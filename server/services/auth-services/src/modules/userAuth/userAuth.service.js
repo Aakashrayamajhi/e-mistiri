@@ -8,16 +8,6 @@ import redis from "../../config/redis.config.js";
 
 import { sendSMS } from "../../utils/otp.service.js";
 
-import {
-  getUsername,
-  getEmail,
-  reserveUsername,
-  reserveEmail,
-  releaseUsername,
-  releaseEmail,
-  saveUserCache
-} from "../../utils/lookup.js";
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -31,59 +21,7 @@ const USER_SERVICE_URL =
 const JWT_SECRET = process.env.JWT_SECRET;
 const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || "1d";
 
-const otpKey = (phone) => `otp:${phone}`;
-
-
-// ================= SEND OTP =================
-
-export const sendOTP = async (phone) => {
-  if (!phone) throw new Error("Phone required");
-
-  const otp = Math.floor(100000 + Math.random() * 900000).toString();
-
-  await redis.set(otpKey(phone), otp, "EX", 200);
-
-  // await sendSMS(phone, `Your OTP is ${otp}`);
-  console.log("otp:", otp)
-
-  return { success: true, message: "OTP sent" };
-};
-
-
-// ================= VERIFY OTP =================
-
-export const verifyOTP = async (phone, otp) => {
-  const storedOtp = await redis.get(otpKey(phone));
-
-  if (!storedOtp) throw new Error("OTP expired");
-
-  if (storedOtp !== otp) throw new Error("Invalid OTP");
-
-  await redis.del(otpKey(phone));
-  const response = await axios.post(`${USER_SERVICE_URL}`, {
-    phone
-  });
-
-  let user = response.data.data
-
-  const token = jwt.sign(
-    {
-      id: user._id,
-      role: user.role,
-    },
-    JWT_SECRET,
-    {
-      expiresIn: JWT_EXPIRES_IN
-    }
-  );
-  return {
-    success: true,
-    token,
-    message: "Successfully verified your Number",
-    user
-  };
-};
-
+// const otpKey = (phone) => `otp:${phone}`;
 
 const validatePassword = (password) => {
   const strongPasswordRegex =
@@ -111,6 +49,8 @@ export function isValidNepaliPhoneNumber(phone) {
   return prefix === "97" || prefix === "98";
 }
 
+//user ko signup logic
+
 export const completeProfile = async (data) => {
   try {
     const { phone, fullname, password, otp } = data;
@@ -118,28 +58,50 @@ export const completeProfile = async (data) => {
     if (!phone) throw new Error("Phone is required");
 
     //CB and fallback 
-      if (!isValidNepaliPhoneNumber(phone)) {
+    if (!isValidNepaliPhoneNumber(phone)) {
       throw new Error("Invalid Nepali phone number");
     }
 
 
     if (!otp) {
-      if (!fullname || fullname.trim().length < 3) {
-        throw new Error("Full name must be at least 3 characters");
+      
+      if (!phone) {
+        const error = new Error("Phone is required");
+        error.status = 400;
+        throw error;
+      }
+
+      if (!fullname && !password) {
+        const error = new Error("All feilds are required")
+        error.status = 400;
+        throw error;
+      }
+
+      if (!fullname) {
+        const error = new Error("fullname missing")
+        error.status = 400
+        throw error
       }
 
       if (!password) {
-        throw new Error("Password is required");
+        const error = new Error("Password is required");
+        error.status = 400;
+        throw error;
       }
 
-   
+      if (fullname.trim().length < 3) {
+        const error = new Error("Fullname must be at least 3 characters");
+        error.status = 400;
+        throw error;
+      }
+
       validatePassword(password);
 
       const generatedOtp = Math.floor(100000 + Math.random() * 900000).toString();
 
 
       await redis.set(
-        `signup:${phone}`,
+        `usersignup:${phone}`,
         JSON.stringify({
           phone,
           fullname,
@@ -160,7 +122,7 @@ export const completeProfile = async (data) => {
     }
 
     // ================= VERIFY OTP =================
-    const storedData = await redis.get(`signup:${phone}`);
+    const storedData = await redis.get(`usersignup:${phone}`);
 
     if (!storedData) throw new Error("OTP expired or not requested");
 
@@ -182,9 +144,7 @@ export const completeProfile = async (data) => {
     const user = response.data.data.data;
     console.log("user:", user)
 
-
-    await redis.del(`signup:${phone}`);
-
+    await redis.del(`usersignup:${phone}`);
 
     const token = jwt.sign(
       {
@@ -197,7 +157,7 @@ export const completeProfile = async (data) => {
       }
     );
 
-    console.log("user id in token:" , user._id)
+    console.log("user id in token:", user._id)
     return {
       success: true,
       message: "Signup successful",
@@ -222,7 +182,7 @@ export const loginUser = async ({ phone, password }) => {
   if (!phone || !password)
     throw new Error("phoneNumber and password required");
 
-    if (!isValidNepaliPhoneNumber(phone)) {
+  if (!isValidNepaliPhoneNumber(phone)) {
     throw new Error("Invalid Nepali phone number");
   }
 
