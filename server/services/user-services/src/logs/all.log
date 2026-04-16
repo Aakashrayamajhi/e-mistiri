@@ -520,3 +520,52 @@
 2026-04-15 17:06:51 [INFO]: POST / - 400 - 36ms 
 2026-04-15 17:07:17 [INFO]: POST / - 400 - 20ms 
 2026-04-15 17:07:56 [INFO]: POST / - 201 - 15ms 
+2026-04-16 13:08:11 [INFO]: POST / - 201 - 57ms 
+2026-04-16 13:13:32 [ERROR]: [400] mechanic already exists with this phone {
+  "path": "/api/v1/mechanic",
+  "method": "POST",
+  "error": "Error: mechanic already exists with this phone\n    at Module.createmechanic (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/user-services/src/modules/mechanic/mechanic.service.js:7:19)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async registermechanic (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/user-services/src/modules/mechanic/mechanic.controller.js:6:22)"
+}
+2026-04-16 13:13:32 [INFO]: POST /api/v1/mechanic - 400 - 42ms 
+2026-04-16 13:13:46 [INFO]: PATCH /api/v1/mechanic - 404 - 1ms 
+2026-04-16 13:14:24 [INFO]: GET / - 200 - 24ms 
+2026-04-16 13:14:43 [INFO]: GET /approved - 200 - 16ms 
+2026-04-16 13:15:32 [INFO]: GET /approved - 200 - 4ms 
+2026-04-16 13:15:47 [INFO]: GET /api/v1/mechanic/update/69e08e5f72eb54a24f78d9fb - 404 - 1ms 
+2026-04-16 13:15:58 [INFO]: PATCH /update/69e08e5f72eb54a24f78d9fb - 403 - 1ms 
+2026-04-16 16:46:52 [INFO]: POST /api/v1/mechanic/signup - 404 - 18ms 
+2026-04-16 16:46:59 [ERROR]: [400] mechanic already exists with this phone {
+  "path": "/api/v1/mechanic/",
+  "method": "POST",
+  "error": "Error: mechanic already exists with this phone\n    at Module.createmechanic (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/user-services/src/modules/mechanic/mechanic.service.js:7:19)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async registermechanic (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/user-services/src/modules/mechanic/mechanic.controller.js:6:22)"
+}
+2026-04-16 16:46:59 [INFO]: POST /api/v1/mechanic/ - 400 - 34ms 
+2026-04-16 16:47:09 [ERROR]: [500] E11000 duplicate key error collection: e-mistiri.mechanics index: email_1 dup key: { email: null } {
+  "path": "/api/v1/mechanic/",
+  "method": "POST",
+  "error": "MongoServerError: E11000 duplicate key error collection: e-mistiri.mechanics index: email_1 dup key: { email: null }\n    at InsertOneOperation.handleOk (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongodb\\lib\\operations\\insert.js:51:19)\n    at tryOperation (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongodb\\lib\\operations\\execute_operation.js:217:34)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async executeOperation (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongodb\\lib\\operations\\execute_operation.js:80:16)\n    at async Collection.insertOne (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongodb\\lib\\collection.js:154:16)\n    at async model.$__save (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\model.js:425:16)\n    at async model.save (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\model.js:664:5)\n    at async model.create (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\model.js:2751:5)\n    at async Module.createmechanic (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/user-services/src/modules/mechanic/mechanic.repository.js:12:10)\n    at async Module.createmechanic (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/user-services/src/modules/mechanic/mechanic.service.js:12:10)"
+}
+2026-04-16 16:47:09 [INFO]: POST /api/v1/mechanic/ - 500 - 50ms 
+2026-04-16 16:51:55 [ERROR]: [500] E11000 duplicate key error collection: e-mistiri.mechanics index: email_1 dup key: { email: null } {
+  "path": "/api/v1/mechanic/",
+  "method": "POST",
+  "error": "MongoServerError: E11000 duplicate key error collection: e-mistiri.mechanics index: email_1 dup key: { email: null }\n    at InsertOneOperation.handleOk (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongodb\\lib\\operations\\insert.js:51:19)\n    at tryOperation (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongodb\\lib\\operations\\execute_operation.js:217:34)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async executeOperation (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongodb\\lib\\operations\\execute_operation.js:80:16)\n    at async Collection.insertOne (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongodb\\lib\\collection.js:154:16)\n    at async model.$__save (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\model.js:425:16)\n    at async model.save (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\model.js:664:5)\n    at async model.create (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\model.js:2751:5)\n    at async Module.createmechanic (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/user-services/src/modules/mechanic/mechanic.repository.js:12:10)\n    at async Module.createmechanic (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/user-services/src/modules/mechanic/mechanic.service.js:12:10)"
+}
+2026-04-16 16:51:55 [INFO]: POST /api/v1/mechanic/ - 500 - 12ms 
+2026-04-16 16:53:32 [INFO]: POST / - 201 - 10ms 
+2026-04-16 16:54:28 [INFO]: GET / - 200 - 10ms 
+2026-04-16 16:54:50 [INFO]: DELETE /api/v1/mechanic/ - 404 - 1ms 
+2026-04-16 16:54:57 [ERROR]: [500] Cast to ObjectId failed for value "delete" (type string) at path "_id" for model "mechanic" {
+  "path": "/api/v1/mechanic/delete",
+  "method": "DELETE",
+  "error": "CastError: Cast to ObjectId failed for value \"delete\" (type string) at path \"_id\" for model \"mechanic\"\n    at SchemaObjectId.cast (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\schema\\objectId.js:253:11)\n    at SchemaType.applySetters (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\schemaType.js:1287:12)\n    at SchemaType.castForQuery (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\schemaType.js:1713:17)\n    at cast (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\cast.js:386:32)\n    at Query.cast (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\query.js:5127:12)\n    at Query._castConditions (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\query.js:2376:10)\n    at model.Query._findOneAndDelete (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\query.js:3647:8)\n    at model.Query.exec (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\query.js:4726:80)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Module.deletemechanic (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/user-services/src/modules/mechanic/mechanic.repository.js:30:10)"
+}
+2026-04-16 16:54:57 [INFO]: DELETE /api/v1/mechanic/delete - 500 - 8ms 
+2026-04-16 16:55:50 [INFO]: DELETE /69e08e5f72eb54a24f78d9fb - 200 - 21ms 
+2026-04-16 16:56:17 [INFO]: PATCH /update/69e08e5f72eb54a24f78d9fb - 403 - 2ms 
+2026-04-16 16:59:27 [INFO]: DELETE /69e08e5f72eb54a24f78d9fb - 200 - 3ms 
+2026-04-16 17:02:32 [INFO]: DELETE /69e08e5f72eb54a24f78d9fb - 200 - 5ms 
+2026-04-16 17:03:00 [INFO]: GET /69e08e5f72eb54a24f78d9fb - 404 - 3ms 
+2026-04-16 17:03:53 [INFO]: GET /69e0c3303436428cfa1d4b04 - 200 - 4ms 
+2026-04-16 17:04:05 [INFO]: GET /69e0c3303436428cfa1d4b04 - 200 - 4ms 
+2026-04-16 17:04:14 [INFO]: DELETE /69e0c3303436428cfa1d4b04 - 200 - 3ms 

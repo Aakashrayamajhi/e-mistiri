@@ -3,6 +3,7 @@ import helmet from 'helmet'
 import cors from 'cors'
 import userRouter from './modules/user/user.route.js'
 import garageRouter from './modules/garage/garage.route.js'
+import mechanicRouter from './modules/mechanic/mechanic.route.js'
 import { errorMiddleware } from './middleware/error.middleware.js'
 import { logger } from './utils/logger.js'
 
@@ -32,6 +33,7 @@ app.get('/health', (req, res) => {
 
 app.use('/api/v1/user', userRouter)
 app.use('/api/v1/garage', garageRouter)
+app.use('/api/v1/mechanic', mechanicRouter )
 
 app.use((req, res) => {
   res.status(404).json({

@@ -216,3 +216,6 @@
 2026-04-15 17:06:51 [ERROR] API-GATEWAY: POST /api/userAuth/signup - 500 {"method":"POST","path":"/api/userAuth/signup","statusCode":500,"duration":"176ms","ip":"192.168.31.166","userAgent":"PostmanRuntime/7.53.0"}
 2026-04-15 17:07:17 [ERROR] API-GATEWAY: POST /api/userAuth/signup - 500 {"method":"POST","path":"/api/userAuth/signup","statusCode":500,"duration":"247ms","ip":"192.168.31.166","userAgent":"PostmanRuntime/7.53.0"}
 2026-04-15 17:07:24 [ERROR] API-GATEWAY: POST /api/userAuth/signup - 500 {"method":"POST","path":"/api/userAuth/signup","statusCode":500,"duration":"12ms","ip":"192.168.31.166","userAgent":"PostmanRuntime/7.53.0"}
+2026-04-16 16:47:09 [ERROR] API-GATEWAY: POST /api/mechanic/ - 500 {"method":"POST","path":"/api/mechanic/","statusCode":500,"duration":"57ms","ip":"127.0.0.1","userAgent":"PostmanRuntime/7.53.0"}
+2026-04-16 16:51:55 [ERROR] API-GATEWAY: POST /api/mechanic/ - 500 {"method":"POST","path":"/api/mechanic/","statusCode":500,"duration":"21ms","ip":"127.0.0.1","userAgent":"PostmanRuntime/7.53.0"}
+2026-04-16 16:54:57 [ERROR] API-GATEWAY: DELETE /api/mechanic/delete - 500 {"method":"DELETE","path":"/api/mechanic/delete","statusCode":500,"duration":"14ms","ip":"127.0.0.1","userAgent":"PostmanRuntime/7.53.0"}
