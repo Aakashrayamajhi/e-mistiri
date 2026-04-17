@@ -8,7 +8,7 @@ import garageRouter from './modules/garage/garage.route.js'
 import mechanicRouter from './modules/mechanic/mechanic.route.js'
 import userAuthRouter from './modules/userAuth/userAuth.route.js'
 import garageAuthRouter from './modules/garageAuth/garageAuth.route.js'
-// import mechanicAuthRouter from './modules/mechanicAuth/mechanicAuth.route.js'
+import mechanicAuthRouter from './modules/mechanicAuth/mechanicAuth.route.js'
 
 
 import { loggerMiddleware } from './middleware/logger.middleware.js'
@@ -48,9 +48,11 @@ app.use('/api/garageAuth',
   garageAuthRouter
 )
 
+app.use('/api/mechanicAuth', mechanicAuthRouter)
+
 app.use('/api/user', authMiddleware, userRouter)
 app.use('/api/garage', authMiddleware, garageRouter)
-app.use('/api/mechanic',  mechanicRouter)
+app.use('/api/mechanic', authMiddleware,  mechanicRouter)
 
 app.use((req, res) => {
   res.status(404).json({

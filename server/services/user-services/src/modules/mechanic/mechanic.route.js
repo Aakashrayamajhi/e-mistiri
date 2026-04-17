@@ -10,7 +10,6 @@ mechanicRouter.get("/phone/:phone", mechanicController.getmechanicByPhone);
 
 mechanicRouter.get("/", mechanicController.getAllmechanics)
 mechanicRouter.get("/approved", mechanicController.getmechanics);
-// mechanicRouter.get("/nearby", mechanicController.getNearbymechanics);
 mechanicRouter.patch("/update/:id", mechanicController.updatemechanic);
 mechanicRouter.get("/:id", mechanicController.getmechanic);
 mechanicRouter.delete("/:id", mechanicController.deletemechanic);

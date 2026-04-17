@@ -569,3 +569,53 @@
 2026-04-16 17:03:53 [INFO]: GET /69e0c3303436428cfa1d4b04 - 200 - 4ms 
 2026-04-16 17:04:05 [INFO]: GET /69e0c3303436428cfa1d4b04 - 200 - 4ms 
 2026-04-16 17:04:14 [INFO]: DELETE /69e0c3303436428cfa1d4b04 - 200 - 3ms 
+2026-04-16 17:35:41 [INFO]: POST / - 201 - 7ms 
+2026-04-16 17:36:48 [INFO]: POST /api/v1/mechanic/update/69e0cd113436428cfa1d4b0f - 404 - 1ms 
+2026-04-16 17:37:51 [INFO]: PATCH /update/69e0cd113436428cfa1d4b0f - 200 - 24ms 
+2026-04-17 10:49:00 [INFO]: POST /api/v1/mechanic/signup - 404 - 13ms 
+2026-04-17 10:49:01 [INFO]: POST /api/v1/mechanic/signup - 404 - 1ms 
+2026-04-17 10:49:06 [INFO]: POST /api/v1/mechanic/signup - 404 - 1ms 
+2026-04-17 10:49:07 [INFO]: POST /api/v1/mechanic/signup - 404 - 1ms 
+2026-04-17 10:49:08 [INFO]: POST /api/v1/mechanic/signup - 404 - 0ms 
+2026-04-17 10:49:09 [INFO]: POST /api/v1/mechanic/signup - 404 - 0ms 
+2026-04-17 10:49:10 [INFO]: POST /api/v1/mechanic/signup - 404 - 0ms 
+2026-04-17 10:49:11 [INFO]: POST /api/v1/mechanic/signup - 404 - 1ms 
+2026-04-17 10:49:11 [INFO]: POST /api/v1/mechanic/signup - 404 - 0ms 
+2026-04-17 10:49:13 [INFO]: POST /api/v1/mechanic/signup - 404 - 1ms 
+2026-04-17 11:03:46 [ERROR]: [400] mechanic already exists with this phone {
+  "path": "/api/v1/mechanic",
+  "method": "POST",
+  "error": "Error: mechanic already exists with this phone\n    at Module.createmechanic (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/user-services/src/modules/mechanic/mechanic.service.js:7:19)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async registermechanic (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/user-services/src/modules/mechanic/mechanic.controller.js:6:22)"
+}
+2026-04-17 11:03:46 [INFO]: POST /api/v1/mechanic - 400 - 19ms 
+2026-04-17 11:05:45 [ERROR]: [500] E11000 duplicate key error collection: e-mistiri.mechanics index: email_1 dup key: { email: null } {
+  "path": "/api/v1/mechanic",
+  "method": "POST",
+  "error": "MongoServerError: E11000 duplicate key error collection: e-mistiri.mechanics index: email_1 dup key: { email: null }\n    at InsertOneOperation.handleOk (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongodb\\lib\\operations\\insert.js:51:19)\n    at tryOperation (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongodb\\lib\\operations\\execute_operation.js:217:34)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async executeOperation (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongodb\\lib\\operations\\execute_operation.js:80:16)\n    at async Collection.insertOne (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongodb\\lib\\collection.js:154:16)\n    at async model.$__save (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\model.js:425:16)\n    at async model.save (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\model.js:664:5)\n    at async model.create (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\model.js:2751:5)\n    at async Module.createmechanic (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/user-services/src/modules/mechanic/mechanic.repository.js:12:10)\n    at async Module.createmechanic (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/user-services/src/modules/mechanic/mechanic.service.js:12:10)"
+}
+2026-04-17 11:05:45 [INFO]: POST /api/v1/mechanic - 500 - 20ms 
+2026-04-17 11:11:11 [INFO]: GET / - 404 - 4ms 
+2026-04-17 11:11:15 [INFO]: GET /health - 200 - 1ms 
+2026-04-17 11:20:27 [INFO]: GET /phone/9811111113 - 404 - 10ms 
+2026-04-17 11:20:40 [INFO]: GET /phone/9811111112 - 200 - 8ms 
+2026-04-17 11:20:48 [INFO]: GET /phone/9811111112 - 200 - 3ms 
+2026-04-17 11:21:02 [INFO]: GET /phone/9811111112 - 200 - 3ms 
+2026-04-17 11:22:06 [ERROR]: [400] mechanic already exists with this phone {
+  "path": "/api/v1/mechanic",
+  "method": "POST",
+  "error": "Error: mechanic already exists with this phone\n    at Module.createmechanic (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/user-services/src/modules/mechanic/mechanic.service.js:7:19)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async registermechanic (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/user-services/src/modules/mechanic/mechanic.controller.js:6:22)"
+}
+2026-04-17 11:22:06 [INFO]: POST /api/v1/mechanic - 400 - 5ms 
+2026-04-17 11:22:42 [ERROR]: [500] E11000 duplicate key error collection: e-mistiri.mechanics index: email_1 dup key: { email: null } {
+  "path": "/api/v1/mechanic",
+  "method": "POST",
+  "error": "MongoServerError: E11000 duplicate key error collection: e-mistiri.mechanics index: email_1 dup key: { email: null }\n    at InsertOneOperation.handleOk (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongodb\\lib\\operations\\insert.js:51:19)\n    at tryOperation (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongodb\\lib\\operations\\execute_operation.js:217:34)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async executeOperation (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongodb\\lib\\operations\\execute_operation.js:80:16)\n    at async Collection.insertOne (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongodb\\lib\\collection.js:154:16)\n    at async model.$__save (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\model.js:425:16)\n    at async model.save (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\model.js:664:5)\n    at async model.create (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\mongoose\\lib\\model.js:2751:5)\n    at async Module.createmechanic (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/user-services/src/modules/mechanic/mechanic.repository.js:12:10)\n    at async Module.createmechanic (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/user-services/src/modules/mechanic/mechanic.service.js:12:10)"
+}
+2026-04-17 11:22:42 [INFO]: POST /api/v1/mechanic - 500 - 17ms 
+2026-04-17 11:23:12 [INFO]: POST / - 201 - 6ms 
+2026-04-17 11:27:25 [ERROR]: [400] Expected double-quoted property name in JSON at position 40 (line 9 column 1) {
+  "path": "/api/v1/mechanic/update/69e1c744831c36db50dad31d",
+  "method": "PATCH",
+  "error": "SyntaxError: Expected double-quoted property name in JSON at position 40 (line 9 column 1)\n    at JSON.parse (<anonymous>)\n    at parse (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\body-parser\\lib\\types\\json.js:72:19)\n    at C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\body-parser\\lib\\read.js:162:18\n    at AsyncResource.runInAsyncScope (node:async_hooks:228:14)\n    at invokeCallback (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\raw-body\\index.js:238:16)\n    at done (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\raw-body\\index.js:227:7)\n    at IncomingMessage.onEnd (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\user-services\\node_modules\\raw-body\\index.js:287:7)\n    at IncomingMessage.emit (node:events:508:28)\n    at endReadableNT (node:internal/streams/readable:1729:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)"
+}
+2026-04-17 11:27:30 [INFO]: PATCH /update/69e1c744831c36db50dad31d - 200 - 14ms 

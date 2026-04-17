@@ -3,6 +3,7 @@ import helmet from 'helmet'
 import cors from 'cors'
 import userAuthRouter from './modules/userAuth/userAuth.router.js'
 import garageAuthRouter from './modules/garageAuth/garageAuth.route.js'
+import mechanicAuthRouter from './modules/mechanicAuth/mechanicAuth.route.js'
 import { errorMiddleware } from './middleware/error.middleware.js'
 import { logger } from './utils/logger.js'
 
@@ -32,6 +33,7 @@ app.get('/health', (req, res) => {
 
 app.use('/api/v1/userAuth', userAuthRouter)
 app.use('/api/v1/garageAuth', garageAuthRouter)
+app.use('/api/v1/mechanicAuth', mechanicAuthRouter)
 
 // 404 handler
 app.use((req, res) => {

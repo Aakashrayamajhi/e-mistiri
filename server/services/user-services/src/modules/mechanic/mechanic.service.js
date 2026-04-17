@@ -40,11 +40,6 @@ export const getApprovedmechanics = async () => {
   return await mechanicRepository.getApprovedmechanics();
 };
 
-// export const getNearbymechanics = async (lng, lat) => {
-//   return await mechanicRepository.getNearbymechanics(lng, lat);
-// };
-
-
 export const approvemechanic = async (id) => {
   const mechanic = await mechanicRepository.getmechanicById(id);
 
