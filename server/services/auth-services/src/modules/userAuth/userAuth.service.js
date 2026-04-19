@@ -25,7 +25,7 @@ const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || "1d";
 
 const validatePassword = (password) => {
   const strongPasswordRegex =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$#!%*?&])[A-Za-z\d@$!#%*?&]{6,}$/;
 
   if (!strongPasswordRegex.test(password)) {
     throw new Error(

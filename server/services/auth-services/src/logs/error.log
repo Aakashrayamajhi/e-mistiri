@@ -998,3 +998,63 @@
   "method": "POST",
   "error": "Error: E11000 duplicate key error collection: e-mistiri.mechanics index: email_1 dup key: { email: null }\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/mechanicAuth/mechanicAuth.service.js:173:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/mechanicAuth/mechanicAuth.controller.js:38:20)"
 }
+2026-04-19 11:40:52 [ERROR]: [500] Invalid Nepali phone number {
+  "path": "/api/v1/userAuth/signup",
+  "method": "POST",
+  "error": "Error: Invalid Nepali phone number\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:175:11)\n    at completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:38)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:291:5)"
+}
+2026-04-19 11:41:45 [ERROR]: [500] Invalid Nepali phone number {
+  "path": "/api/v1/userAuth/signup",
+  "method": "POST",
+  "error": "Error: Invalid Nepali phone number\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:175:11)\n    at completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:38)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:291:5)"
+}
+2026-04-19 11:42:15 [ERROR]: [500] OTP expired or not requested {
+  "path": "/api/v1/userAuth/signup",
+  "method": "POST",
+  "error": "Error: OTP expired or not requested\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:175:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:20)"
+}
+2026-04-19 11:43:46 [ERROR]: [500] OTP expired or not requested {
+  "path": "/api/v1/userAuth/signup",
+  "method": "POST",
+  "error": "Error: OTP expired or not requested\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:175:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:20)"
+}
+2026-04-19 11:44:01 [ERROR]: [400] Expected double-quoted property name in JSON at position 76 (line 5 column 1) {
+  "path": "/api/v1/userAuth/signup",
+  "method": "POST",
+  "error": "SyntaxError: Expected double-quoted property name in JSON at position 76 (line 5 column 1)\n    at JSON.parse (<anonymous>)\n    at parse (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\body-parser\\lib\\types\\json.js:72:19)\n    at C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\body-parser\\lib\\read.js:162:18\n    at AsyncResource.runInAsyncScope (node:async_hooks:228:14)\n    at invokeCallback (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\raw-body\\index.js:238:16)\n    at done (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\raw-body\\index.js:227:7)\n    at IncomingMessage.onEnd (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\raw-body\\index.js:287:7)\n    at IncomingMessage.emit (node:events:508:28)\n    at endReadableNT (node:internal/streams/readable:1729:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)"
+}
+2026-04-19 11:44:35 [ERROR]: [500] User with this number already exists {
+  "path": "/api/v1/userAuth/signup",
+  "method": "POST",
+  "error": "Error: User with this number already exists\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:172:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:20)"
+}
+2026-04-19 11:45:32 [ERROR]: [500] Invalid password {
+  "path": "/api/v1/userAuth/login",
+  "method": "POST",
+  "error": "Error: Invalid password\n    at Module.loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:204:21)\n    at async loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:71:20)"
+}
+2026-04-19 11:45:49 [ERROR]: [500] Invalid password {
+  "path": "/api/v1/userAuth/login",
+  "method": "POST",
+  "error": "Error: Invalid password\n    at Module.loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:204:21)\n    at async loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:71:20)"
+}
+2026-04-19 11:46:52 [ERROR]: [400] Expected double-quoted property name in JSON at position 81 (line 5 column 1) {
+  "path": "/api/v1/userAuth/signup",
+  "method": "POST",
+  "error": "SyntaxError: Expected double-quoted property name in JSON at position 81 (line 5 column 1)\n    at JSON.parse (<anonymous>)\n    at parse (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\body-parser\\lib\\types\\json.js:72:19)\n    at C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\body-parser\\lib\\read.js:162:18\n    at AsyncResource.runInAsyncScope (node:async_hooks:228:14)\n    at invokeCallback (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\raw-body\\index.js:238:16)\n    at done (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\raw-body\\index.js:227:7)\n    at IncomingMessage.onEnd (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\raw-body\\index.js:287:7)\n    at IncomingMessage.emit (node:events:508:28)\n    at endReadableNT (node:internal/streams/readable:1729:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)"
+}
+2026-04-19 11:48:31 [ERROR]: [500] Invalid password {
+  "path": "/api/v1/userAuth/login",
+  "method": "POST",
+  "error": "Error: Invalid password\n    at Module.loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:204:21)\n    at async loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:71:20)"
+}
+2026-04-19 13:12:05 [ERROR]: [500] Invalid password {
+  "path": "/api/v1/garageAuth/login",
+  "method": "POST",
+  "error": "Error: Invalid password\n    at Module.loginGarage (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.service.js:207:21)\n    at async loginGarage (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.controller.js:56:20)"
+}
+2026-04-19 13:12:27 [ERROR]: [500] Invalid password {
+  "path": "/api/v1/garageAuth/login",
+  "method": "POST",
+  "error": "Error: Invalid password\n    at Module.loginGarage (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.service.js:207:21)\n    at async loginGarage (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.controller.js:56:20)"
+}

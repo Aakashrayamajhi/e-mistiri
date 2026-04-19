@@ -1,0 +1,37 @@
+import swaggerJSDoc from "swagger-jsdoc";
+
+const options = {
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: "E-Mistiri API of AUTH-SERVICES",
+      version: "1.0.0",
+      description: "API documentation for E-Mistiri platform of AUTH-SERVICES",
+    },
+    servers: [
+      {
+        url: `http://localhost:${process.env.PORT || 3002}`,
+      },
+    ],
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: "http",
+          scheme: "bearer",
+          bearerFormat: "JWT",
+        },
+      },
+    },
+    security: [
+      {
+        bearerAuth: [],
+      },
+    ],
+  },
+
+  apis: [
+    "./modules/**/*.js", 
+  ],
+};
+
+export const swaggerSpec = swaggerJSDoc(options);

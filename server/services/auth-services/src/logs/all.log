@@ -1437,3 +1437,155 @@
 }
 2026-04-17 11:22:42 [INFO]: POST /api/v1/mechanicAuth/signup - 500 - 129ms 
 2026-04-17 11:23:12 [INFO]: POST /signup - 200 - 138ms 
+2026-04-19 11:33:50 [INFO]: GET / - 301 - 13ms 
+2026-04-19 11:33:50 [INFO]: GET / - 200 - 10ms 
+2026-04-19 11:33:50 [INFO]: GET /swagger-ui-init.js - 200 - 1ms 
+2026-04-19 11:33:50 [INFO]: GET /swagger-ui.css - 200 - 21ms 
+2026-04-19 11:33:50 [INFO]: GET /swagger-ui-standalone-preset.js - 200 - 23ms 
+2026-04-19 11:33:50 [INFO]: GET /swagger-ui-bundle.js - 200 - 73ms 
+2026-04-19 11:33:50 [INFO]: GET /favicon-32x32.png - 200 - 3ms 
+2026-04-19 11:37:38 [INFO]: GET / - 304 - 12ms 
+2026-04-19 11:37:38 [INFO]: GET /swagger-ui.css - 304 - 3ms 
+2026-04-19 11:37:38 [INFO]: GET /swagger-ui-bundle.js - 304 - 5ms 
+2026-04-19 11:37:38 [INFO]: GET /swagger-ui-init.js - 200 - 4ms 
+2026-04-19 11:37:38 [INFO]: GET /swagger-ui-standalone-preset.js - 304 - 11ms 
+2026-04-19 11:37:38 [INFO]: GET /favicon-32x32.png - 304 - 1ms 
+2026-04-19 11:37:58 [INFO]: GET / - 304 - 2ms 
+2026-04-19 11:37:58 [INFO]: GET /swagger-ui.css - 304 - 4ms 
+2026-04-19 11:37:58 [INFO]: GET /swagger-ui-bundle.js - 304 - 3ms 
+2026-04-19 11:37:58 [INFO]: GET /swagger-ui-init.js - 304 - 2ms 
+2026-04-19 11:37:58 [INFO]: GET /swagger-ui-standalone-preset.js - 304 - 2ms 
+2026-04-19 11:37:58 [INFO]: GET /favicon-32x32.png - 304 - 2ms 
+2026-04-19 11:38:17 [INFO]: GET / - 304 - 13ms 
+2026-04-19 11:38:17 [INFO]: GET /swagger-ui.css - 304 - 4ms 
+2026-04-19 11:38:17 [INFO]: GET /swagger-ui-bundle.js - 304 - 5ms 
+2026-04-19 11:38:17 [INFO]: GET /swagger-ui-standalone-preset.js - 304 - 7ms 
+2026-04-19 11:38:17 [INFO]: GET /swagger-ui-init.js - 200 - 2ms 
+2026-04-19 11:38:17 [INFO]: GET /favicon-32x32.png - 304 - 2ms 
+2026-04-19 11:40:52 [ERROR]: [500] Invalid Nepali phone number {
+  "path": "/api/v1/userAuth/signup",
+  "method": "POST",
+  "error": "Error: Invalid Nepali phone number\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:175:11)\n    at completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:38)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:291:5)"
+}
+2026-04-19 11:40:52 [INFO]: POST /api/v1/userAuth/signup - 500 - 7ms 
+2026-04-19 11:41:45 [ERROR]: [500] Invalid Nepali phone number {
+  "path": "/api/v1/userAuth/signup",
+  "method": "POST",
+  "error": "Error: Invalid Nepali phone number\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:175:11)\n    at completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:38)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\router\\index.js:291:5)"
+}
+2026-04-19 11:41:45 [INFO]: POST /api/v1/userAuth/signup - 500 - 3ms 
+2026-04-19 11:42:15 [ERROR]: [500] OTP expired or not requested {
+  "path": "/api/v1/userAuth/signup",
+  "method": "POST",
+  "error": "Error: OTP expired or not requested\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:175:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:20)"
+}
+2026-04-19 11:42:15 [INFO]: POST /api/v1/userAuth/signup - 500 - 3ms 
+2026-04-19 11:43:46 [ERROR]: [500] OTP expired or not requested {
+  "path": "/api/v1/userAuth/signup",
+  "method": "POST",
+  "error": "Error: OTP expired or not requested\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:175:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:20)"
+}
+2026-04-19 11:43:46 [INFO]: POST /api/v1/userAuth/signup - 500 - 21ms 
+2026-04-19 11:44:01 [ERROR]: [400] Expected double-quoted property name in JSON at position 76 (line 5 column 1) {
+  "path": "/api/v1/userAuth/signup",
+  "method": "POST",
+  "error": "SyntaxError: Expected double-quoted property name in JSON at position 76 (line 5 column 1)\n    at JSON.parse (<anonymous>)\n    at parse (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\body-parser\\lib\\types\\json.js:72:19)\n    at C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\body-parser\\lib\\read.js:162:18\n    at AsyncResource.runInAsyncScope (node:async_hooks:228:14)\n    at invokeCallback (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\raw-body\\index.js:238:16)\n    at done (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\raw-body\\index.js:227:7)\n    at IncomingMessage.onEnd (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\raw-body\\index.js:287:7)\n    at IncomingMessage.emit (node:events:508:28)\n    at endReadableNT (node:internal/streams/readable:1729:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)"
+}
+2026-04-19 11:44:09 [INFO]: POST /signup - 200 - 4ms 
+2026-04-19 11:44:35 [ERROR]: [500] User with this number already exists {
+  "path": "/api/v1/userAuth/signup",
+  "method": "POST",
+  "error": "Error: User with this number already exists\n    at Module.completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:172:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async completeProfile (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:38:20)"
+}
+2026-04-19 11:44:35 [INFO]: POST /api/v1/userAuth/signup - 500 - 312ms 
+2026-04-19 11:45:32 [ERROR]: [500] Invalid password {
+  "path": "/api/v1/userAuth/login",
+  "method": "POST",
+  "error": "Error: Invalid password\n    at Module.loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:204:21)\n    at async loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:71:20)"
+}
+2026-04-19 11:45:32 [INFO]: POST /api/v1/userAuth/login - 500 - 222ms 
+2026-04-19 11:45:49 [ERROR]: [500] Invalid password {
+  "path": "/api/v1/userAuth/login",
+  "method": "POST",
+  "error": "Error: Invalid password\n    at Module.loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:204:21)\n    at async loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:71:20)"
+}
+2026-04-19 11:45:49 [INFO]: POST /api/v1/userAuth/login - 500 - 204ms 
+2026-04-19 11:46:52 [ERROR]: [400] Expected double-quoted property name in JSON at position 81 (line 5 column 1) {
+  "path": "/api/v1/userAuth/signup",
+  "method": "POST",
+  "error": "SyntaxError: Expected double-quoted property name in JSON at position 81 (line 5 column 1)\n    at JSON.parse (<anonymous>)\n    at parse (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\body-parser\\lib\\types\\json.js:72:19)\n    at C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\body-parser\\lib\\read.js:162:18\n    at AsyncResource.runInAsyncScope (node:async_hooks:228:14)\n    at invokeCallback (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\raw-body\\index.js:238:16)\n    at done (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\raw-body\\index.js:227:7)\n    at IncomingMessage.onEnd (C:\\Users\\aakas\\OneDrive\\Desktop\\e-mistiri\\server\\services\\auth-services\\node_modules\\raw-body\\index.js:287:7)\n    at IncomingMessage.emit (node:events:508:28)\n    at endReadableNT (node:internal/streams/readable:1729:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)"
+}
+2026-04-19 11:46:58 [INFO]: POST /signup - 200 - 3ms 
+2026-04-19 11:47:31 [INFO]: POST /signup - 200 - 237ms 
+2026-04-19 11:48:31 [ERROR]: [500] Invalid password {
+  "path": "/api/v1/userAuth/login",
+  "method": "POST",
+  "error": "Error: Invalid password\n    at Module.loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.service.js:204:21)\n    at async loginUser (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/userAuth/userAuth.controller.js:71:20)"
+}
+2026-04-19 11:48:31 [INFO]: POST /api/v1/userAuth/login - 500 - 182ms 
+2026-04-19 11:48:44 [INFO]: POST /login - 200 - 218ms 
+2026-04-19 12:03:12 [INFO]: GET / - 304 - 19ms 
+2026-04-19 12:03:12 [INFO]: GET /swagger-ui.css - 304 - 9ms 
+2026-04-19 12:03:12 [INFO]: GET /swagger-ui-init.js - 304 - 5ms 
+2026-04-19 12:03:12 [INFO]: GET /swagger-ui-bundle.js - 304 - 20ms 
+2026-04-19 12:03:12 [INFO]: GET /swagger-ui-standalone-preset.js - 304 - 25ms 
+2026-04-19 12:03:12 [INFO]: GET /favicon-32x32.png - 304 - 2ms 
+2026-04-19 12:03:44 [INFO]: GET / - 304 - 5ms 
+2026-04-19 12:03:44 [INFO]: GET /swagger-ui.css - 304 - 5ms 
+2026-04-19 12:03:44 [INFO]: GET /swagger-ui-init.js - 304 - 1ms 
+2026-04-19 12:03:44 [INFO]: GET /swagger-ui-bundle.js - 304 - 15ms 
+2026-04-19 12:03:44 [INFO]: GET /swagger-ui-standalone-preset.js - 304 - 19ms 
+2026-04-19 12:03:44 [INFO]: GET /favicon-32x32.png - 304 - 1ms 
+2026-04-19 12:03:47 [INFO]: GET / - 304 - 1ms 
+2026-04-19 12:03:47 [INFO]: GET /swagger-ui-init.js - 304 - 1ms 
+2026-04-19 12:03:47 [INFO]: GET /swagger-ui.css - 304 - 5ms 
+2026-04-19 12:03:47 [INFO]: GET /swagger-ui-bundle.js - 304 - 6ms 
+2026-04-19 12:03:47 [INFO]: GET /swagger-ui-standalone-preset.js - 304 - 8ms 
+2026-04-19 12:03:47 [INFO]: GET /favicon-32x32.png - 304 - 1ms 
+2026-04-19 12:03:48 [INFO]: GET / - 304 - 2ms 
+2026-04-19 12:03:48 [INFO]: GET /swagger-ui-init.js - 304 - 0ms 
+2026-04-19 12:03:48 [INFO]: GET /swagger-ui.css - 304 - 4ms 
+2026-04-19 12:03:48 [INFO]: GET /swagger-ui-bundle.js - 304 - 5ms 
+2026-04-19 12:03:48 [INFO]: GET /swagger-ui-standalone-preset.js - 304 - 7ms 
+2026-04-19 12:03:48 [INFO]: GET /favicon-32x32.png - 304 - 1ms 
+2026-04-19 12:05:35 [INFO]: GET / - 304 - 2ms 
+2026-04-19 12:05:35 [INFO]: GET /swagger-ui.css - 304 - 1ms 
+2026-04-19 12:05:35 [INFO]: GET /swagger-ui-bundle.js - 304 - 3ms 
+2026-04-19 12:05:35 [INFO]: GET /swagger-ui-init.js - 304 - 1ms 
+2026-04-19 12:05:35 [INFO]: GET /swagger-ui-standalone-preset.js - 304 - 4ms 
+2026-04-19 12:05:36 [INFO]: GET /favicon-32x32.png - 304 - 1ms 
+2026-04-19 12:06:06 [INFO]: GET / - 304 - 3ms 
+2026-04-19 12:06:06 [INFO]: GET /swagger-ui.css - 304 - 2ms 
+2026-04-19 12:06:06 [INFO]: GET /swagger-ui-bundle.js - 304 - 3ms 
+2026-04-19 12:06:06 [INFO]: GET /swagger-ui-init.js - 304 - 1ms 
+2026-04-19 12:06:06 [INFO]: GET /swagger-ui-standalone-preset.js - 304 - 3ms 
+2026-04-19 13:08:09 [INFO]: GET / - 304 - 8ms 
+2026-04-19 13:08:09 [INFO]: GET /swagger-ui.css - 304 - 6ms 
+2026-04-19 13:08:09 [INFO]: GET /swagger-ui-bundle.js - 304 - 10ms 
+2026-04-19 13:08:09 [INFO]: GET /swagger-ui-standalone-preset.js - 304 - 7ms 
+2026-04-19 13:08:09 [INFO]: GET /swagger-ui-init.js - 200 - 3ms 
+2026-04-19 13:08:09 [INFO]: GET /favicon-32x32.png - 304 - 1ms 
+2026-04-19 13:08:39 [INFO]: GET / - 304 - 7ms 
+2026-04-19 13:08:39 [INFO]: GET /swagger-ui.css - 304 - 6ms 
+2026-04-19 13:08:39 [INFO]: GET /swagger-ui-bundle.js - 304 - 8ms 
+2026-04-19 13:08:39 [INFO]: GET /swagger-ui-standalone-preset.js - 304 - 2ms 
+2026-04-19 13:08:39 [INFO]: GET /swagger-ui-init.js - 200 - 3ms 
+2026-04-19 13:08:39 [INFO]: GET /favicon-32x32.png - 304 - 1ms 
+2026-04-19 13:11:34 [INFO]: GET / - 304 - 6ms 
+2026-04-19 13:11:34 [INFO]: GET /swagger-ui.css - 304 - 2ms 
+2026-04-19 13:11:34 [INFO]: GET /swagger-ui-bundle.js - 304 - 3ms 
+2026-04-19 13:11:34 [INFO]: GET /swagger-ui-init.js - 200 - 3ms 
+2026-04-19 13:11:34 [INFO]: GET /swagger-ui-standalone-preset.js - 304 - 17ms 
+2026-04-19 13:11:34 [INFO]: GET /favicon-32x32.png - 304 - 1ms 
+2026-04-19 13:12:05 [ERROR]: [500] Invalid password {
+  "path": "/api/v1/garageAuth/login",
+  "method": "POST",
+  "error": "Error: Invalid password\n    at Module.loginGarage (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.service.js:207:21)\n    at async loginGarage (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.controller.js:56:20)"
+}
+2026-04-19 13:12:05 [INFO]: POST /api/v1/garageAuth/login - 500 - 49ms 
+2026-04-19 13:12:27 [ERROR]: [500] Invalid password {
+  "path": "/api/v1/garageAuth/login",
+  "method": "POST",
+  "error": "Error: Invalid password\n    at Module.loginGarage (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.service.js:207:21)\n    at async loginGarage (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.controller.js:56:20)"
+}
+2026-04-19 13:12:27 [INFO]: POST /api/v1/garageAuth/login - 500 - 13ms 

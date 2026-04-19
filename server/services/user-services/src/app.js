@@ -7,6 +7,9 @@ import mechanicRouter from './modules/mechanic/mechanic.route.js'
 import { errorMiddleware } from './middleware/error.middleware.js'
 import { logger } from './utils/logger.js'
 
+import swaggerUi from "swagger-ui-express";
+import { swaggerSpec } from "./config/swagger.config.js";
+
 const app = express()
 
 app.use(helmet())
@@ -26,6 +29,8 @@ app.use((req, res, next) => {
   })
   next()
 })
+
+app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.get('/health', (req, res) => {
   res.json({ status: 'User Service OK', timestamp: new Date().toISOString() })
