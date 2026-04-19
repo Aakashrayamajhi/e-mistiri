@@ -3,6 +3,10 @@ import express from 'express'
 import cors from 'cors'
 import helmet from 'helmet'
 
+import swaggerUi from "swagger-ui-express";
+import { swaggerSpec } from "./config/swagger.config.js";
+
+import chatRouter from './modules/chat/chat.route.js'
 import userRouter from './modules/user/user.route.js'
 import garageRouter from './modules/garage/garage.route.js'
 import mechanicRouter from './modules/mechanic/mechanic.route.js'
@@ -10,16 +14,13 @@ import userAuthRouter from './modules/userAuth/userAuth.route.js'
 import garageAuthRouter from './modules/garageAuth/garageAuth.route.js'
 import mechanicAuthRouter from './modules/mechanicAuth/mechanicAuth.route.js'
 
-
 import { loggerMiddleware } from './middleware/logger.middleware.js'
 import { errorMiddleware } from './middleware/error.middleware.js'
 import { apilimiter } from './middleware/ratelimiter.middleware.js'
 import { authMiddleware } from './middleware/auth.middleware.js'
 import redis from './config/redis.config.js'
 
-
 const app = express()
-
 
 app.use(helmet())
 app.use(cors({
@@ -32,6 +33,8 @@ redis
 app.use(loggerMiddleware)
 app.use(apilimiter)
 
+app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
 app.get('/health', (req, res) => {
   res.status(200).json({
     status: 'API Gateway is running',
@@ -40,15 +43,11 @@ app.get('/health', (req, res) => {
   })
 })
 
-app.use('/api/userAuth',
-  userAuthRouter
-)
-
-app.use('/api/garageAuth',
-  garageAuthRouter
-)
-
+app.use('/api/userAuth', userAuthRouter)
+app.use('/api/garageAuth', garageAuthRouter)
 app.use('/api/mechanicAuth', mechanicAuthRouter)
+
+app.use('/api/chat', authMiddleware, chatRouter)
 
 app.use('/api/user', authMiddleware, userRouter)
 app.use('/api/garage', authMiddleware, garageRouter)

@@ -1,0 +1,33 @@
+/**
+ * @swagger
+ * /api/userAuth/signup:
+ *   post:
+ *     summary: User Signup
+ *     tags: [User Auth]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - phone
+ *               - password
+ *               - fullname
+ *             properties:
+ *               phone:
+ *                 type: string
+ *                 example: "9811111111"
+ *               fullname:
+ *                 type: string
+ *                 example: "Aakash Jung"
+ *               password:
+ *                 type: string
+ *                 example: "Aakash1#"
+ *     responses:
+ *       201:
+ *         description: User created successfully
+ *       400:
+ *         description: Validation error
+ */
+router.post("/signup", signupController);

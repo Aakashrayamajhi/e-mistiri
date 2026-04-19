@@ -1,11 +1,15 @@
 import { app } from './app.js'
 import { PORT } from './config/env.config.js'
+import http from "http"
+import { initSocketGateway } from './modules/chat/socket.gateway.js'
 
 let server
 
 const StartServer = () => {
   try {
-    server = app.listen(PORT, "0.0.0.0",() => {
+    server = http.createServer(app)
+    initSocketGateway(server)
+    server.listen(PORT, "0.0.0.0",() => {
       console.log(`API Gateway running on port: ${PORT}`)
     })
     
