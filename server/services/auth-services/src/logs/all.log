@@ -1589,3 +1589,24 @@
   "error": "Error: Invalid password\n    at Module.loginGarage (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.service.js:207:21)\n    at async loginGarage (file:///C:/Users/aakas/OneDrive/Desktop/e-mistiri/server/services/auth-services/src/modules/garageAuth/garageAuth.controller.js:56:20)"
 }
 2026-04-19 13:12:27 [INFO]: POST /api/v1/garageAuth/login - 500 - 13ms 
+2026-04-20 14:36:31 [INFO]: GET /api/v1/userAuth/api/docs - 404 - 12ms 
+2026-04-20 14:37:00 [INFO]: GET /api/v1/user/api/docs - 404 - 1ms 
+2026-04-20 14:39:42 [INFO]: GET / - 301 - 3ms 
+2026-04-20 14:39:42 [INFO]: GET / - 200 - 8ms 
+2026-04-20 14:45:27 [INFO]: GET / - 200 - 10ms 
+2026-04-20 14:49:09 [INFO]: GET /api/v1/userAuth/docs - 404 - 3ms 
+2026-04-20 14:49:41 [INFO]: GET /api/v1/userAuth/signup - 404 - 1ms 
+2026-04-20 14:49:50 [INFO]: GET /api/v1/userAuth/signup - 404 - 1ms 
+2026-04-20 14:51:18 [INFO]: GET / - 304 - 2ms 
+2026-04-20 14:51:18 [INFO]: GET /swagger-ui.css - 304 - 4ms 
+2026-04-20 14:51:18 [INFO]: GET /swagger-ui-bundle.js - 304 - 5ms 
+2026-04-20 14:51:18 [INFO]: GET /swagger-ui-standalone-preset.js - 304 - 2ms 
+2026-04-20 14:51:18 [INFO]: GET /swagger-ui-init.js - 304 - 1ms 
+2026-04-20 15:00:17 [INFO]: GET / - 301 - 2ms 
+2026-04-20 15:00:17 [INFO]: GET / - 304 - 2ms 
+2026-04-20 15:00:17 [INFO]: GET /swagger-ui.css - 304 - 1ms 
+2026-04-20 15:00:17 [INFO]: GET /swagger-ui-init.js - 304 - 0ms 
+2026-04-20 15:00:17 [INFO]: GET /swagger-ui-bundle.js - 304 - 4ms 
+2026-04-20 15:00:17 [INFO]: GET /swagger-ui-standalone-preset.js - 304 - 4ms 
+2026-04-20 15:01:24 [INFO]: POST /signup - 200 - 4ms 
+2026-04-20 15:01:53 [INFO]: POST /signup - 200 - 146ms 
