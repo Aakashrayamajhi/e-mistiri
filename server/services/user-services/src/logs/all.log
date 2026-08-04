@@ -744,3 +744,4 @@
 2026-04-22 09:27:35 [INFO]: GET /favicon-32x32.png - 200 - 14ms 
 2026-04-22 09:27:45 [INFO]: GET /health - 200 - 1ms 
 2026-04-22 09:27:52 [INFO]: GET /health - 200 - 2ms 
+{"duration":10,"level":"info","message":"Request completed","method":"GET","path":"/health","requestId":"unknown","service":"user-service","status":200,"timestamp":"2026-08-04 13:42:25","userId":"anonymous"}
