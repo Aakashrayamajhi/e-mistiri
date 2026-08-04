@@ -1,3 +1,4 @@
+import { jest } from '@jest/globals';
 import { validateSocketEvent } from '../src/middleware/validation.middleware.js';
 import sendMessageSchema from '../src/dtos/chat.dto.js';
 

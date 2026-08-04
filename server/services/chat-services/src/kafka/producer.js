@@ -10,7 +10,7 @@ export const connectProducer = async () => {
     createPartitioner: Partitioners.LegacyPartitioner,
   });
 
-  await withRetry(() => producer.connect(), 3, 1000);
+  await withRetry(() => producer.connect(), 3, 1000)();
   logger.info("Producer connected");
 };
 
@@ -32,7 +32,7 @@ export const sendToKafka = async (data) => {
       }),
     3,
     1000
-  );
+  )();
 
   logger.info("Message sent to Kafka", { topic: TOPIC });
 };

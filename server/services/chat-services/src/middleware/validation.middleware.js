@@ -10,7 +10,7 @@ export const validateSocketEvent = (eventName, schema) => {
   const middleware = (data, callback) => {
     const result = schema.safeParse(data);
     if (!result.success) {
-      return callback(new Error(`Validation failed for ${eventName}: ${result.error.errors.map(e => e.message).join(", ")}`), false);
+      return callback(new Error(`Validation failed for ${eventName}: ${result.error.issues.map(e => e.message).join(", ")}`), false);
     }
     return callback(null, result.data);
   };

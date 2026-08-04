@@ -1,32 +1,29 @@
-import kafka, { TOPIC, GROUP_ID } from '../src/config/kafka.config.js';
+import { jest } from '@jest/globals';
 
 describe('Kafka Configuration', () => {
-  it('should export TOPIC constant', () => {
+  it('should export TOPIC constant', async () => {
+    const { TOPIC } = await import('../src/config/kafka.config.js');
     expect(TOPIC).toBeDefined();
     expect(typeof TOPIC).toBe('string');
-  });
-
-  it('should export GROUP_ID constant', () => {
-    expect(GROUP_ID).toBeDefined();
-    expect(typeof GROUP_ID).toBe('string');
-  });
-
-  it('should export kafka instance', () => {
-    expect(kafka).toBeDefined();
-    expect(kafka.clientId).toBeDefined();
-    expect(kafka.brokers).toBeDefined();
-  });
-
-  it('should have valid TOPIC default', () => {
     expect(TOPIC).toBe('chat-message');
   });
 
-  it('should have valid GROUP_ID default', () => {
+  it('should export GROUP_ID constant', async () => {
+    const { GROUP_ID } = await import('../src/config/kafka.config.js');
+    expect(GROUP_ID).toBeDefined();
+    expect(typeof GROUP_ID).toBe('string');
     expect(GROUP_ID).toBe('chat-group');
   });
 
+  it('should export kafka instance', async () => {
+    const { default: kafka } = await import('../src/config/kafka.config.js');
+    expect(kafka).toBeDefined();
+    expect(typeof kafka.producer).toBe('function');
+    expect(typeof kafka.consumer).toBe('function');
+  });
+
   it('producer should use correct topic', async () => {
-    const { connectProducer, sendToKafka, disconnectProducer } = await import('../src/kafka/producer.js');
+    jest.resetModules();
 
     const mockProducer = {
       connect: jest.fn(),
@@ -34,15 +31,16 @@ describe('Kafka Configuration', () => {
       disconnect: jest.fn(),
     };
 
-    const mockKafka = {
-      producer: jest.fn(() => mockProducer),
-    };
-
-    jest.doMock('../src/config/kafka.config.js', () => ({
+    await jest.unstable_mockModule('../src/config/kafka.config.js', () => ({
       __esModule: true,
-      default: mockKafka,
+      default: {
+        producer: jest.fn(() => mockProducer),
+      },
       TOPIC: 'chat-message',
+      GROUP_ID: 'chat-group',
     }));
+
+    const { connectProducer, sendToKafka, disconnectProducer } = await import('../src/kafka/producer.js');
 
     await connectProducer();
     await sendToKafka({ msg: 'test', to: 'user123', senderId: 'user456' });
@@ -54,21 +52,32 @@ describe('Kafka Configuration', () => {
   });
 
   it('consumer should subscribe to correct topic', async () => {
+    jest.resetModules();
+
     const mockConsumer = {
       connect: jest.fn(),
       subscribe: jest.fn(),
       run: jest.fn(),
     };
 
-    const mockKafka = {
-      consumer: jest.fn(() => mockConsumer),
-    };
-
-    jest.doMock('../src/config/kafka.config.js', () => ({
+    await jest.unstable_mockModule('../src/config/kafka.config.js', () => ({
       __esModule: true,
-      default: mockKafka,
+      default: {
+        consumer: jest.fn(() => mockConsumer),
+      },
       TOPIC: 'chat-message',
       GROUP_ID: 'chat-group',
+    }));
+
+    await jest.unstable_mockModule('ioredis', () => ({
+      __esModule: true,
+      default: class MockRedis {
+        constructor() {
+          this.set = async () => 'OK';
+          this.get = async () => null;
+          this.del = async () => 1;
+        }
+      },
     }));
 
     const { kafkaConsumer } = await import('../src/kafka/consumer.js');

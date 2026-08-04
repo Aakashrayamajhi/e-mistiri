@@ -2,28 +2,88 @@ import mongoSanitize from 'express-mongo-sanitize'
 import xss from 'xss'
 
 export const sanitizeMiddleware = (req, res, next) => {
-  if (req.body && typeof req.body === 'object') {
-    req.body = sanitizeObject(req.body);
+  mongoSanitize()(req, res, () => {
+    sanitizeAndAssign(req, 'body')
+    sanitizeAndAssign(req, 'query')
+    sanitizeAndAssign(req, 'params')
+    next()
+  })
+}
+
+const getPropertyDescriptor = (obj, key) => {
+  let current = obj
+  while (current) {
+    const descriptor = Object.getOwnPropertyDescriptor(current, key)
+    if (descriptor) {
+      return descriptor
+    }
+    current = Object.getPrototypeOf(current)
   }
-  next();
-};
+  return undefined
+}
+
+const sanitizeAndAssign = (req, key) => {
+  const value = req[key]
+  if (value && typeof value === 'object') {
+    const sanitized = sanitizeObject(value)
+    const descriptor = getPropertyDescriptor(req, key)
+    const canReassign = !descriptor || descriptor.writable === true || typeof descriptor.set === 'function'
+
+    if (canReassign) {
+      try {
+        req[key] = sanitized
+        return
+      } catch {}
+    }
+
+    if (Array.isArray(value)) {
+      for (let i = 0; i < sanitized.length; i += 1) {
+        if (Object.prototype.hasOwnProperty.call(value, i)) {
+          try {
+            value[i] = sanitized[i]
+          } catch {}
+        }
+      }
+      return
+    }
+
+    Object.keys(sanitized).forEach((k) => {
+      const propDesc = Object.getOwnPropertyDescriptor(value, k)
+      if (!propDesc || propDesc.writable === true || typeof propDesc.set === 'function') {
+        try {
+          value[k] = sanitized[k]
+        } catch {}
+      } else if (propDesc.configurable) {
+        Object.defineProperty(value, k, {
+          value: sanitized[k],
+          writable: true,
+          enumerable: propDesc.enumerable,
+          configurable: true,
+        })
+      }
+    })
+  }
+}
 
 const sanitizeObject = (obj) => {
-  const result = {}
+  if (typeof obj !== 'object' || obj === null) {
+    return typeof obj === 'string' ? xss(obj) : obj
+  }
+
+  if (Array.isArray(obj)) {
+    return obj.map(sanitizeObject)
+  }
+
+  const sanitized = {}
   for (const key of Object.keys(obj)) {
-    const cleanKey = xss(key)
     const value = obj[key]
-    if (Array.isArray(value)) {
-      result[cleanKey] = value.map((item) =>
-        typeof item === 'string' ? xss(item) : typeof item === 'object' && item !== null ? sanitizeObject(item) : item
-      )
-    } else if (value !== null && typeof value === 'object') {
-      result[cleanKey] = sanitizeObject(value)
-    } else if (typeof value === 'string') {
-      result[cleanKey] = xss(value)
+    if (typeof value === 'string') {
+      sanitized[key] = xss(value)
+    } else if (typeof value === 'object' && value !== null) {
+      sanitized[key] = sanitizeObject(value)
     } else {
-      result[cleanKey] = value
+      sanitized[key] = value
     }
   }
-  return result
+  return sanitized
 }
