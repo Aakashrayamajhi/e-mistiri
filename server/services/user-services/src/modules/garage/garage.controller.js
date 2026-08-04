@@ -3,7 +3,7 @@ import { uploadImage } from "../../utils/cloudinary.util.js";
 
 export const registerGarage = async (req, res, next) => {
   try {
-    const garage = await garageService.createGarage(req.body);
+    const garage = await garageService.createGarage(req.validatedBody);
 
     res.status(201).json({
       success: true,
@@ -30,10 +30,12 @@ export const getGarages = async (req, res, next) => {
 
 export const getAllGarages = async (req, res, next) => {
   try {
-    const garages = await garageService.getAllGarages();
+    const { limit, skip } = req.validatedQuery || {};
+    const garages = await garageService.getAllGarages({ limit, skip });
 
     res.json({
       success: true,
+      count: garages.length,
       data: garages,
     });
   } catch (error) {
@@ -43,7 +45,7 @@ export const getAllGarages = async (req, res, next) => {
 
 export const getGarageByPhone = async (req, res) => {
   try {
-    const garage = await garageService.findGarageByPhone(req.params.phone);
+    const garage = await garageService.findGarageByPhone(req.validatedParams.phone);
 
     if (!garage) {
       return res.status(404).json({
@@ -66,10 +68,9 @@ export const getGarageByPhone = async (req, res) => {
   }
 };
 
-
 export const getGarage = async (req, res, next) => {
   try {
-    const garage = await garageService.getGarageById(req.params.id);
+    const garage = await garageService.getGarageById(req.validatedParams.id);
 
     if (!garage) {
       return res.status(404).json({
@@ -90,10 +91,7 @@ export const getGarage = async (req, res, next) => {
 export const updateGarage = async (req, res) => {
   try {
     const garageId = req.params.id;
-    console.log("garageId:", garageId)
-
     const garageIdFromToken = req.headers['x-user-id'];
-    console.log("garageid form token:", garageIdFromToken)
 
     if (!garageIdFromToken || garageIdFromToken !== garageId) {
       return res.status(403).json({
@@ -102,7 +100,7 @@ export const updateGarage = async (req, res) => {
       });
     }
 
-    const garage = await garageService.updateGarage(garageId, req.body);
+    const garage = await garageService.updateGarage(garageId, req.validatedBody);
 
     if (!garage) {
       return res.status(404).json({
@@ -126,7 +124,6 @@ export const updateGarage = async (req, res) => {
   }
 };
 
-
 export const deleteGarage = async (req, res, next) => {
   try {
     await garageService.deleteGarage(req.params.id);
@@ -142,11 +139,11 @@ export const deleteGarage = async (req, res, next) => {
 
 export const getNearbyGarages = async (req, res, next) => {
   try {
-    const { lng, lat } = req.query;
-
+    const { lng, lat, maxDistance } = req.validatedQuery || {};
     const garages = await garageService.getNearbyGarages(
       Number(lng),
-      Number(lat)
+      Number(lat),
+      maxDistance ? Number(maxDistance) : 5000
     );
 
     res.json({
@@ -158,10 +155,9 @@ export const getNearbyGarages = async (req, res, next) => {
   }
 };
 
-
 export const approveGarage = async (req, res, next) => {
   try {
-    const garage = await garageService.approveGarage(req.params.id);
+    const garage = await garageService.approveGarage(req.validatedParams.id);
 
     res.json({
       success: true,
@@ -175,7 +171,7 @@ export const approveGarage = async (req, res, next) => {
 
 export const rejectGarage = async (req, res, next) => {
   try {
-    const garage = await garageService.rejectGarage(req.params.id);
+    const garage = await garageService.rejectGarage(req.validatedParams.id);
 
     res.json({
       success: true,

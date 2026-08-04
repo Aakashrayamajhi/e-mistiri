@@ -1,17 +1,18 @@
-import kafka  from "../config/kafka.config.js";
-import Message from "../model/chatModel.js"; 
+import kafka, { TOPIC, GROUP_ID } from "../config/kafka.config.js";
+import Message from "../model/chatModel.js";
+import { getUserSession } from "../utils/redisSession.js";
+import logger from "../utils/logger.js";
 
-const consumer = kafka.consumer({ groupId: "chat-group" });
+const consumer = kafka.consumer({ groupId: GROUP_ID });
 
-export const kafkaConsumer = async (io, users) => {
+export const kafkaConsumer = async (io) => {
   await consumer.connect();
+  logger.info("Kafka consumer connected");
 
   await consumer.subscribe({
-    topic: "chat-messages",
+    topic: TOPIC,
     fromBeginning: false,
   });
-
-  console.log(" Consumer connected");
 
   await consumer.run({
     eachMessage: async ({ message }) => {
@@ -19,7 +20,7 @@ export const kafkaConsumer = async (io, users) => {
         const data = JSON.parse(message.value.toString());
         const { msg, to, senderId } = data;
 
-        console.log("Kafka received:", data);
+        logger.info("Kafka received message", { topic: TOPIC });
 
         await Message.create({
           sender: senderId,
@@ -27,20 +28,18 @@ export const kafkaConsumer = async (io, users) => {
           content: msg,
         });
 
-        console.log(" Saved to DB");
+        logger.info("Message saved to DB");
 
-
-        const socketId = users.get(to);
+        const socketId = await getUserSession(to);
 
         if (socketId) {
           io.to(socketId).emit("receivingmessage", { msg, senderId });
-          console.log(" Sent to user:", to);
+          logger.info("Message sent to user", { userId: to, socketId });
         } else {
-          console.log("User offline:", to);
+          logger.warn("User offline", { userId: to });
         }
-
       } catch (err) {
-        console.error("Consumer error:", err);
+        logger.error("Consumer error", { error: err.message });
       }
     },
   });

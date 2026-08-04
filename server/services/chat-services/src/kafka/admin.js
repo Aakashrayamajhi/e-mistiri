@@ -1,28 +1,27 @@
-import kafka from "../config/kafka.config.js"
+import kafka, { TOPIC } from "../config/kafka.config.js";
+import logger from "../utils/logger.js";
 
 export const createTopic = async () => {
-    try {
+  try {
+    const admin = kafka.admin();
+    await admin.connect();
+    logger.info("Kafka admin connected");
 
-        const admin = kafka.admin()
-        await admin.connect()
-        console.log("admin connected!")
+    await admin.createTopics({
+      topics: [
+        {
+          topic: TOPIC,
+          numPartitions: 5,
+          replicationFactor: 1,
+        },
+      ],
+    });
 
-        await admin.createTopics({
-            topics: [{
-                topic: "chat-message",
-                numPartitions: 5,
-                replicationFactor: 1,
+    logger.info("Kafka topic created", { topic: TOPIC });
 
-            }]
-        })
-
-        console.log("topic created successfully")
-
-        await admin.disconnect()
-        console.log("admin disconnected successfully")
-    } catch (error) {
-        console.log("error while creating topic in admin:", error)
-    }
-
-}
-
+    await admin.disconnect();
+    logger.info("Kafka admin disconnected");
+  } catch (error) {
+    logger.error("Error creating topic", { error: error.message });
+  }
+};

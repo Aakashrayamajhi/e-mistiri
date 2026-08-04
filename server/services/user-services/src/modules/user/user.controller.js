@@ -1,9 +1,8 @@
 import * as userService from "./user.service.js";
-import { uploadImage } from "../../utils/cloudinary.util.js";
 
 export const createUser = async (req, res) => {
   try {
-    const user = await userService.createUser(req.body);
+    const user = await userService.createUser(req.validatedBody);
 
     return res.status(201).json({
       success: true,
@@ -22,7 +21,7 @@ export const createUser = async (req, res) => {
 
 export const getUserByPhone = async (req, res) => {
   try {
-    const user = await userService.findUserByPhone(req.params.phone);
+    const user = await userService.findUserByPhone(req.validatedParams.phone);
 
     if (!user) {
       return res.status(404).json({
@@ -47,7 +46,7 @@ export const getUserByPhone = async (req, res) => {
 
 export const getUserById = async (req, res) => {
   try {
-    const user = await userService.getUserById(req.params.id);
+    const user = await userService.getUserById(req.validatedParams.id);
 
     if (!user) {
       return res.status(404).json({
@@ -72,7 +71,8 @@ export const getUserById = async (req, res) => {
 
 export const getAllUsers = async (req, res) => {
   try {
-    const users = await userService.getAllUsers();
+    const { limit, skip } = req.validatedQuery || {};
+    const users = await userService.getAllUsers({ limit, skip });
 
     return res.json({
       success: true,
@@ -92,10 +92,7 @@ export const getAllUsers = async (req, res) => {
 export const updateUser = async (req, res) => {
   try {
     const userId = req.params.id;
-    console.log("userid:", userId)
-
     const userIdFromToken = req.headers['x-user-id'];
-    console.log("userid form token:", userIdFromToken)
 
     if (!userIdFromToken || userIdFromToken !== userId) {
       return res.status(403).json({
@@ -104,7 +101,7 @@ export const updateUser = async (req, res) => {
       });
     }
 
-    const user = await userService.updateUser(userId, req.body);
+    const user = await userService.updateUser(userId, req.validatedBody);
 
     if (!user) {
       return res.status(404).json({
@@ -162,6 +159,7 @@ export const uploadProfileImage = async (req, res) => {
       });
     }
 
+    const { uploadImage } = await import("../../utils/cloudinary.util.js");
     const result = await uploadImage(req.file.buffer, "users");
 
     const user = await userService.updateUser(req.params.id, {

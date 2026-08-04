@@ -1,6 +1,5 @@
 import * as garageAuthService from "./garageAuth.service.js";
 
-
 export const sendOTP = async (req, res, next) => {
   try {
     const { phone } = req.body;
@@ -15,7 +14,6 @@ export const sendOTP = async (req, res, next) => {
     next(error);
   }
 };
-
 
 export const verifyOTP = async (req, res, next) => {
   try {
@@ -39,15 +37,14 @@ export const completeProfile = async (req, res, next) => {
 
     res.status(200).json({
       success: result.success,
-      message: result.message, 
+      message: result.message,
       data: result.data || null,
     });
 
   } catch (error) {
-    next(error); 
+    next(error);
   }
 };
-
 
 export const loginGarage = async (req, res, next) => {
   try {
@@ -65,3 +62,18 @@ export const loginGarage = async (req, res, next) => {
   }
 };
 
+export const refreshToken = async (req, res, next) => {
+  try {
+    const { refreshToken } = req.body;
+
+    const result = await garageAuthService.refreshToken(refreshToken);
+
+    res.status(200).json({
+      success: true,
+      message: "Token refreshed",
+      data: result,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
