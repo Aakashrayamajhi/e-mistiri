@@ -1,4 +1,3 @@
-
 import express from 'express'
 import cors from 'cors'
 import helmet from 'helmet'
@@ -18,17 +17,34 @@ import { loggerMiddleware } from './middleware/logger.middleware.js'
 import { errorMiddleware } from './middleware/error.middleware.js'
 import { apilimiter } from './middleware/ratelimiter.middleware.js'
 import { authMiddleware } from './middleware/auth.middleware.js'
+import { sanitizeMiddleware } from './middleware/sanitize.middleware.js'
+import { metricsMiddleware, metricsEndpoint } from './middleware/metrics.middleware.js'
+import { rbac } from './middleware/rbac.middleware.js'
 import redis from './config/redis.config.js'
 
 const app = express()
 
+const allowedOrigins = process.env.ALLOWED_ORIGINS
+  ? process.env.ALLOWED_ORIGINS.split(',').map((origin) => origin.trim())
+  : []
+
 app.use(helmet())
 app.use(cors({
-  origin: process.env.ALLOWED_ORIGINS || '*',
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.length === 0 || allowedOrigins.includes(origin)) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  },
   credentials: true
 }))
 
-redis 
+app.use(sanitizeMiddleware)
+app.use(express.json({ limit: '10kb' }))
+app.use(express.urlencoded({ extended: true, limit: '10kb' }))
+
+app.use(metricsMiddleware)
 
 app.use(loggerMiddleware)
 app.use(apilimiter)
@@ -43,15 +59,17 @@ app.get('/health', (req, res) => {
   })
 })
 
+app.get('/metrics', metricsEndpoint)
+
 app.use('/api/userAuth', userAuthRouter)
 app.use('/api/garageAuth', garageAuthRouter)
 app.use('/api/mechanicAuth', mechanicAuthRouter)
 
-app.use('/api/chat', authMiddleware, chatRouter)
+app.use('/api/chat', authMiddleware, rbac('user', 'garage', 'mechanic'), chatRouter)
 
-app.use('/api/user', authMiddleware, userRouter)
-app.use('/api/garage', authMiddleware, garageRouter)
-app.use('/api/mechanic', authMiddleware,  mechanicRouter)
+app.use('/api/user', authMiddleware, rbac('user'), userRouter)
+app.use('/api/garage', authMiddleware, rbac('garage'), garageRouter)
+app.use('/api/mechanic', authMiddleware, rbac('mechanic'), mechanicRouter)
 
 app.use((req, res) => {
   res.status(404).json({
@@ -64,4 +82,4 @@ app.use((req, res) => {
 
 app.use(errorMiddleware)
 
-export { app }
+export { app, rbac }

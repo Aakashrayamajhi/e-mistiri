@@ -1,12 +1,38 @@
 {
   "name": "api-gateway",
   "version": "1.0.0",
-  "description": "",
+  "description": "API Gateway for e-mistiri",
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon --watch src --exec \"node --trace-deprecation src/index.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {},
+    "testMatch": [
+      "**/?(*.)+(spec|test).[jt]s?(x)"
+    ],
+    "moduleNameMapper": {
+      "^\\./logger\\.js$": "<rootDir>/tests/__mocks__/api-gateway/logger.js",
+      "^ioredis$": "<rootDir>/tests/__mocks__/ioredis.js",
+      "^prom-client$": "<rootDir>/tests/__mocks__/prom-client.js",
+      "^http-proxy-middleware$": "<rootDir>/tests/__mocks__/http-proxy-middleware.js",
+      "^socket\\.io$": "<rootDir>/tests/__mocks__/socket.io.js",
+      "^socket\\.io-client$": "<rootDir>/tests/__mocks__/socket.io-client.js",
+      "^xss$": "<rootDir>/tests/__mocks__/xss.js",
+      "^express-mongo-sanitize$": "<rootDir>/tests/__mocks__/express-mongo-sanitize.js",
+      "^opossum$": "<rootDir>/tests/__mocks__/opossum.js",
+      "^../../config/redis\\.config\\.js$": "<rootDir>/tests/__mocks__/api-gateway/redis.config.js",
+      "^./config/redis\\.config\\.js$": "<rootDir>/tests/__mocks__/api-gateway/redis.config.js",
+      "^src/config/redis\\.config\\.js$": "<rootDir>/tests/__mocks__/api-gateway/redis.config.js",
+      "^.*config/redis\\.config\\.js$": "<rootDir>/tests/__mocks__/api-gateway/redis.config.js"
+    },
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/logs/"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -16,16 +42,23 @@
     "cors": "^2.8.6",
     "dotenv": "^17.3.1",
     "express": "^5.2.1",
+    "express-mongo-sanitize": "^2.2.0",
     "express-rate-limit": "^8.3.1",
     "helmet": "^8.1.0",
     "http-proxy-middleware": "^3.0.5",
     "ioredis": "^5.10.1",
+    "jest": "^30.4.2",
     "joi": "^17.11.0",
     "jsonwebtoken": "^9.0.3",
+    "opossum": "^10.0.0",
+    "prom-client": "^15.1.3",
     "socket.io": "^4.8.3",
     "socket.io-client": "^4.8.3",
+    "supertest": "^7.2.2",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1",
-    "winston": "^3.19.0"
+    "winston": "^3.19.0",
+    "xss": "^1.0.15",
+    "zod": "^4.4.3"
   }
 }
