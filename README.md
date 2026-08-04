@@ -1,6 +1,6 @@
 # E-Mistiri Platform - Microservices Architecture
 
-> A production-grade, fully-tested, scalable microservices platform for autonomous vehicle maintenance and garage management.
+> Production-grade, fully-tested, scalable microservices platform for autonomous vehicle maintenance and garage management.
 
 [![Status](https://img.shields.io/badge/Status-Production%20Ready-green.svg)](https://github.com)
 [![Node Version](https://img.shields.io/badge/node-18%2B-blue.svg)](https://nodejs.org)
@@ -8,19 +8,31 @@
 
 ## Quick Start
 
-Get the system running in 5 minutes:
-
 ```bash
 # 1. Install dependencies
-npm install
+cd server/api-gateway && npm install
+cd ../services/auth-services && npm install
+cd ../services/user-services && npm install
+cd ../services/chat-services && npm install
 
 # 2. Setup environment
-cd server/api-gateway && cp .env.example .env
-cd ../services/auth-services && cp .env.example .env
-cd ../services/user-services && cp .env.example .env
+cp server/api-gateway/.env.example server/api-gateway/.env
+cp server/services/auth-services/.env.example server/services/auth-services/.env
+cp server/services/user-services/.env.example server/services/user-services/.env
+cp server/services/chat-services/.env.example server/services/chat-services/.env
 
 # 3. Start services
-npm run dev  # or use PM2: pm2 start ecosystem.config.js
+# Terminal 1
+cd server/api-gateway && npm run dev
+
+# Terminal 2
+cd server/services/auth-services && npm run dev
+
+# Terminal 3
+cd server/services/user-services && npm run dev
+
+# Terminal 4
+cd server/services/chat-services && npm run dev
 ```
 
 See [QUICKSTART.md](./QUICKSTART.md) for detailed instructions
@@ -30,19 +42,27 @@ See [QUICKSTART.md](./QUICKSTART.md) for detailed instructions
 ## System Overview
 
 ### Architecture
-- **API Gateway** (Port 2002) - Central request router with security & rate limiting
-- **Auth Service** (Port 4002) - User & garage authentication, JWT token generation
-- **User Service** (Port 3002) - User profiles, garage management, bookings
+
+- **API Gateway** (Port 2002) - Central request router with security, rate limiting, RBAC, and metrics
+- **Auth Service** (Port 4002) - User, garage, and mechanic authentication, JWT generation, OTP verification
+- **User Service** (Port 3002) - User profiles, garage management, mechanic profiles, booking, audit logging
+- **Chat Service** (Port 5000) - Real-time chat via Socket.io, Kafka-based messaging, Redis sessions
 - **MongoDB** - Primary data store
-- **Redis** - Caching and rate limiting
+- **Redis** - Caching, rate limiting, chat sessions, distributed locks
+- **Kafka** - Chat message streaming
 
 ### Technology Stack
+
 - **Runtime**: Node.js 18+
 - **Framework**: Express.js 5
-- **Database**: MongoDB 5+
-- **Cache**: Redis 6+
-- **Security**: Helmet.js, JWT
-- **Logging**: Winston
+- **Databases**: MongoDB 5+ (Mongoose), Redis 6+
+- **Messaging**: KafkaJS
+- **Real-time**: Socket.io
+- **Security**: Helmet.js, JWT, refresh tokens, RBAC, express-mongo-sanitize, xss
+- **Validation**: Joi, Zod
+- **Resilience**: Opossum (circuit breaker), retry logic, timeouts
+- **Logging**: Winston (file + console)
+- **Docs**: Swagger UI
 - **Process Manager**: PM2
 
 ---
@@ -50,32 +70,35 @@ See [QUICKSTART.md](./QUICKSTART.md) for detailed instructions
 ## What's New (v1.0.0)
 
 ### Security Hardening
-- JWT_SECRET validation (no weak defaults)
+- JWT_SECRET validation with refresh token support
 - Helmet.js security headers on all services
-- CORS configuration
-- Input validation framework (Joi ready)
-- Environment variable enforcement
+- RBAC middleware (user, garage, mechanic)
+- Input validation (Joi + Zod)
+- Mongo sanitization + XSS protection
+- Rate limiting per service tier
 
 ### Scalability Improvements
-- MongoDB connection pooling (min: 2, max: 10)
-- Horizontal scaling ready
-- Rate limiting (100 req/15min)
+- MongoDB connection pooling
+- Redis-backed rate limiting and sessions
+- Kafka-based chat messaging
 - Stateless service design
-- Health check endpoints
+- Health and metrics endpoints
+- Circuit breakers and retries
 
 ### Reliability & Observability
-- Global error handlers
-- Graceful shutdown (SIGTERM/SIGINT)
-- Structured logging (Winston, files + console)
-- Request tracking (duration, metadata)
-- Error sanitization (dev vs prod)
+- Global error handlers and graceful shutdown
+- Structured Winston logging with file persistence
+- Request duration and metadata tracking
+- Audit middleware for critical operations
+- Idempotency middleware
+- Prometheus-style metrics middleware
 
 ### Developer Experience
-- Comprehensive setup guide
-- Complete testing guide with examples
-- PM2 deployment configuration
-- Environment templates
-- Detailed change log
+- Swagger API docs on every service
+- Comprehensive setup, testing, and deployment guides
+- PM2 ecosystem config
+- Environment templates with validation
+- Jest + Supertest test suites
 
 ---
 
@@ -106,26 +129,19 @@ npm run dev
 # Terminal 3: User Service
 cd server/services/user-services
 npm run dev
+
+# Terminal 4: Chat Service
+cd server/services/chat-services
+npm run dev
 ```
 
 ### Production Mode (with PM2)
 ```bash
-# Install PM2 globally
 npm install -g pm2
-
-# Start all services
 pm2 start ecosystem.config.js --env production
-
-# View status
 pm2 status
-
-# View logs
 pm2 logs
-
-# Restart all services
 pm2 restart all
-
-# Stop all services
 pm2 stop all
 ```
 
@@ -135,25 +151,51 @@ pm2 stop all
 
 ### Health Checks
 ```
-GET /health                              → API Gateway health
-GET /health                              → Service health (Auth/User)
+GET /health                              API Gateway
+GET /health                              Auth Service
+GET /health                              User Service
+GET /health                              Chat Service
+```
+
+### Metrics
+```
+GET /metrics                             API Gateway
+GET /metrics                             Auth Service
+```
+
+### API Documentation
+```
+GET /api/docs                            API Gateway
+GET /api/docs                            Auth Service
+GET /api/docs                            User Service
 ```
 
 ### Public Routes (No Auth Required)
 ```
-POST /api/userAuth/register              → User registration
-POST /api/userAuth/login                 → User login
-POST /api/garageAuth/register            → Garage registration
-POST /api/garageAuth/login               → Garage login
+POST /api/v1/userAuth/register           User registration
+POST /api/v1/userAuth/login              User login
+POST /api/v1/garageAuth/register         Garage registration
+POST /api/v1/garageAuth/login            Garage login
+POST /api/v1/mechanicAuth/register       Mechanic registration
+POST /api/v1/mechanicAuth/login          Mechanic login
 ```
 
-### Protected Routes (Auth Required)
+### Protected Routes (Auth + RBAC Required)
 ```
-GET  /api/user/profile                   → Get user profile
-POST /api/user/update                    → Update profile
-GET  /api/garage/list                    → List all garages
-GET  /api/garage/{id}                    → Get garage details
-POST /api/garage/register                → Register new garage
+GET  /api/user/profile                   User profile
+POST /api/user/update                    Update user profile
+GET  /api/garage/list                    List garages
+GET  /api/garage/{id}                    Garage details
+POST /api/garage/register                Register garage
+GET  /api/mechanic/list                  List mechanics
+POST /api/mechanic/register              Register mechanic
+```
+
+### Chat Routes
+```
+/ws                                        Socket.io namespace
+Event: register { userId }
+Event: sendingmessage { senderId, to, message }
 ```
 
 ---
@@ -166,12 +208,11 @@ POST /api/garage/register                → Register new garage
 ```env
 PORT=2002
 NODE_ENV=development
-LOG_LEVEL=debug
 JWT_SECRET=your-secret-key-here
 REDIS_HOST=localhost
 REDIS_PORT=6379
-ALLOWED_ORIGINS=http://localhost:3000
-MONGO_URI=mongodb://localhost:27017/emistiri
+ALLOWED_ORIGINS=http://localhost:3000,http://localhost:3001
+MONGO_URI=mongodb://localhost:27017/e-mistiri
 ```
 
 **Auth Service** (`.env`):
@@ -179,7 +220,19 @@ MONGO_URI=mongodb://localhost:27017/emistiri
 PORT=4002
 NODE_ENV=development
 JWT_SECRET=your-secret-key-here
+JWT_EXPIRES_IN=15m
+REFRESH_TOKEN_SECRET=refresh-secret-here
+REFRESH_TOKEN_EXPIRES_IN=7d
 MONGO_URI=mongodb://localhost:27017/emistiri-auth
+REDIS_HOST=localhost
+REDIS_PORT=6379
+ALLOWED_ORIGINS=*
+USER_SERVICE_URL=http://localhost:3002/api/v1/user
+GARAGE_SERVICE_URL=http://localhost:3002/api/v1/garage
+MECHANIC_SERVICE_URL=http://localhost:3002/api/v1/mechanic
+TWILIO_SID=your-twilio-sid
+TWILIO_AUTH_TOKEN=your-twilio-auth-token
+TWILIO_PHONE=your-twilio-phone
 ```
 
 **User Service** (`.env`):
@@ -187,6 +240,26 @@ MONGO_URI=mongodb://localhost:27017/emistiri-auth
 PORT=3002
 NODE_ENV=development
 MONGO_URI=mongodb://localhost:27017/emistiri-users
+REDIS_HOST=localhost
+REDIS_PORT=6379
+ALLOWED_ORIGINS=*
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+```
+
+**Chat Service** (`.env`):
+```env
+PORT=5000
+NODE_ENV=development
+MONGO_URI=mongodb://localhost:27017/emistiri-chat
+REDIS_HOST=localhost
+REDIS_PORT=6379
+CORS_ORIGIN=http://localhost:3000
+KAFKA_BROKERS=localhost:9092
+KAFKA_CLIENT_ID=chatapp
+KAFKA_TOPIC=chat-message
+KAFKA_GROUP_ID=chat-group
 ```
 
 ---
@@ -200,7 +273,6 @@ curl http://localhost:2002/health
 
 ### Rate Limiting Test
 ```bash
-# Send 101 requests rapidly
 for i in {1..101}; do curl http://localhost:2002/health; done
 ```
 
@@ -241,32 +313,120 @@ See [TESTING_GUIDE.md](./TESTING_GUIDE.md) for comprehensive testing procedures
 
 ## Security Features
 
-- **JWT Authentication** - Secure token-based auth
-- **Rate Limiting** - 100 requests per 15 minutes per IP
+- **JWT Authentication** - Secure token-based auth with refresh tokens
+- **Rate Limiting** - Configurable per-tier limits (public, write, admin)
 - **Security Headers** - Helmet.js protection
 - **CORS Protection** - Configurable allowed origins
-- **Input Validation** - Joi framework ready
+- **RBAC** - Role-based access control (user, garage, mechanic)
+- **Input Validation** - Joi and Zod schemas
+- **Mongo Sanitization** - NoSQL injection prevention
+- **XSS Protection** - Input/output sanitization
 - **Error Sanitization** - No stack traces in production
 - **Environment Validation** - Required vars enforced
+- **Audit Logging** - Critical operations tracked
+- **Idempotency** - Duplicate request prevention
+
+---
+
+## Key Middleware
+
+| Middleware | Purpose |
+|------------|---------|
+| `authMiddleware` | JWT verification and user attachment |
+| `rbac('user','garage','mechanic')` | Role-based route access |
+| `sanitizeMiddleware` | Mongo sanitization + XSS cleanup |
+| `publicReadLimiter` | Rate limit for public reads |
+| `writeLimiter` | Rate limit for write operations |
+| `adminActionLimiter` | Rate limit for admin actions |
+| `metricsMiddleware` | Request metrics collection |
+| `errorMiddleware` | Centralized error formatting |
+| `idempotencyMiddleware` | Duplicate request protection |
+| `auditMiddleware` | Sensitive action logging |
+
+---
+
+## Port Reference
+
+| Service | Port | Health Endpoint |
+|---------|------|-----------------|
+| API Gateway | 2002 | http://localhost:2002/health |
+| Auth Service | 4002 | http://localhost:4002/health |
+| User Service | 3002 | http://localhost:3002/health |
+| Chat Service | 5000 | http://localhost:5000/health |
+| MongoDB | 27017 | database only |
+| Redis | 6379 | cache only |
+| Kafka | 9092 | messaging only |
+
+---
+
+## Project Structure
+
+```
+e-mistiri/
+├── server/
+│   ├── api-gateway/
+│   │   ├── src/
+│   │   ├── package.json
+│   │   └── .env.example
+│   ├── services/
+│   │   ├── auth-services/
+│   │   │   ├── src/
+│   │   │   │   ├── modules/
+│   │   │   │   │   ├── userAuth/
+│   │   │   │   │   ├── garageAuth/
+│   │   │   │   │   └── mechanicAuth/
+│   │   │   │   ├── middleware/
+│   │   │   │   ├── config/
+│   │   │   │   └── utils/
+│   │   │   ├── package.json
+│   │   │   └── .env.example
+│   │   ├── user-services/
+│   │   │   ├── src/
+│   │   │   │   ├── modules/
+│   │   │   │   │   ├── user/
+│   │   │   │   │   ├── garage/
+│   │   │   │   │   └── mechanic/
+│   │   │   │   ├── middleware/
+│   │   │   │   ├── config/
+│   │   │   │   └── utils/
+│   │   │   ├── package.json
+│   │   │   └── .env.example
+│   │   └── chat-services/
+│   │       ├── src/
+│   │       │   ├── kafka/
+│   │       │   ├── middleware/
+│   │       │   ├── utils/
+│   │       │   └── model/
+│   │       ├── package.json
+│   │       └── .env.example
+│   └── api-gateway/
+├── ecosystem.config.js
+├── test-system.bat
+├── test-system.sh
+├── QUICKSTART.md
+├── SETUP_GUIDE.md
+├── TESTING_GUIDE.md
+├── FIXES_AND_IMPROVEMENTS.md
+└── SYSTEM_SUMMARY.md
+```
 
 ---
 
 ## Deployment
 
 ### Prerequisites
-```bash
-# Ensure these are installed and running
 - Node.js 18+
 - MongoDB 5+
 - Redis 6+
-```
+- Kafka (for chat service)
 
 ### Production Checklist
 - [ ] Set NODE_ENV=production
-- [ ] Configure strong JWT_SECRET (32+ characters)
+- [ ] Configure strong JWT_SECRET and REFRESH_TOKEN_SECRET
 - [ ] Set up MongoDB with authentication
 - [ ] Configure Redis with persistence
-- [ ] Set ALLOWED_ORIGINS for CORS
+- [ ] Set ALLOWED_ORIGINS / CORS_ORIGIN for CORS
+- [ ] Configure Kafka brokers for chat service
 - [ ] Set up log rotation
 - [ ] Configure monitoring/alerting
 - [ ] Test graceful shutdown
@@ -280,14 +440,19 @@ See [SETUP_GUIDE.md](./SETUP_GUIDE.md) for complete deployment guide
 
 ### v1.0.0 - Production Release
 - Fixed JWT_SECRET security issue
-- Added Helmet.js to all services
+- Added Helmet.js and security middleware to all services
 - Implemented comprehensive error handling
-- Added structured logging system
+- Added structured logging with Winston
 - Implemented graceful shutdown
 - Added global error handlers
 - Fixed database connection pooling
-- Improved rate limiting
-- Added health endpoints
+- Improved rate limiting with tiered limits
+- Added health and metrics endpoints
+- Added Swagger API documentation
+- Added RBAC, audit, idempotency middleware
+- Added chat service with Kafka and Socket.io
+- Added refresh token and OTP support
+- Added file upload support via Cloudinary
 - Complete documentation
 
 See [FIXES_AND_IMPROVEMENTS.md](./FIXES_AND_IMPROVEMENTS.md) for detailed list
@@ -314,55 +479,29 @@ MONGO_URI=mongodb://localhost:27017/emistiri
 ```bash
 # Check if Redis is running
 redis-server
-
 # Or update environment variables
 REDIS_HOST=your-redis-host
 REDIS_PORT=6379
 ```
 
+**"Error: Kafka connection failed"**
+```bash
+# Check if Kafka is running
+# Or update environment variables
+KAFKA_BROKERS=localhost:9092
+```
+
 **"Port already in use"**
 ```bash
 # Change PORT in .env or kill the process
-PORT=2003  # Use different port
+PORT=2003
 ```
 
 See [QUICKSTART.md](./QUICKSTART.md) for more troubleshooting tips
 
 ---
 
-## 📁 Project Structure
-
-```
-e-mistiri/
-├── server/
-│   ├── api-gateway/          # API Gateway service
-│   │   ├── src/
-│   │   ├── package.json
-│   │   └── .env.example
-│   └── services/
-│       ├── auth-services/    # Authentication service
-│       │   ├── src/
-│       │   ├── package.json
-│       │   └── .env.example
-│       └── user-services/    # User management service
-│           ├── src/
-│           ├── package.json
-│           └── .env.example
-├── logs/                      # Log files (created at runtime)
-├── QUICKSTART.md             # 5-minute setup
-├── SETUP_GUIDE.md            # Complete setup guide
-├── TESTING_GUIDE.md          # Testing procedures
-├── FIXES_AND_IMPROVEMENTS.md # Detailed changes
-├── SYSTEM_SUMMARY.md         # System overview
-├── ecosystem.config.js       # PM2 configuration
-└── test-system.bat           # Windows test script
-```
-
----
-
-## 🤝 Contributing
-
-To contribute to this project:
+## Contributing
 
 1. Follow the existing code structure
 2. Ensure all tests pass
@@ -372,23 +511,15 @@ To contribute to this project:
 
 ---
 
-## 📞 Support
+## Support
 
-### Documentation
-- Check [QUICKSTART.md](./QUICKSTART.md) for quick setup
-- Check [SETUP_GUIDE.md](./SETUP_GUIDE.md) for detailed instructions
-- Check [TESTING_GUIDE.md](./TESTING_GUIDE.md) for testing examples
-
-### Resources
-- [Node.js Documentation](https://nodejs.org/docs/)
-- [Express.js Guide](https://expressjs.com/)
-- [MongoDB Manual](https://docs.mongodb.com/manual/)
-- [Winston Logger](https://github.com/winstonjs/winston)
-- [Helmet.js](https://helmetjs.github.io/)
+- [QUICKSTART.md](./QUICKSTART.md) - Quick setup
+- [SETUP_GUIDE.md](./SETUP_GUIDE.md) - Detailed instructions
+- [TESTING_GUIDE.md](./TESTING_GUIDE.md) - Testing examples
 
 ---
 
-## 📄 License
+## License
 
 ISC License - See LICENSE file
 
@@ -398,7 +529,7 @@ ISC License - See LICENSE file
 
 - **Version**: 1.0.0
 - **Status**: Production Ready
-- **Last Updated**: January 2024
+- **Last Updated**: August 2026
 - **Security**: Hardened
 - **Scalability**: Optimized
 - **Reliability**: Comprehensive
@@ -408,18 +539,10 @@ ISC License - See LICENSE file
 
 ## Next Steps
 
-1. **Read QUICKSTART.md** - Get started in 5 minutes
-2. **Run health checks** - Verify everything works
-3. **Review FIXES_AND_IMPROVEMENTS.md** - Understand what changed
-4. **Deploy to production** - Follow deployment guide
-5. **Set up monitoring** - Configure alerts and dashboards
+1. Read QUICKSTART.md
+2. Run health checks
+3. Review FIXES_AND_IMPROVEMENTS.md
+4. Deploy to production
+5. Set up monitoring
 
----
-
-**Ready to build amazing things?**
-
-Start with → **[QUICKSTART.md](./QUICKSTART.md)**
-
----
-
-Made with ❤️ for production-grade microservices
+Start with **[QUICKSTART.md](./QUICKSTART.md)**
