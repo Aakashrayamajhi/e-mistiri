@@ -1,0 +1,2 @@
+{"error":"Connection error: ","level":"error","message":"Error creating topic","service":"chat-service","timestamp":"2026-08-04 13:53:55"}
+{"error":"Connection error: ","level":"error","message":"Startup error","service":"chat-service","timestamp":"2026-08-04 13:55:00"}
