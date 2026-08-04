@@ -1,16 +1,5 @@
+import { jest } from '@jest/globals';
 import { idempotencyMiddleware } from '../src/middleware/idempotency.middleware.js';
-
-jest.mock('ioredis', () => {
-  const mockGet = jest.fn();
-  const mockSetEx = jest.fn();
-  return {
-    __esModule: true,
-    default: jest.fn(() => ({
-      get: mockGet,
-      setEx: mockSetEx,
-    }))
-  };
-});
 
 describe('Idempotency Middleware', () => {
   let mockRedis;

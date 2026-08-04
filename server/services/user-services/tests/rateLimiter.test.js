@@ -1,16 +1,5 @@
+import { jest } from '@jest/globals';
 import { publicReadLimiter, writeLimiter, adminActionLimiter } from '../src/middleware/rateLimiter.middleware.js';
-
-jest.mock('ioredis', () => {
-  const mockInc = jest.fn();
-  const mockExpire = jest.fn();
-  return {
-    __esModule: true,
-    default: jest.fn(() => ({
-      incr: mockInc,
-      expire: mockExpire,
-    }))
-  };
-});
 
 describe('Rate Limiter Middleware', () => {
   let mockRedis;

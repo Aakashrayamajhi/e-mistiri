@@ -42,3 +42,11 @@
 {"level":"info","message":"DB connected","service":"chat-service","timestamp":"2026-08-04 13:53:38"}
 {"error":"Connection error: ","level":"error","message":"Error creating topic","service":"chat-service","timestamp":"2026-08-04 13:53:55"}
 {"error":"Connection error: ","level":"error","message":"Startup error","service":"chat-service","timestamp":"2026-08-04 13:55:00"}
+{"level":"info","message":"Producer connected","service":"chat-service","timestamp":"2026-08-04 14:01:52"}
+{"level":"info","message":"Kafka consumer connected","service":"chat-service","timestamp":"2026-08-04 14:01:52"}
+{"level":"info","message":"Message sent to Kafka","service":"chat-service","timestamp":"2026-08-04 14:01:52","topic":"chat-message"}
+{"level":"info","message":"Producer disconnected","service":"chat-service","timestamp":"2026-08-04 14:01:52"}
+{"level":"info","message":"Producer connected","service":"chat-service","timestamp":"2026-08-04 14:12:10"}
+{"level":"info","message":"Kafka consumer connected","service":"chat-service","timestamp":"2026-08-04 14:12:10"}
+{"level":"info","message":"Message sent to Kafka","service":"chat-service","timestamp":"2026-08-04 14:12:10","topic":"chat-message"}
+{"level":"info","message":"Producer disconnected","service":"chat-service","timestamp":"2026-08-04 14:12:10"}
