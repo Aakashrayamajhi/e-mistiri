@@ -5,8 +5,11 @@ import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
 import redis from "../../config/redis.config.js";
-
 import { sendSMS } from "../../utils/otp.service.js";
+import { generateAccessToken, generateRefreshToken, storeRefreshToken, revokeRefreshToken, verifyRefreshToken, isRefreshTokenValid } from "../../utils/token.service.js";
+import { env } from "../../config/dotenv.config.js";
+import { retry, withTimeout } from "../../utils/retry.js";
+import { withCircuitBreaker } from "../../utils/circuitBreaker.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -15,90 +18,64 @@ dotenv.config({
   path: path.join(__dirname, "../../.env")
 });
 
-const MECHANIC_SERVICE_URL =
-  process.env.MECHANIC_SERVICE_URL || "http://localhost:3002/api/v1/mechanic";
+const MECHANIC_SERVICE_URL = env.MECHANIC_SERVICE_URL;
 
-const JWT_SECRET = process.env.JWT_SECRET;
-const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || "1d";
-
+const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,128}$/;
 
 const validatePassword = (password) => {
-  const strongPasswordRegex =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$#!%*?&])[A-Za-z\d@$#!%*?&]{6,}$/;
-
-  if (!strongPasswordRegex.test(password)) {
+  if (!PASSWORD_REGEX.test(password)) {
     throw new Error(
-      "Password must be at least 6 characters and include uppercase, lowercase, number, and special character"
+      "Password must be at least 8 characters and include uppercase, lowercase, number, and special character"
     );
   }
 };
 
-// phone number validation ko laghi 
-
 export function isValidNepaliPhoneNumber(phone) {
   if (typeof phone !== "string") return false;
-
   const normalized = phone.replace(/[\s-]/g, "");
   const local = normalized.replace(/^(?:\+?977)/, "");
-
   if (!/^\d{10}$/.test(local)) return false;
-
   const prefix = local.slice(0, 2);
-
   return prefix === "97" || prefix === "98";
 }
 
-//mechanic ko signup logic
+const callWithResilience = async (fn) => {
+  const timeoutFn = withTimeout(fn, 10000);
+  const retryFn = () => retry(timeoutFn, 3, 1000, 10000);
+  const circuitBreakerFn = withCircuitBreaker(retryFn);
+  return circuitBreakerFn();
+};
 
 export const completeProfile = async (data) => {
   try {
-
-    console.log("mechanic complete profile module hit")
-    const { phone, fullname, password, otp } = data;
+    const { phone, fullname, password, otp, email } = data;
 
     if (!phone) throw new Error("Phone is required");
 
-    //CB and fallback 
-      if (!isValidNepaliPhoneNumber(phone)) {
+    if (!isValidNepaliPhoneNumber(phone)) {
       throw new Error("Invalid Nepali phone number");
     }
 
-
     if (!otp) {
-    if (!phone) {
-        const error = new Error("Phone is required");
-        error.status = 400;
-        throw error;
-      }
-
       if (!fullname && !password) {
-        const error = new Error("All feilds are required")
-        error.status = 400;
-        throw error;
+        throw new Error("All fields are required");
       }
 
       if (!fullname) {
-        const error = new Error("fullname missing")
-        error.status = 400
-        throw error
+        throw new Error("fullname missing");
       }
 
       if (!password) {
-        const error = new Error("Password is required");
-        error.status = 400;
-        throw error;
+        throw new Error("Password is required");
       }
 
       if (fullname.trim().length < 3) {
-        const error = new Error("Fullname must be at least 3 characters");
-        error.status = 400;
-        throw error;
+        throw new Error("Fullname must be at least 3 characters");
       }
 
       validatePassword(password);
 
       const generatedOtp = Math.floor(100000 + Math.random() * 900000).toString();
-
 
       await redis.set(
         `mechanicsignup:${phone}`,
@@ -114,14 +91,12 @@ export const completeProfile = async (data) => {
 
       console.log("OTP:", generatedOtp);
 
-
       return {
         success: true,
         message: "OTP sent to phone",
       };
     }
 
-    // ================= VERIFY OTP =================
     const storedData = await redis.get(`mechanicsignup:${phone}`);
 
     if (!storedData) throw new Error("OTP expired or not requested");
@@ -132,91 +107,92 @@ export const completeProfile = async (data) => {
       throw new Error("Invalid OTP");
     }
 
-
     const hashedPassword = await bcrypt.hash(parsedData.password, 10);
 
-    const response = await axios.post(`${MECHANIC_SERVICE_URL}`, {
-      phone: parsedData.phone,
-      fullname: parsedData.fullname,
-      password: hashedPassword,
-    });
-    
-    console.log("axios hit mechanic.services.js")
+    const response = await callWithResilience(() =>
+      axios.post(`${MECHANIC_SERVICE_URL}`, {
+        phone: parsedData.phone,
+        fullname: parsedData.fullname,
+        password: hashedPassword,
+      })
+    );
+
+    if (response.fallback) {
+      throw new Error("Mechanic service is temporarily unavailable. Please try again later.");
+    }
+
     const mechanic = response.data.data;
     console.log("mechanic:", mechanic)
 
     await redis.del(`mechanicsignup:${phone}`);
 
-    const token = jwt.sign(
-      {
-        id: mechanic._id,
-        role: mechanic.role,
-      },
-      JWT_SECRET,
-      {
-        expiresIn: JWT_EXPIRES_IN
-      }
-    );
+    const accessToken = generateAccessToken({
+      id: mechanic._id,
+      role: mechanic.role,
+    });
 
-    console.log("mechanic id in token:" , mechanic._id)
+    const refreshToken = generateRefreshToken({
+      id: mechanic._id,
+      role: mechanic.role,
+    });
+
+    await storeRefreshToken(mechanic._id, refreshToken);
+
+    console.log("mechanic id in token:", mechanic._id)
     return {
       success: true,
       message: "Signup successful",
       data: {
-        token,
+        accessToken,
+        refreshToken,
         mechanic,
       },
     };
 
   } catch (error) {
     if (error.response) {
-      throw new Error(error.response.data?.message || "mechanic service error");
+      throw new Error(error.response.data?.message || "Mechanic service error");
     }
-
     throw new Error(error.message || "Something went wrong");
   }
 };
-
-
 
 export const loginmechanic = async ({ phone, password }) => {
   if (!phone || !password)
     throw new Error("phoneNumber and password required");
 
-    if (!isValidNepaliPhoneNumber(phone)) {
+  if (!isValidNepaliPhoneNumber(phone)) {
     throw new Error("Invalid Nepali phone number");
   }
 
-  console.log("password:", password)
+  const response = await callWithResilience(() =>
+    axios.get(`${MECHANIC_SERVICE_URL}/phone/${phone}`)
+  );
 
-  let mechanic;
-
-  try {
-    const response = await axios.get(
-      `${MECHANIC_SERVICE_URL}/phone/${phone}`
-    );
-    mechanic = response.data.data;
-    console.log("l-u:", mechanic)
-  } catch {
-    throw new Error("mechanic not found");
+  if (response.fallback) {
+    throw new Error("Mechanic service is temporarily unavailable. Please try again later.");
   }
+
+  const mechanic = response.data.data;
 
   const match = await bcrypt.compare(password, mechanic.password);
   if (!match) throw new Error("Invalid password");
 
-  const token = jwt.sign(
-    {
-      id: mechanic._id,
-      role: mechanic.role,
+  const accessToken = generateAccessToken({
+    id: mechanic._id,
+    role: mechanic.role,
+  });
 
-    },
-    JWT_SECRET,
-    {
-      expiresIn: JWT_EXPIRES_IN
-    }
-  );
+  const refreshToken = generateRefreshToken({
+    id: mechanic._id,
+    role: mechanic.role,
+  });
+
+  await storeRefreshToken(mechanic._id, refreshToken);
+
   return {
-    token,
+    accessToken,
+    refreshToken,
     mechanic: {
       id: mechanic._id,
       mechanicname: mechanic.name,
@@ -225,44 +201,34 @@ export const loginmechanic = async ({ phone, password }) => {
   };
 };
 
+export const refreshToken = async (token) => {
+  try {
+    const decoded = verifyRefreshToken(token);
 
+    const isValid = await isRefreshTokenValid(decoded.id, token);
+    if (!isValid) {
+      throw new Error("Invalid or expired refresh token");
+    }
 
+    await revokeRefreshToken(decoded.id, token);
 
-// // ================= LOGIN =================
-// export const loginmechanic = async ({ phone, password }) => {
-//   if (!phone || !password)
-//     throw new Error("Phone and password required");
-//   console.log("password:", password)
+    const accessToken = generateAccessToken({
+      id: decoded.id,
+      role: decoded.role,
+    });
 
-//   let mechanic;
-  
-//   try {
-//     const response = await axios.get(
-//       `${mechanic_SERVICE_URL}/approved`
-//     );
-//     mechanic = response.data.data;
-//     console.log("mechanic:", mechanic)
-//   } catch {
-//     throw new Error("mechanic not found");
-//   }
+    const newRefreshToken = generateRefreshToken({
+      id: decoded.id,
+      role: decoded.role,
+    });
 
-//   if (mechanic.status !== "approved") {
-//     throw new Error("mechanic not approved yet");
-//   }
+    await storeRefreshToken(decoded.id, newRefreshToken);
 
-//   // const match = await bcrypt.compare(password, mechanic.password);
-//   // if (!match) throw new Error("Invalid password");
-
-//   const token = jwt.sign({ id: mechanic._id, role: "mechanic" }, JWT_SECRET, {
-//     expiresIn: JWT_EXPIRES_IN
-//   });
-
-//   return {
-//     token,
-//     mechanic: {
-//       id: mechanic._id,
-//       name: mechanic.name,
-//       email: mechanic.email
-//     }
-//   };
-// };
+    return {
+      accessToken,
+      refreshToken: newRefreshToken
+    };
+  } catch (error) {
+    throw new Error("Invalid refresh token");
+  }
+};
