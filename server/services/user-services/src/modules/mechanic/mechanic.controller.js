@@ -3,7 +3,7 @@ import { uploadImage } from "../../utils/cloudinary.util.js";
 
 export const registermechanic = async (req, res, next) => {
   try {
-    const mechanic = await mechanicService.createmechanic(req.body);
+    const mechanic = await mechanicService.createmechanic(req.validatedBody);
 
     res.status(201).json({
       success: true,
@@ -30,10 +30,12 @@ export const getmechanics = async (req, res, next) => {
 
 export const getAllmechanics = async (req, res, next) => {
   try {
-    const mechanics = await mechanicService.getAllmechanics();
+    const { limit, skip } = req.validatedQuery || {};
+    const mechanics = await mechanicService.getAllmechanics({ limit, skip });
 
     res.json({
       success: true,
+      count: mechanics.length,
       data: mechanics,
     });
   } catch (error) {
@@ -43,7 +45,7 @@ export const getAllmechanics = async (req, res, next) => {
 
 export const getmechanicByPhone = async (req, res) => {
   try {
-    const mechanic = await mechanicService.findmechanicByPhone(req.params.phone);
+    const mechanic = await mechanicService.findmechanicByPhone(req.validatedParams.phone);
 
     if (!mechanic) {
       return res.status(404).json({
@@ -66,10 +68,9 @@ export const getmechanicByPhone = async (req, res) => {
   }
 };
 
-
 export const getmechanic = async (req, res, next) => {
   try {
-    const mechanic = await mechanicService.getmechanicById(req.params.id);
+    const mechanic = await mechanicService.getmechanicById(req.validatedParams.id);
 
     if (!mechanic) {
       return res.status(404).json({
@@ -90,10 +91,7 @@ export const getmechanic = async (req, res, next) => {
 export const updatemechanic = async (req, res) => {
   try {
     const mechanicId = req.params.id;
-    console.log("mechanicId:", mechanicId)
-
     const mechanicIdFromToken = req.headers['x-user-id'];
-    console.log("mechanicid form token:", mechanicIdFromToken)
 
     if (!mechanicIdFromToken || mechanicIdFromToken !== mechanicId) {
       return res.status(403).json({
@@ -102,7 +100,7 @@ export const updatemechanic = async (req, res) => {
       });
     }
 
-    const mechanic = await mechanicService.updatemechanic(mechanicId, req.body);
+    const mechanic = await mechanicService.updatemechanic(mechanicId, req.validatedBody);
 
     if (!mechanic) {
       return res.status(404).json({
@@ -126,7 +124,6 @@ export const updatemechanic = async (req, res) => {
   }
 };
 
-
 export const deletemechanic = async (req, res, next) => {
   try {
     await mechanicService.deletemechanic(req.params.id);
@@ -140,28 +137,9 @@ export const deletemechanic = async (req, res, next) => {
   }
 };
 
-// export const getNearbymechanics = async (req, res, next) => {
-//   try {
-//     const { lng, lat } = req.query;
-
-//     const mechanics = await mechanicService.getNearbymechanics(
-//       Number(lng),
-//       Number(lat)
-//     );
-
-//     res.json({
-//       success: true,
-//       data: mechanics,
-//     });
-//   } catch (error) {
-//     next(error);
-//   }
-// };
-
-
 export const approvemechanic = async (req, res, next) => {
   try {
-    const mechanic = await mechanicService.approvemechanic(req.params.id);
+    const mechanic = await mechanicService.approvemechanic(req.validatedParams.id);
 
     res.json({
       success: true,
@@ -175,7 +153,7 @@ export const approvemechanic = async (req, res, next) => {
 
 export const rejectmechanic = async (req, res, next) => {
   try {
-    const mechanic = await mechanicService.rejectmechanic(req.params.id);
+    const mechanic = await mechanicService.rejectmechanic(req.validatedParams.id);
 
     res.json({
       success: true,

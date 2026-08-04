@@ -1,11 +1,11 @@
 import Garage from "./garage.model.js";
 
 export const findGarageByPhone = async (phone) => {
-  return await Garage.findOne({ phone });
+  return await Garage.findOne({ phone }, { password: 0 });
 };
 
 export const findGarageByEmail = async (email) => {
-  return await Garage.findOne({ email });
+  return await Garage.findOne({ email }, { password: 0 });
 };
 
 export const createGarage = async (data) => {
@@ -13,16 +13,18 @@ export const createGarage = async (data) => {
 };
 
 export const getGarageById = async (id) => {
-  return await Garage.findById(id);
+  return await Garage.findById(id, { password: 0 });
 };
 
-export const getAllGarages = async () => {
-  return await Garage.find();
+export const getAllGarages = async (query = {}) => {
+  const limit = parseInt(query.limit) || 10;
+  const skip = parseInt(query.skip) || 0;
+  return await Garage.find({}, { password: 0 }).skip(skip).limit(limit).lean();
 };
 
 export const updateGarage = async (id, data) => {
   return await Garage.findByIdAndUpdate(id, data, {
-  returnDocument : "after"
+    returnDocument: "after"
   });
 };
 
@@ -31,10 +33,10 @@ export const deleteGarage = async (id) => {
 };
 
 export const getApprovedGarages = async () => {
-  return await Garage.find({ status: "approved" });
+  return await Garage.find({ status: "approved" }, { password: 0 }).lean();
 };
 
-export const getNearbyGarages = async (lng, lat) => {
+export const getNearbyGarages = async (lng, lat, maxDistance = 5000) => {
   return await Garage.find({
     location: {
       $near: {
@@ -42,7 +44,7 @@ export const getNearbyGarages = async (lng, lat) => {
           type: "Point",
           coordinates: [lng, lat],
         },
-        $maxDistance: 5000, // 5km
+        $maxDistance: maxDistance,
       },
     },
   });
@@ -54,7 +56,8 @@ export const approveGarage = async (id) => {
     {
       status: "approved",
       isVerified: true,
-    },{returnDocument: 'after'}
+    },
+    { returnDocument: 'after' }
   );
 };
 
