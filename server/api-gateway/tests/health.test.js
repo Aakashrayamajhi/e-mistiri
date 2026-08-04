@@ -19,6 +19,7 @@ jest.mock('../src/config/redis.config.js', () => ({
 }));
 
 jest.mock('../src/config/services.config.js', () => ({
+  __esModule: true,
   SERVICES: {
     CHAT_SERVICE: 'http://localhost:5001',
     USER_SERVICE: 'http://localhost:5002',

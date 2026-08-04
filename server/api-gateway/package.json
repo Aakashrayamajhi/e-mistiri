@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon --watch src --exec \"node --trace-deprecation src/index.js\"",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles"
+    "test": "set JWT_SECRET=test-secret && node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles"
   },
   "jest": {
     "testEnvironment": "node",

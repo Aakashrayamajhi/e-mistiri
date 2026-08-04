@@ -9,14 +9,18 @@
   "jest": {
     "testEnvironment": "node",
     "transform": {},
-    "testMatch": ["**/?(*.)+(spec|test).[jt]s?(x)"],
+    "testMatch": [
+      "**/?(*.)+(spec|test).[jt]s?(x)"
+    ],
     "moduleNameMapper": {
       "^mongoose$": "<rootDir>/tests/__mocks__/mongoose.js",
-      "^ioredis$": "<rootDir>/tests/__mocks__/ioredis.js",
       "^cloudinary$": "<rootDir>/tests/__mocks__/cloudinary.js",
       "^multer$": "<rootDir>/tests/__mocks__/multer.js"
     },
-    "testPathIgnorePatterns": ["/node_modules/", "/logs/"]
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/logs/"
+    ]
   },
   "keywords": [],
   "author": "",

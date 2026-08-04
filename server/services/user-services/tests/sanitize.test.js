@@ -1,3 +1,4 @@
+import { jest } from '@jest/globals';
 import { sanitizeMiddleware } from '../src/middleware/sanitize.middleware.js';
 import xss from 'xss';
 

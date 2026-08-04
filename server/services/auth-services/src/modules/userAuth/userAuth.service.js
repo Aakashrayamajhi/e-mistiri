@@ -8,7 +8,8 @@ import redis from "../../config/redis.config.js";
 import { sendSMS } from "../../utils/otp.service.js";
 import { generateAccessToken, generateRefreshToken, storeRefreshToken, revokeRefreshToken, verifyRefreshToken, isRefreshTokenValid } from "../../utils/token.service.js";
 import { env } from "../../config/dotenv.config.js";
-import { retry, withTimeout } from "../../utils/retry.js";
+import { retry } from "../../utils/retry.js";
+import { withTimeout } from "../../utils/timeout.js";
 import { withCircuitBreaker } from "../../utils/circuitBreaker.js";
 
 const __filename = fileURLToPath(import.meta.url);

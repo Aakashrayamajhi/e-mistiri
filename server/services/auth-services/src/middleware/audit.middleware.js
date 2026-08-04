@@ -1,4 +1,4 @@
-import redis from '../../config/redis.config.js';
+import redis from '../config/redis.config.js';
 import { logger } from '../../utils/logger.js';
 
 export const auditLog = (action) => {

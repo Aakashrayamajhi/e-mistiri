@@ -1,4 +1,4 @@
-import redis from '../../config/redis.config.js';
+import redis from '../config/redis.config.js';
 
 const createRateLimiter = (windowMs, max, getKey) => {
   return async (req, res, next) => {

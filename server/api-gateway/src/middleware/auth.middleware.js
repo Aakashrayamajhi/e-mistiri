@@ -35,7 +35,7 @@ export const authMiddleware = (req, res, next) => {
         })
       }
 
-      if (error.name === 'JsonWebTokenError') {
+      if (error.name === 'JsonWebTokenError' || error.name === 'SyntaxError') {
         return res.status(403).json({
           success: false,
           message: 'Invalid token - Malformed or tampered token'
