@@ -12,6 +12,9 @@ export default {
   disconnect: async () => {},
   connection: { on: () => {} },
   model: () => mockModel(),
+  Schema: class {
+    constructor(definition) {
+      this.definition = definition;
+    }
+  },
 };
-
-export const Schema = class {};

@@ -6,7 +6,7 @@ jest.mock('xss', () => jest.fn((str) => typeof str === 'string' ? str.replace(/<
 jest.mock('express-mongo-sanitize', () => jest.fn(() => (req, res, next) => next()));
 
 describe('Sanitize Middleware', () => {
-  const middleware = sanitizeMiddleware();
+  const middleware = sanitizeMiddleware;
   const req = { body: {}, query: {}, params: {} };
   const res = { };
   const next = jest.fn();

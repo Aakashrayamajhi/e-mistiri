@@ -1,18 +1,5 @@
+import { jest } from '@jest/globals';
 import { saveUserSession, getUserSession, removeUserSession } from '../src/utils/redisSession.js';
-
-jest.mock('ioredis', () => {
-  const mockSet = jest.fn();
-  const mockGet = jest.fn();
-  const mockDel = jest.fn();
-  return {
-    __esModule: true,
-    default: jest.fn(() => ({
-      set: mockSet,
-      get: mockGet,
-      del: mockDel,
-    }))
-  };
-});
 
 describe('Redis Session', () => {
   let mockRedis;

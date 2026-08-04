@@ -13,4 +13,8 @@ const mockRedis = {
   quit: async () => 'OK',
 };
 
-export default mockRedis;
+export default class MockRedis {
+  constructor() {
+    return mockRedis;
+  }
+}

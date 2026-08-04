@@ -1,4 +1,5 @@
 import { sanitizeMiddleware } from '../src/middleware/sanitize.middleware.js';
+import { jest } from '@jest/globals';
 import xss from 'xss';
 
 jest.mock('xss', () => jest.fn((str) => typeof str === 'string' ? str.replace(/<script>/gi, '') : str));

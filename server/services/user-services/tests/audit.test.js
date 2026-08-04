@@ -1,18 +1,6 @@
 import { jest } from '@jest/globals';
 import { auditLog } from '../src/middleware/audit.middleware.js';
 
-jest.mock('ioredis', () => {
-  const mockHSet = jest.fn();
-  const mockExpire = jest.fn();
-  return {
-    __esModule: true,
-    default: jest.fn(() => ({
-      hSet: mockHSet,
-      expire: mockExpire,
-    }))
-  };
-});
-
 describe('Audit Middleware', () => {
   let mockRedis;
 
