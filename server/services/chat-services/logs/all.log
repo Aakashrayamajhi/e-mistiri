@@ -38,3 +38,4 @@
 {"level":"info","message":"Kafka consumer connected","service":"chat-service","timestamp":"2026-08-04 13:18:06"}
 {"level":"info","message":"Message sent to Kafka","service":"chat-service","timestamp":"2026-08-04 13:18:06","topic":"chat-message"}
 {"level":"info","message":"Producer disconnected","service":"chat-service","timestamp":"2026-08-04 13:18:06"}
+{"level":"info","message":"DB connected","service":"chat-service","timestamp":"2026-08-04 13:44:10"}
