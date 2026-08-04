@@ -1,3 +1,4 @@
+import { jest } from '@jest/globals';
 import { auditLog } from '../src/middleware/audit.middleware.js';
 
 jest.mock('ioredis', () => {

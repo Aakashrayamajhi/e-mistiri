@@ -2,12 +2,17 @@ import mongoSanitize from 'express-mongo-sanitize'
 import xss from 'xss'
 
 export const sanitizeMiddleware = (req, res, next) => {
-  mongoSanitize()(req, res, () => {
-    sanitizeAndAssign(req, 'body')
-    sanitizeAndAssign(req, 'query')
-    sanitizeAndAssign(req, 'params')
-    next()
-  })
+  try {
+    mongoSanitize()(req, res, () => {})
+  } catch {
+    // express-mongo-sanitize v2.x may throw on read-only Express 5 req properties;
+    // fall through to the custom sanitizer below.
+  }
+
+  sanitizeAndAssign(req, 'body')
+  sanitizeAndAssign(req, 'query')
+  sanitizeAndAssign(req, 'params')
+  next()
 }
 
 const getPropertyDescriptor = (obj, key) => {

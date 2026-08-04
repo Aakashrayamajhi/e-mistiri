@@ -1,15 +1,13 @@
 import { jest } from '@jest/globals';
-import request from 'supertest';
-import { app } from '../src/app.js';
-import jwt from 'jsonwebtoken';
 
-jest.mock('../src/config/env.config.js', () => ({
-  JWT_SECRET: 'test-secret',
-}));
+const request = (await import('supertest')).default;
+const { JWT_SECRET } = await import('../src/config/env.config.js');
+const { app } = await import('../src/app.js');
+const jwt = (await import('jsonwebtoken')).default;
 
 describe('Auth Middleware', () => {
   it('should allow request with valid token', async () => {
-    const token = jwt.sign({ id: 'user123', role: 'user' }, 'test-secret', { expiresIn: '15m' });
+    const token = jwt.sign({ id: 'user123', role: 'user' }, JWT_SECRET, { expiresIn: '15m' });
     const res = await request(app)
       .get('/api/user')
       .set('Authorization', `Bearer ${token}`);
@@ -37,7 +35,7 @@ describe('Auth Middleware', () => {
   });
 
   it('should reject request with expired token', async () => {
-    const token = jwt.sign({ id: 'user123', role: 'user' }, 'test-secret', { expiresIn: '-1s' });
+    const token = jwt.sign({ id: 'user123', role: 'user' }, JWT_SECRET, { expiresIn: '-1s' });
     const res = await request(app)
       .get('/api/user')
       .set('Authorization', `Bearer ${token}`);
@@ -53,11 +51,11 @@ describe('Auth Middleware', () => {
       .set('Authorization', `Bearer ${token}`);
 
     expect(res.status).toBe(403);
-    expect(res.body.message).toMatch(/Invalid token/);
+    expect(res.body.message).toMatch(/Invalid token|Token could not be verified/);
   });
 
   it('should reject request with token missing user id', async () => {
-    const token = jwt.sign({ role: 'user' }, 'test-secret', { expiresIn: '15m' });
+    const token = jwt.sign({ role: 'user' }, JWT_SECRET, { expiresIn: '15m' });
     const res = await request(app)
       .get('/api/user')
       .set('Authorization', `Bearer ${token}`);

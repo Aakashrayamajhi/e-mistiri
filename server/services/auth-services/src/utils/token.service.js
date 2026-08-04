@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import redis from '../../config/redis.config.js';
+import redis from '../config/redis.config.js';
 import { env } from '../config/dotenv.config.js';
 
 export const generateAccessToken = (payload) => {

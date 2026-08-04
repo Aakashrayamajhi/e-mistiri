@@ -1,5 +1,5 @@
 import client from 'prom-client'
-import { logger } from './logger.js'
+import { logger } from '../utils/logger.js'
 
 export const httpRequestDuration = new client.Histogram({
   name: 'http_request_duration_seconds',

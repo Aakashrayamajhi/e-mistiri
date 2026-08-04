@@ -1,3 +1,4 @@
+import { jest } from '@jest/globals';
 import { requireAdmin } from '../src/middleware/rbac.middleware.js';
 
 describe('RBAC Middleware', () => {
